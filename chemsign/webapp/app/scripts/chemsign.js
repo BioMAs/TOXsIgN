@@ -2052,10 +2052,9 @@ angular.module('chemsign').controller('userCtrl',
         // console.log(data['query']);
         var params = $location.search();
         console.log(params);
-        console.log("TATA");
+        console.log($scope.search_sig);
         SearchHits.setHits(data);
         // //$rootScope.search_result = data;
-        $location.path('/');
         $location.path('/search');
       });
     }
