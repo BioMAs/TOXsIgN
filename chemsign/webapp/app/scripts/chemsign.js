@@ -2046,14 +2046,16 @@ angular.module('chemsign').controller('userCtrl',
 
 
     $scope.onSearch = function() {
-      var params = $location.search();
-      console.log(params);
-      console.log("TATA");
+
+
       // var sgfrom=0;
       Search.search_index({'query': $scope.search_sig,'search':'true', 'pfrom' : 0 , 'sfrom' : 0, 'sgfrom':0 }).$promise.then(function(data){
         // console.log($scope.search_sig);
         // console.log(data);
         // console.log(data['query']);
+        var params = $location.search();
+        console.log(params);
+        console.log("TATA");
         SearchHits.setHits(data);
         // //$rootScope.search_result = data;
         $location.path('/search');
