@@ -2055,7 +2055,7 @@ angular.module('chemsign').controller('userCtrl',
         // console.log(data['query']);
         SearchHits.setHits(data);
         // //$rootScope.search_result = data;
-        $windows.location.path('/search');
+        $windows.location.href('/search');
       });
     }
 
