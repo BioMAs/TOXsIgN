@@ -40,12 +40,12 @@ else:
     from email.mime.text import MIMEText
 
 from logging.handlers import RotatingFileHandler
- 
+
 # création de l'objet logger qui va nous servir à écrire dans les logs
 logger = logging.getLogger()
 # on met le niveau du logger à DEBUG, comme ça il écrit tout
 logger.setLevel(logging.DEBUG)
- 
+
 # création d'un formateur qui va ajouter le temps, le niveau
 # de chaque message quand on écrira un message dans le log
 formatter = logging.Formatter('%(asctime)s :: %(levelname)s :: %(message)s')
@@ -57,7 +57,7 @@ file_handler = RotatingFileHandler('view.log', 'a', 1000000000, 1)
 file_handler.setLevel(logging.DEBUG)
 file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
- 
+
 # création d'un second handler qui va rediriger chaque écriture de log
 # sur la console
 steam_handler = logging.StreamHandler()
@@ -143,9 +143,9 @@ def user_info_update(request):
         if token != "" :
             form['token'] = token
         return form
-    else : 
+    else :
         return HTTPUnauthorized('Not authorized to access this resource')
-    
+
 
 @view_config(route_name='user', renderer='json')
 def user(request):
@@ -414,9 +414,9 @@ def getdata(request):
         project_number = request.registry.db_mongo['projects'].find({field :select_filter}).count()
         study_number = request.registry.db_mongo['studies'].find({field :select_filter}).count()
         assay_number = request.registry.db_mongo['assays'].find({field :select_filter}).count()
-        signature_number = request.registry.db_mongo['signatures'].find({field :select_filter}).count() 
+        signature_number = request.registry.db_mongo['signatures'].find({field :select_filter}).count()
     if form['from'] == "None" :
-        
+
         result = request.registry.db_mongo[collection].find_one({field :select_filter})
         if result is not None :
             if 'edges' in result:
@@ -518,7 +518,7 @@ def readresult(request):
     value = param[2]
     if job_info['tool'] == "distance analysis" :
         try :
-            orgafile = {'pvalue':7,'zscore':6,'r':1}
+            orgafile = {'pvalue':8,'zscore':6,'r':1}
             if os.path.getsize(result_file) == 0 :
                 return {'msg':'No file available','Bp':[],'Disease': [],'Mf':[],'Cc':[] ,'status':"0"}
             else :
@@ -531,7 +531,7 @@ def readresult(request):
                 #print len(R)
                 if arg_val == 'lt' :
                     R = [x for x in R if float(x[orgafile[filter_val]])<=float(value)]
-                        
+
                 if arg_val == 'gt' :
                     R = [x for x in R if float(x[orgafile[filter_val]])>=float(value)]
 
@@ -539,7 +539,7 @@ def readresult(request):
                 for line in R :
                     name_sig = request.registry.db_mongo['signatures'].find_one({'id':line[0]})
                     #print line
-                    dGo = {'name':line[0]+' - '+name_sig['title'],'signature':line[0],'r':int(line[1]),'R':int(line[2]),'n':int(line[3]),'N':int(line[4]),'rR':line[5],'zscore':line[6],'pvalue':line[7],'euclid':line[8],'cor':line[9],'genes':line[10]}
+                    dGo = {'name':line[0]+' - '+name_sig['title'],'signature':line[0],'r':int(line[1]),'R':int(line[2]),'n':int(line[3]),'N':int(line[4]),'rR':line[5],'zscore':line[6],'pvalue':line[7],'pBH':line[8],'euclid':line[9],'cor':line[10],'genes':line[11]}
                     lsg.append(dGo)
                 return {'msg':'Enrichment Done','results':lsg,'status':"0"}
         except :
@@ -559,7 +559,7 @@ def readresult(request):
         #print len(R)
         if arg_val == 'lt' :
             R = [x for x in R if float(x[orgafile[filter_val]])<=float(value)]
-            
+
         if arg_val == 'gt' :
             R = [x for x in R if float(x[orgafile[filter_val]])>=float(value)]
         #print len(R)
@@ -600,7 +600,7 @@ def run(request):
             return {'msg':'Error - Your signature is not a genomics signature.','id':'None'}
         if signature['status'] == 'private' and signature['owner'] != user_id :
             return {'msg':'Error - Your are not authorized to access this resource.','id':'None'}
- 
+
         request.registry.db_mongo['Jobs'].update({'id': 1}, {'$inc': {'val': 1}})
         repos = request.registry.db_mongo['Jobs'].find_one({'id': 1})
         jobID = repos['val']
@@ -650,7 +650,7 @@ def predict(request):
             dVal['down']['key'] = "R < 0.5"
             dVal['down']['color'] = "#FF0000"
             dVal['down']['values'].append({"label":cluster,"value":value})
-     
+
     dResults.append(dVal['up'])
     dResults.append(dVal['middle'])
     dResults.append(dVal['down'])
@@ -776,7 +776,7 @@ def cluster(request):
         dResults['enrichment']['No enrichment available'] = {'mesh':'No enrichment available'}
 
 
-        
+
     return {'msg':'Prediction Done','result':dResults,'method':infoMethod(form['method']),'cluster':clusterName,'status':"0"}
 
 
@@ -788,7 +788,7 @@ def cluster(request):
 def download_data(request):
     session_user = is_authenticated(request)
     dataset_id = request.matchdict['dataset']
-    
+
     result = request.registry.db_mongo['projects'].find_one({'id' :dataset_id})
     if result['status'] == 'public' :
         name = 'TOXsIgN_'+dataset_id+'.xlsx'
@@ -844,7 +844,7 @@ def file_dataset(request):
     downfile = request.matchdict['file']
     logger.warning(downfile)
     url_file = os.path.join(request.registry.dataset_path,directory,downfile)
-    (handle, tmp_file) = tempfile.mkstemp('.zip') 
+    (handle, tmp_file) = tempfile.mkstemp('.zip')
     logger.warning(tmp_file)
     z = zipfile.ZipFile(tmp_file, "w")
     z.write(url_file,os.path.basename(url_file))
@@ -859,7 +859,7 @@ def file_signature(request):
     dataset_id = request.matchdict['project']
     signature_id = request.matchdict['signature']
     file_id = request.matchdict['file']
-    
+
     if signature_id == 'none':
         result = ""
         if 'project' in file_id :
@@ -870,7 +870,7 @@ def file_signature(request):
             result = request.registry.db_mongo['assays'].find_one({'id' :dataset_id})
         if 'signature' in file_id :
             result = request.registry.db_mongo['signatures'].find_one({'id' :dataset_id})
-        
+
 
         name = file_id+'.csv'
         results = []
@@ -1040,7 +1040,7 @@ def file_upload(request):
                 print 'create directory'
                 if not os.path.exists(os.path.join(request.registry.upload_path, request.params['uid'], request.params['dataset'], request.params['sid'])):
                     os.makedirs(os.path.join(request.registry.upload_path, request.params['uid'], request.params['dataset'], request.params['sid']))
-                
+
                 #print 'Create final'
                 check_files = open(os.path.join(request.registry.upload_path, request.params['uid'], request.params['dataset'], request.params['sid'],request.params['name']),'a')
                 have_wrong = 0
@@ -1048,8 +1048,8 @@ def file_upload(request):
                     if ids in lresult :
                         check_files.write(ids+'\t'+lresult[ids][0]+'\t'+lresult[ids][1].replace('\n','')+'\t1\n')
                     else :
-                        check_files.write(ids+'\t'+'NA\tNA'+'\t0\n')  
-                        have_wrong = 1                  
+                        check_files.write(ids+'\t'+'NA\tNA'+'\t0\n')
+                        have_wrong = 1
                 check_files.close()
                 #print "File checked and uploded !"
                 if 'up' in request.params['type'] :
@@ -1058,9 +1058,9 @@ def file_upload(request):
                     request.registry.db_mongo['signatures'].update({'id' :request.POST['sid']},{'$set':{'genes_down':','.join(lId)}})
                 if have_wrong == 0 :
                     return {'msg':"File checked and uploded !",'status': '0' }
-                else : 
+                else :
                     return {'msg':"Warning ! Some IDs are not EntrezGene ID or are desprecated",'status': '0' }
-     
+
         except :
             print sys.exc_info()[1]
             return {'msg':"TOXsIgN can't read your file. Please make sure you use the correct format. If this error persists, please contact the site administrator.",'status': '1' }
@@ -1286,7 +1286,7 @@ def excel_signature_upload(request):
                     'description' : study_description,
                     'experimental_design' : study_experimental_design,
                     'results' : study_results,
-                    'study_type' : study_type 
+                    'study_type' : study_type
                 }
                 studies[study_id] = dico
 
@@ -1311,16 +1311,16 @@ def excel_signature_upload(request):
                 assay_title = ""
                 assay_organism = ""
                 assay_experimental_type = ""
-                assay_developmental_stage = "" 
+                assay_developmental_stage = ""
                 assay_generation = ""
                 assay_sex = ""
                 assay_tissue = ""
                 assay_cell = ""
-                assay_cell_line = ""   
+                assay_cell_line = ""
                 assay_pop_age = ""
                 assay_location = ""
                 assay_reference = ""
-                assay_matrice = "" 
+                assay_matrice = ""
                 assay_additional_information = ""
 
 
@@ -1364,7 +1364,7 @@ def excel_signature_upload(request):
                         assay_error['Warning'].append("Developmental stage not listed ("+assay_id+")")
                 else :
                     assay_error['Info'].append("No developmental stage selected ("+assay_id+")")
-                    
+
 
                 if row_values[6] != "":
                     if row_values[6] in  list_generation :
@@ -1462,7 +1462,7 @@ def excel_signature_upload(request):
 
                 if row_values[19] != "":
                     assay_additional_information = row_values[19]
-                
+
                 #After reading line add all info in dico project
                 dico ={
                     'associated_studies' : assay_study,
@@ -1614,10 +1614,10 @@ def excel_signature_upload(request):
 
                 if row_values[13] != "":
                     factor_exposure_frequencies = row_values[13]
-                
+
                 if row_values[14] != "":
                     factor_additional_information = row_values[14]
-              
+
 
 
                 #After reading line add all info in dico project
@@ -1656,7 +1656,7 @@ def excel_signature_upload(request):
                 signature_generation = ""
                 signature_sex = ""
                 signature_tissue = ""
-                signature_cell = "" 
+                signature_cell = ""
                 signature_cell_line = ""
                 signature_molecule = ""
                 signature_pathology = ""
@@ -1666,10 +1666,10 @@ def excel_signature_upload(request):
                 signature_control_sample = ""
                 signature_treated_sample = ""
                 signature_pvalue = ""
-                signature_cutoff = "" 
+                signature_cutoff = ""
                 signature_satistical_processing = ""
                 signature_additional_file = ""
-                signature_file_up = "" 
+                signature_file_up = ""
                 signature_file_down = ""
                 signature_file_interrogated= ""
                 signature_study_type= ""
@@ -1712,7 +1712,7 @@ def excel_signature_upload(request):
                     critical += 1
 
                 if row_values[4] != "":
-                    if row_values[4] in list_signature_type : 
+                    if row_values[4] in list_signature_type :
                         signature_type = row_values[4]
                     else :
                         signature_error['Critical'].append("Signature title not in the list ("+signature_id+")")
@@ -1745,7 +1745,7 @@ def excel_signature_upload(request):
                         signature_error['Warning'].append("Developmental stage not listed ("+signature_id+")")
                 else :
                     signature_error['Info'].append("No developmental stage selected ("+signature_id+")")
-                    
+
 
                 if row_values[8] != "":
                     if row_values[8] in  list_generation :
@@ -1991,7 +1991,7 @@ def excel_signature_upload(request):
                         critical += 1
 
 
-                
+
                 signature_study_type = studies[signature_associated_study]
                 #After reading line add all info in dico project
                 dico={
@@ -2023,7 +2023,7 @@ def excel_signature_upload(request):
                     'genes_down' : ""
                 }
                 signatures[signature_id] = dico
-        
+
 
 
         # Iterate through each row in worksheet and fetch values into dict
@@ -2033,7 +2033,7 @@ def excel_signature_upload(request):
         logger.warning("Error - Read excel file")
         logger.warning(sys.exc_info())
         return {'msg':'An error occurred while saving your file. If the error persists please contact TOXsIgN support ','status':'1'}
-    
+
 
 
 
@@ -2051,7 +2051,7 @@ def save_excel(request):
     input_file = None
     form = json.loads(request.body, encoding=request.charset)
     user = form['uid']
-  
+
     try:
         input_file = form['file']
     except Exception:
@@ -2060,7 +2060,7 @@ def save_excel(request):
     print 'write file into : '+input_file
 
     #Create error list
-    
+
     asso_id = {}
     reverse_asso = {}
 
@@ -2265,7 +2265,7 @@ def save_excel(request):
                 id_s = ""
                 for res in repos:
                     id_s = res
-                
+
                 #Excel id -> databas id
                 asso_id[study_id] = 'TSE'+str(id_s['val'])
                 reverse_asso[asso_id[study_id]] = study_id
@@ -2300,7 +2300,7 @@ def save_excel(request):
                     'warnings' : ','.join(study_error['Warning']),
                     'critical' : ','.join(study_error['Critical']),
                     'excel_id' : study_id
-                }      
+                }
                 studies[study_id]=dico
 
         # List of TOXsIgN 'ontologies'
@@ -2313,7 +2313,7 @@ def save_excel(request):
         list_exposition_factor = ['Chemical','Physical','Biological']
         list_signature_type = ['Physiological','Genomic','Molecular']
         list_observed_effect = ['Decrease','Increase','No effect','NA']
-        
+
 
         # Check assay
         sh = wb.sheet_by_index(2)
@@ -2330,7 +2330,7 @@ def save_excel(request):
                 assay_organism = ""
                 assay_organism_name = ""
                 assay_experimental_type = ""
-                assay_developmental_stage = "" 
+                assay_developmental_stage = ""
                 assay_generation = ""
                 assay_sex = ""
                 assay_tissue = ""
@@ -2338,13 +2338,13 @@ def save_excel(request):
                 assay_cell = ""
                 assay_cell_name = ""
                 assay_cell_line = ""
-                assay_cell_line_name = ""   
-                assay_additional_information = "" 
-                tag = [] 
+                assay_cell_line_name = ""
+                assay_additional_information = ""
+                tag = []
                 assay_pop_age = ""
                 assay_location = ""
                 assay_reference = ""
-                assay_matrice = "" 
+                assay_matrice = ""
 
 
                 if row_values[1] != "":
@@ -2395,7 +2395,7 @@ def save_excel(request):
                         assay_error['Warning'].append("Developmental stage not listed ("+assay_id+")")
                 else :
                     assay_error['Info'].append("No developmental stage selected ("+assay_id+")")
-                    
+
 
                 if row_values[6] != "":
                     if row_values[6] in  list_generation :
@@ -2519,7 +2519,7 @@ def save_excel(request):
                 id_a = ""
                 for res in repos:
                     id_a = res
-                
+
                 #Excel id -> databas id
                 asso_id[assay_id] = 'TSA'+str(id_a['val'])
                 reverse_asso[asso_id[assay_id]] = assay_id
@@ -2581,7 +2581,7 @@ def save_excel(request):
                     continue
 
                 factor_error = {'Critical':[],'Warning':[],'Info':[]}
-        
+
                 factor_id = row_values[0]
                 factor_type = ""
                 factor_assay = ""
@@ -2639,7 +2639,7 @@ def save_excel(request):
                         tag.extend(data['all_name'])
                         if row_values[3] != "":
                             factor_chemical_name = row_values[3]
-                            tag.append(factor_chemical_name)      
+                            tag.append(factor_chemical_name)
                 else :
                     assay_error['Warning'].append("No chemical selected ("+factor_id+")")
 
@@ -2714,7 +2714,7 @@ def save_excel(request):
 
                 if row_values[14] != "":
                     factor_additional_information = row_values[14]
-        
+
 
 
                 #After reading line add all info in dico project
@@ -2723,7 +2723,7 @@ def save_excel(request):
                 id_a = ""
                 for res in repos:
                     id_f = res
-                
+
                 #Excel id -> databas id
                 asso_id[factor_id] = 'TSF'+str(id_f['val'])
                 reverse_asso[asso_id[factor_id]] = factor_id
@@ -2747,7 +2747,7 @@ def save_excel(request):
                 p_factor.append(asso_id[factor_id])
                 projects[project_asso]['factors'] = ','.join(p_factor)
 
-                #up factor tags to associated assy 
+                #up factor tags to associated assy
                 tag_assay = assays[factor_assay]['tags'].split(',')
                 tag_assay.extend(tag)
                 assays[factor_assay]['tags'] = ','.join(tag_assay)
@@ -2831,7 +2831,7 @@ def save_excel(request):
                 signature_tissue = ""
                 signature_tissue_name = ""
                 signature_cell = ""
-                signature_cell_name = "" 
+                signature_cell_name = ""
                 signature_cell_line = ""
                 signature_cell_line_name = ""
                 signature_molecule = ""
@@ -2844,10 +2844,10 @@ def save_excel(request):
                 signature_control_sample = ""
                 signature_treated_sample = ""
                 signature_pvalue = ""
-                signature_cutoff = "" 
+                signature_cutoff = ""
                 signature_satistical_processing = ""
                 signature_additional_file = ""
-                signature_file_up = "" 
+                signature_file_up = ""
                 signature_file_down = ""
                 signature_file_interrogated = ""
                 signature_genes_identifier = ""
@@ -2891,7 +2891,7 @@ def save_excel(request):
                     critical += 1
 
                 if row_values[4] != "":
-                    if row_values[4] in list_signature_type : 
+                    if row_values[4] in list_signature_type :
                         signature_type = row_values[4]
                     else :
                         signature_error['Critical'].append("Signature title not in the list ("+signature_id+")")
@@ -2920,7 +2920,7 @@ def save_excel(request):
                         tag.extend(data['all_name'])
                         if row_values[5] != "":
                             signature_organism = row_values[5]
-                            tag.append(signature_organism_name)   
+                            tag.append(signature_organism_name)
                 else :
                     signature_error['Critical'].append("No organism selected ("+signature_id+")")
                     critical += 1
@@ -2932,7 +2932,7 @@ def save_excel(request):
                         signature_error['Warning'].append("Developmental stage not listed ("+signature_id+")")
                 else :
                     signature_error['Info'].append("No developmental stage selected ("+signature_id+")")
-                    
+
 
                 if row_values[8] != "":
                     if row_values[8] in  list_generation :
@@ -2968,7 +2968,7 @@ def save_excel(request):
                         tag.extend(data['all_name'])
                         if row_values[10] != "":
                             signature_tissue_name = row_values[10]
-                            tag.append(signature_tissue_name)  
+                            tag.append(signature_tissue_name)
 
                 if row_values[13] != "":
                     data = request.registry.db_mongo['cell.tab'].find_one({'id': row_values[13]})
@@ -2985,10 +2985,10 @@ def save_excel(request):
                         tag.extend(data['synonyms'])
                         tag.extend(data['direct_parent'])
                         tag.extend(data['all_parent'])
-                        tag.extend(data['all_name']) 
+                        tag.extend(data['all_name'])
                         if row_values[12] != "":
                             signature_cell_name = row_values[12]
-                            tag.append(signature_cell_name)  
+                            tag.append(signature_cell_name)
 
                 if row_values[15] != "":
                     data = request.registry.db_mongo['cell_line.tab'].find_one({'id': row_values[15]})
@@ -3008,7 +3008,7 @@ def save_excel(request):
                         tag.extend(data['all_name'])
                         if row_values[14] != "":
                             signature_cell_line_name = row_values[14]
-                            tag.append(signature_cell_line_name)   
+                            tag.append(signature_cell_line_name)
 
                 # Check if at least tissue/cell or cell line are filled
                 if signature_cell_line == "" and signature_cell == "" and signature_tissue =="" :
@@ -3034,7 +3034,7 @@ def save_excel(request):
                         tag.extend(data['all_name'])
                         if row_values[16] != "" :
                             signature_molecule_name = row_values[16]
-                            tag.append(signature_molecule_name)   
+                            tag.append(signature_molecule_name)
 
 
                 if row_values[18] != "":
@@ -3076,7 +3076,7 @@ def save_excel(request):
                         tag.extend(data['all_name'])
                         if row_values[20] != "":
                             signature_technology_name = row_values[20]
-                            tag.append(signature_technology_name)              
+                            tag.append(signature_technology_name)
                 else :
                     if signature_type == "Genomic":
                         signature_error['Warning'].append("No technology selected ("+signature_id+")")
@@ -3205,7 +3205,7 @@ def save_excel(request):
                 id_a = ""
                 for res in repos:
                     id_si = res
-                
+
                 #Excel id -> databas id
                 asso_id[signature_id] = 'TSS'+str(id_si['val'])
                 reverse_asso[asso_id[signature_id]] = signature_id
@@ -3233,7 +3233,7 @@ def save_excel(request):
                 tag.extend(assays[signature_associated_assay]['tags'].split(','))
                 myset = list(set(tag))
                 tag = myset
-                
+
                 signature_study_type = studies[signature_associated_study]['study_type']
                 dico ={
                     'id' : asso_id[signature_id],
@@ -3292,7 +3292,7 @@ def save_excel(request):
                     'genes_down' : ""
                 }
                 signatures[signature_id] = dico
-        
+
 
 
         # Create user project directory + move tmp
@@ -3344,7 +3344,7 @@ def update_dataset(request):
     input_file = None
     form = json.loads(request.body, encoding=request.charset)
     user = form['uid']
-  
+
     try:
         input_file = form['file']
     except Exception:
@@ -3459,7 +3459,7 @@ def update_dataset(request):
                 'critical' : ','.join(project_error['Critical']),
                 'excel_id' : project_id
                 }
-            
+
             if p_project['excel_id'] == project_id :
                 projects[project_id] = dico
             else :
@@ -3575,7 +3575,7 @@ def update_dataset(request):
                             if study['excel_id'] == study_id :
 
                                 asso_id[study_id] = study['id']
-                                reverse_asso[asso_id[study_id]] = study_id 
+                                reverse_asso[asso_id[study_id]] = study_id
 
                                 #Add studies id to associated project
                                 p_stud = projects[study_projects]['studies'].split()
@@ -3608,10 +3608,10 @@ def update_dataset(request):
                                     'warnings' : ','.join(study_error['Warning']),
                                     'critical' : ','.join(study_error['Critical']),
                                     'excel_id' : study_id
-                                } 
-                                    
+                                }
+
                                 studies[study_id] = dico
-                else : 
+                else :
 
                     #After reading line add all info in dico project
                     request.registry.db_mongo['study'].update({'id': 1}, {'$inc': {'val': 1}})
@@ -3619,7 +3619,7 @@ def update_dataset(request):
                     id_s = ""
                     for res in repos:
                         id_s = res
-                    
+
                     #Excel id -> databas id
                     asso_id[study_id] = 'TSE'+str(id_s['val'])
                     reverse_asso[asso_id[study_id]] = study_id
@@ -3657,7 +3657,7 @@ def update_dataset(request):
                         'warnings' : ','.join(study_error['Warning']),
                         'critical' : ','.join(study_error['Critical']),
                         'excel_id' : study_id
-                    }      
+                    }
                     studies[study_id]=dico
 
         # List of TOXsIgN 'ontologies'
@@ -3693,7 +3693,7 @@ def update_dataset(request):
             assay_organism = ""
             assay_organism_name = ""
             assay_experimental_type = ""
-            assay_developmental_stage = "" 
+            assay_developmental_stage = ""
             assay_generation = ""
             assay_sex = ""
             assay_tissue = ""
@@ -3701,13 +3701,13 @@ def update_dataset(request):
             assay_cell = ""
             assay_cell_name = ""
             assay_cell_line = ""
-            assay_cell_line_name = ""   
-            assay_additional_information = "" 
-            tag = [] 
+            assay_cell_line_name = ""
+            assay_additional_information = ""
+            tag = []
             assay_pop_age = ""
             assay_location = ""
             assay_reference = ""
-            assay_matrice = "" 
+            assay_matrice = ""
 
 
             if row_values[1] != "":
@@ -3758,7 +3758,7 @@ def update_dataset(request):
                     assay_error['Warning'].append("Developmental stage not listed ("+assay_id+")")
             else :
                 assay_error['Info'].append("No developmental stage selected ("+assay_id+")")
-                
+
 
             if row_values[6] != "":
                 if row_values[6] in  list_generation :
@@ -3784,7 +3784,7 @@ def update_dataset(request):
                         tag.append(assay_tissue_name)
                     else :
                         assay_tissue = ""
-  
+
                 else :
                     assay_tissue = data['name']
                     tag.append(data['name'])
@@ -3945,7 +3945,7 @@ def update_dataset(request):
                 id_a = ""
                 for res in repos:
                     id_a = res
-                
+
                 #Excel id -> databas id
                 asso_id[assay_id] = 'TSA'+str(id_a['val'])
                 reverse_asso[asso_id[assay_id]] = assay_id
@@ -4076,7 +4076,7 @@ def update_dataset(request):
                     tag.extend(data['all_name'])
                     if row_values[3] != "":
                         factor_chemical_name = row_values[3]
-                        tag.append(factor_chemical_name)      
+                        tag.append(factor_chemical_name)
 
             if row_values[5] != "":
                 data = request.registry.db_mongo['chemical.tab'].find_one({'id': row_values[5]})
@@ -4133,7 +4133,7 @@ def update_dataset(request):
                 else :
                     factor_error['Critical'].append("Factor dose unit required ("+factor_id+")")
                     critical += 1
-            except : 
+            except :
                  factor_dose_unit = row_values[10]
 
             if row_values[11] != "":
@@ -4142,7 +4142,7 @@ def update_dataset(request):
                 factor_error['Critical'].append("Factor exposure duration required ("+factor_id+")")
                 critical += 1
 
-            try : 
+            try :
                 if row_values[12] != "":
                     if str(row_values[12]) in list_exposure_duration_unit :
                         factor_exposure_duration_unit = row_values[12]
@@ -4195,7 +4195,7 @@ def update_dataset(request):
                         p_factor = list(set(p_factor))
                         projects[project_asso]['factors'] = ','.join(p_factor)
 
-                        #up factor tags to associated assy 
+                        #up factor tags to associated assy
                         tag_assay = assays[factor_assay]['tags'].split(',')
                         tag_assay.extend(tag)
                         tag_assay = list(set(tag_assay))
@@ -4226,10 +4226,10 @@ def update_dataset(request):
                             'critical' : ','.join(factor_error['Critical']),
                             'excel_id' : factor_id
                         }
-                        
+
                         factors[factor_id] = dico
 
-            else : 
+            else :
 
                 #After reading line add all info in dico project
                 request.registry.db_mongo['factor'].update({'id': 1}, {'$inc': {'val': 1}})
@@ -4237,7 +4237,7 @@ def update_dataset(request):
                 id_a = ""
                 for res in repos:
                     id_f = res
-                
+
                 #Excel id -> databas id
                 asso_id[factor_id] = 'TSF'+str(id_f['val'])
                 reverse_asso[asso_id[factor_id]] = factor_id
@@ -4264,7 +4264,7 @@ def update_dataset(request):
                 p_factor = list(set(p_factor))
                 projects[project_asso]['factors'] = ','.join(p_factor)
 
-                #up factor tags to associated assy 
+                #up factor tags to associated assy
                 tag_assay = assays[factor_assay]['tags'].split(',')
                 tag_assay.extend(tag)
                 tag_assay = list(set(tag_assay))
@@ -4353,7 +4353,7 @@ def update_dataset(request):
             signature_tissue = ""
             signature_tissue_name = ""
             signature_cell = ""
-            signature_cell_name = "" 
+            signature_cell_name = ""
             signature_cell_line = ""
             signature_cell_line_name = ""
             signature_molecule = ""
@@ -4366,10 +4366,10 @@ def update_dataset(request):
             signature_control_sample = ""
             signature_treated_sample = ""
             signature_pvalue = ""
-            signature_cutoff = "" 
+            signature_cutoff = ""
             signature_satistical_processing = ""
             signature_additional_file = ""
-            signature_file_up = "" 
+            signature_file_up = ""
             signature_file_down = ""
             signature_file_interrogated = ""
             signature_genes_identifier = ""
@@ -4413,7 +4413,7 @@ def update_dataset(request):
                 critical += 1
 
             if row_values[4] != "":
-                if row_values[4] in list_signature_type : 
+                if row_values[4] in list_signature_type :
                     signature_type = row_values[4]
                 else :
                     signature_error['Critical'].append("Signature title not in the list ("+signature_id+")")
@@ -4442,7 +4442,7 @@ def update_dataset(request):
                     tag.extend(data['all_name'])
                     if row_values[5] != "":
                         signature_organism = row_values[5]
-                        tag.append(signature_organism_name)   
+                        tag.append(signature_organism_name)
             else :
                 signature_error['Critical'].append("No organism selected ("+signature_id+")")
                 critical += 1
@@ -4454,7 +4454,7 @@ def update_dataset(request):
                     signature_error['Warning'].append("Developmental stage not listed ("+signature_id+")")
             else :
                 signature_error['Info'].append("No developmental stage selected ("+signature_id+")")
-                
+
 
             if row_values[8] != "":
                 if row_values[8] in  list_generation :
@@ -4492,7 +4492,7 @@ def update_dataset(request):
                     tag.extend(data['all_name'])
                     if row_values[10] != "":
                         signature_tissue_name = row_values[10]
-                        tag.append(signature_tissue_name)  
+                        tag.append(signature_tissue_name)
             else :
                 if studies[signature_associated_study]['study_type'] != 'Observational' :
                     signature_error['Warning'].append("No tissue selected ("+signature_id+")")
@@ -4514,10 +4514,10 @@ def update_dataset(request):
                     tag.extend(data['synonyms'])
                     tag.extend(data['direct_parent'])
                     tag.extend(data['all_parent'])
-                    tag.extend(data['all_name']) 
+                    tag.extend(data['all_name'])
                     if row_values[12] != "":
                         signature_cell_name = row_values[12]
-                        tag.append(signature_cell_name)  
+                        tag.append(signature_cell_name)
             else :
                 if studies[signature_associated_study]['study_type'] != 'Observational' :
                     signature_error['Warning'].append("No cell selected ("+signature_id+")")
@@ -4543,7 +4543,7 @@ def update_dataset(request):
                     tag.extend(data['all_name'])
                     if row_values[14] != "":
                         signature_cell_line_name = row_values[14]
-                        tag.append(signature_cell_line_name)   
+                        tag.append(signature_cell_line_name)
             else :
                 if studies[signature_associated_study]['study_type'] != 'Observational' :
                     signature_error['Warning'].append("No cell line selected ("+signature_id+")")
@@ -4575,7 +4575,7 @@ def update_dataset(request):
                     tag.extend(data['all_name'])
                     if row_values[16] != "" :
                         signature_molecule_name = row_values[16]
-                        tag.append(signature_molecule_name)   
+                        tag.append(signature_molecule_name)
             else :
                 if studies[signature_associated_study]['study_type'] != 'Observational' :
                     if signature_type == "Molecular":
@@ -4597,7 +4597,7 @@ def update_dataset(request):
                     tag.extend(data['direct_parent'])
                     tag.extend(data['all_parent'])
                     tag.extend(data['all_name'])
-                          
+
             else :
                 signature_error['Warning'].append("No pathology / disease selected ("+signature_id+")")
 
@@ -4621,7 +4621,7 @@ def update_dataset(request):
                     tag.extend(data['all_name'])
                     if row_values[20] != "":
                         signature_technology_name = row_values[20]
-                        tag.append(signature_technology_name)              
+                        tag.append(signature_technology_name)
             else :
                 if signature_type == "Genomic":
                     signature_error['Warning'].append("No technology selected ("+signature_id+")")
@@ -4849,17 +4849,17 @@ def update_dataset(request):
                         'genes_up' : "",
                         'genes_down' : ""
                         }
-                        
+
                         signatures[signature_id] = dico
 
-            else : 
+            else :
                 #After reading line add all info in dico project
                 request.registry.db_mongo['signature'].update({'id': 1}, {'$inc': {'val': 1}})
                 repos = request.registry.db_mongo['signature'].find({'id': 1})
                 id_a = ""
                 for res in repos:
                     id_si = res
-                
+
                 #Excel id -> databas id
                 asso_id[signature_id] = 'TSS'+str(id_si['val'])
                 reverse_asso[asso_id[signature_id]] = signature_id
@@ -4948,7 +4948,7 @@ def update_dataset(request):
                 }
                 signatures[signature_id] = dico
 
-        
+
 
 
         # Create user project directory + move tmp
@@ -5042,7 +5042,7 @@ def changeQuery(query,_type):
                 newString+=chaine
             except:
                 newString+=chaine
-            
+
         else:
             newString+= ' '+ wordList[i] + ' '
 
@@ -5054,15 +5054,15 @@ def changeQuery(query,_type):
 def search(request):
     form = json.loads(request.body, encoding=request.charset)
     request_query = form['query']
-    
-    
+
+
     size=25
 
-    
+
     #return {'query':request_query}
 
     if 'search' in form:
-        
+
         query=form['query']
         pfrom=form['pfrom']
         sfrom=form['sfrom']
@@ -5081,27 +5081,27 @@ def search(request):
         #     size = size,
         #     from_= from_val,
         #     body = {"query" : { "query_string" : {"query" :'_type:_all AND ' +request_query,"default_operator":"AND",'analyzer': "standard"}}})
-        
+
 
         project = request.registry.es.search(
             index = request.registry.es_db,
             search_type = 'query_then_fetch',
             from_= pfrom,
-            size = size, 
+            size = size,
             body = {"query" : { "query_string" : {"query" :query_project,"default_operator":"AND",'analyzer': "standard"}}})
-        
+
         study = request.registry.es.search(
             index = request.registry.es_db,
             search_type = 'query_then_fetch',
             from_= sfrom,
             size = size,
             body = {"query" : { "query_string" : {"query" :query_study,"default_operator":"AND",'analyzer': "standard"}}})
-        
+
         signature = request.registry.es.search(
             index = request.registry.es_db,
             search_type = 'query_then_fetch',
             from_= sgfrom,
-            size = size,         
+            size = size,
             body = {"query" : { "query_string" : {"query" :query_signature,"default_operator":"AND",'analyzer': "standard"}}})
 
 
@@ -5167,7 +5167,7 @@ def search(request):
         projects={}
         studies={}
         signatures={}
-        
+
         for _type in request_query_dico.keys():
             if("projects" in _type):
                 projects[_type]=request_query_dico[_type]
@@ -5175,7 +5175,7 @@ def search(request):
                 studies[_type]=request_query_dico[_type]
             elif("signatures" in _type):
                 signatures[_type]=request_query_dico[_type]
-        
+
         if projects != {}:
             projects_keys = projects.keys()
             projects_values = projects.values()
@@ -5255,11 +5255,11 @@ def search(request):
             signature=None
             number_signature="0"
 
- 
+
         return {'projects' : project, 'studies':study , 'signatures' : signature ,'query': request_query, \
                     'number_project' : number_project, 'number_study' : number_study,\
                     'number_signature' :number_signature}
-    
+
         # query_projects="(_type:projects AND _all:*)"
         # projects = request.registry.es.search(
         #     index = request.registry.es_db,
@@ -5304,7 +5304,7 @@ def search(request):
         #     #size=(form['from']+25),
         #     body =  {"query" : { "query_string" : {"query" :query_signatures,"default_operator":"AND",'analyzer': "standard"}}}
         # )
-        
+
         # return {'projects' : projects, 'number_projects' : str(projects['hits']['total']),\
         #         'studies' : studies, 'number_studies': str(studies['hits']['total']),\
         #         'assays' : assays, 'number_assays' : str(assays['hits']['total']),\
@@ -5312,7 +5312,7 @@ def search(request):
         #         'query':request_query  }
 
 
-    
+
     # elif request_number_query == 1:
 
     #     page = request.registry.es.search(
@@ -5350,7 +5350,7 @@ def search(request):
     # return {'projects':projects,'studies':studies,'assays':assays, 'strategies':strategies, 'len':total}
     # #body = {"query" : { "query_string" : {"query" :request_query,"default_operator":"AND",'analyzer': "standard"}}}
     # return {'projects':projects,'studies':studies,'assays':assays, 'strategies':strategies, 'len':total}
-  
+
 
 
 
@@ -5469,8 +5469,3 @@ def login_complete_view(request):
                         'exp': datetime.datetime.utcnow() + datetime.timedelta(seconds=36000),
                         'aud': 'urn:chemsign/api'}, secret)
     return HTTPFound(request.static_url('chemsign:webapp/app/')+"index.html#login?token="+token)
-
-
-
-
-

@@ -4,7 +4,7 @@
 	    	<h2>Cluster {{ngDialogData.cluster}}</h2>
 	    	<h4>Method: {{ngDialogData.method}}</h4>
 	  	</div>
-	  	
+
 	  	<ul class="nav nav-tabs">
 		  <li class="active"><a data-toggle="tab" href="#conditions" target="_self">Cluster conditions</a></li>
 		  <li><a data-toggle="tab" href="#enrichment" target="_self" ng-click="showStudies()">Cluster enrichment</a></li>
@@ -31,7 +31,7 @@
 			            <td><a href="#/browse?dataset={{fact.id.signatures}}">{{fact.id.signatures}}</a></td>
 			        </tr>
 				</table>
-			    
+
 			  </div>
 			  <div id="enrichment" class="tab-pane fade">
 			      <table  class="table table-bordered table-hover table-striped">
@@ -85,6 +85,7 @@
 		        <td data-title="'N'" sortable="'N'">{{val.N}}</td>
 		        <td data-title="'Ratio'" sortable="'rR'">{{Math.round(val.rR *100)}} %</td>
 		        <td data-title="'Pvalue'" sortable="'pvalue'">{{val.pvalue}}</td>
+						<td data-title="'Adjusted Pvalue (Benjamini-Hochberg)'" sortable="'pvalue'">{{val.pBH}}</td>
 		        <td data-title="'Zscore'" sortable="'zscore'">{{val.zscore}}</td>
 		        <td data-title="'Euclidean distance'" sortable="'euclid'">{{val.euclid}}</td>
 		        <td data-title="'Correlation distance'" sortable="'cor'">{{val.cor}}</td>
@@ -100,7 +101,7 @@
 	  <li><a data-toggle="tab" href="#cc" target="_self" ng-click="showStudies()">Cellular Component</a></li>
 	  <li><a data-toggle="tab" href="#mf" target="_self" ng-click="showAssays()">Molecular Function</a></li>
 	  <li><a data-toggle="tab" href="#pato" target="_self" ng-click="showSignatures()">Phenotype</a></li>
-	  
+
 	</ul>
 
 	<div class="tab-content">
@@ -173,5 +174,3 @@
         </table>
 	</div>
 </div>
-
-
