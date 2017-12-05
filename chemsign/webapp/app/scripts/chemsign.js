@@ -2010,7 +2010,7 @@ angular.module('chemsign').controller('createCtrl',
 
 
 angular.module('chemsign').controller('userCtrl',
-  function($scope, $rootScope, $routeParams, $log, $location, $window, User, Auth, Search, SearchHits) {
+  function($scope, $rootScope, $routeParams, $log, $location, $windows, User, Auth, Search, SearchHits) {
 
     $scope.is_logged = false;
     $rootScope.$on('loginCtrl.login', function (event, user) {
