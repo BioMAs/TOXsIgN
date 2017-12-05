@@ -3,11 +3,10 @@ TOXsIgN
 
 [//]: # (https://rozaxe.github.io/factory/)
 
-[![Stable v0.1.0](https://img.shields.io/badge/Stable-v0.1.0-green.svg)](https://github.com/ClementLancien/convertToEntrezGeneID)
-[![Release v0.1.0](https://img.shields.io/badge/Release-v0.1.0-blue.svg)](https://github.com/ClementLancien/convertToEntrezGeneID)
+[![Stable v1.0.30](https://img.shields.io/badge/Stable-v0.1.0-green.svg)](https://github.com/ClementLancien/convertToEntrezGeneID)
+[![Release v1.0.32](https://img.shields.io/badge/Release-v0.1.0-blue.svg)](https://github.com/ClementLancien/convertToEntrezGeneID)
 [![Python v>=2.7.12](https://img.shields.io/badge/Python-v>=2.7.12-0077ea.svg)](https://www.python.org/)
-[![node v>=0.4.0](https://img.shields.io/node/v/passport.svg)
-[![Release v>1.0.32](https://img.shields.io/github/release/qubyte/rubidium.svg)]()
+[![node v>=0.4.0](https://img.shields.io/node/v/passport.svg)]
 [![License: GPL-3](https://img.shields.io/aur/license/yaourt.svg)](https://opensource.org/licenses/GPL-3.0)
 
 
