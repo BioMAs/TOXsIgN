@@ -226,8 +226,8 @@ angular.module('chemsign').controller('appCtrl',
             if (cookie_selectID != undefined && cookie_selectID != ''){
                 var user_seletedID = user.selectedID.split(',');
                 var cookies_list = cookie_selectID.split(',');
-                
-            
+
+
                 for(var i=0;i<cookies_list.length; i++){
                     var index = user_seletedID.indexOf(cookies_list[i]);
                     if (index == -1){
@@ -261,7 +261,7 @@ angular.module('chemsign').controller('appCtrl',
                     $cookieStore.put('jobID',null)
                 });
            }
-           
+
         }
 
         if(user === null || user === undefined) {
@@ -273,7 +273,7 @@ angular.module('chemsign').controller('appCtrl',
         }
 
 
-         
+
         Dataset.get({'filter':'public','from':10000000000,'to': 10000000000000,'collection':'projects','field':'status'}).$promise.then(function(data){
             $scope.last_sign = data.request;
         });
@@ -328,7 +328,7 @@ angular.module('chemsign').controller('queryCtrl',
                     //var value=[{'_type': str($scope.selected_type)}, {'selector' : 'AND'}, {'field': '_all', {'search' : str($scope.research)}}]
                 }
                 else{
-                    var value = '(_type:'+$scope.selected_type+' AND '+$scope.selected_field.projects+':'+$scope.research+')';            
+                    var value = '(_type:'+$scope.selected_type+' AND '+$scope.selected_field.projects+':'+$scope.research+')';
                 }
             }
             else if($scope.selected_type == 'studies'){
@@ -336,15 +336,15 @@ angular.module('chemsign').controller('queryCtrl',
                     var value = '(_type:'+$scope.selected_type+' AND '+'_all'+':'+$scope.research+')';
                 }
                 else{
-                    var value = '(_type:'+$scope.selected_type+' AND '+$scope.selected_field.studies+':'+$scope.research+')';  
+                    var value = '(_type:'+$scope.selected_type+' AND '+$scope.selected_field.studies+':'+$scope.research+')';
                 }
-                
+
             }
             else if($scope.selected_type == 'signatures'){
 
                 if($scope.selected_field.signatures== ''){
                     var value = '(_type:'+$scope.selected_type+' AND '+'_all'+':'+$scope.research+')';
-                    
+
                 }
                 else{
                     var value = '(_type:'+$scope.selected_type+' AND '+$scope.selected_field.signatures+':'+$scope.research+')';
@@ -376,7 +376,7 @@ angular.module('chemsign').controller('queryCtrl',
         };
 
 
-       
+
 
 
 
@@ -393,10 +393,10 @@ angular.module('chemsign').controller('queryCtrl',
             $scope.pfrom=$scope.pfrom+25
           }
           else if(type == 'studies'){
-            $scope.sfrom=$scope.sfrom+25       
+            $scope.sfrom=$scope.sfrom+25
           }
           else{
-            $scope.sgfrom=$scope.sgfrom+25   
+            $scope.sgfrom=$scope.sgfrom+25
           }
           console.log('(sgfrom : ');
           console.log($scope.sgfrom);
@@ -416,7 +416,7 @@ angular.module('chemsign').controller('queryCtrl',
                 console.log(data['query'] == '(_all:*) ');
                 if(data['query'] == '(_all:*) ' ){
                   console.log("here");
-                  $location.path('/database'); 
+                  $location.path('/database');
 
                 }
 
@@ -430,7 +430,7 @@ angular.module('chemsign').controller('queryCtrl',
                   $scope.signatures = [];
 
                   if (query_piece.includes('projects') && data['number'] != 0){
-                    
+
                     $scope.projects_number= ''+data['number'];
                     $scope.studies_number = 'No Result';
                     $scope.assays_number = 'No Result';
@@ -440,7 +440,7 @@ angular.module('chemsign').controller('queryCtrl',
                     $scope.studies_number= data['number'];
                     $scope.projects_number = 'No Result';
                     $scope.assays_number = 'No Result';
-                    $scope.signatures_number = 'No Result'; 
+                    $scope.signatures_number = 'No Result';
                   }
 
                   else if(query_piece.includes('signatures') && data['number'] != 0){
@@ -532,17 +532,17 @@ angular.module('chemsign').controller('queryCtrl',
   };
 
 
-        
+
 
         $scope.back = function(type){
            if(type == 'projects'){
             $scope.pfrom=$scope.pfrom-25
           }
           else if(type == 'studies'){
-            $scope.sfrom=$scope.sfrom-25       
+            $scope.sfrom=$scope.sfrom-25
           }
           else{
-            $scope.sgfrom=$scope.sgfrom-25   
+            $scope.sgfrom=$scope.sgfrom-25
           }
 
                    console.log('(sgfrom : ');
@@ -563,7 +563,7 @@ angular.module('chemsign').controller('queryCtrl',
                 console.log(data['query'] == '(_all:*) ');
                 if(data['query'] == '(_all:*) ' ){
                   console.log("here");
-                  $location.path('/database'); 
+                  $location.path('/database');
 
                 }
 
@@ -575,7 +575,7 @@ angular.module('chemsign').controller('queryCtrl',
                   $scope.signatures = [];
 
                   if (query_piece.includes('projects') && data['number'] != 0){
-                    
+
                     $scope.projects_number= ''+data['number'];
                     $scope.studies_number = 'No Result';
                     $scope.assays_number = 'No Result';
@@ -585,7 +585,7 @@ angular.module('chemsign').controller('queryCtrl',
                     $scope.studies_number= data['number'];
                     $scope.projects_number = 'No Result';
                     $scope.assays_number = 'No Result';
-                    $scope.signatures_number = 'No Result'; 
+                    $scope.signatures_number = 'No Result';
                   }
 
                   else if(query_piece.includes('signatures') && data['number'] != 0){
@@ -714,7 +714,7 @@ angular.module('chemsign').controller('queryCtrl',
                 query_piece = query_piece +$scope.query[filter]+' '+filter+' ';
 
             }
- 
+
             query_piece=query_piece.substr(4);
             console.log(query_piece);
             Search.search_index({"query":query_piece, 'query_dico':$scope.query,'number_query':number_query, 'pfrom':$scope.pfrom, 'sfrom':$scope.sfrom, 'sgfrom':$scope.sgfrom}).$promise.then(function(data){
@@ -724,7 +724,7 @@ angular.module('chemsign').controller('queryCtrl',
                 console.log(data['query'] == '(_all:*) ');
                 if(data['query'] == '(_all:*) ' ){
                   console.log("here");
-                  $location.path('/database'); 
+                  $location.path('/database');
 
                 }
 
@@ -734,7 +734,7 @@ angular.module('chemsign').controller('queryCtrl',
                   $scope.projects = [];
                   $scope.studies = [];
                   $scope.signatures = [];
-                  
+
                   $scope.results="ok";
 
 
@@ -742,7 +742,7 @@ angular.module('chemsign').controller('queryCtrl',
 
 
                                     if (query_piece.includes('projects') && data['number'] != 0){
-                    
+
                     $scope.projects_number= ''+data['number'];
                     $scope.studies_number = 'No Result';
                     $scope.assays_number = 'No Result';
@@ -752,7 +752,7 @@ angular.module('chemsign').controller('queryCtrl',
                     $scope.studies_number= data['number'];
                     $scope.projects_number = 'No Result';
                     $scope.assays_number = 'No Result';
-                    $scope.signatures_number = 'No Result'; 
+                    $scope.signatures_number = 'No Result';
                   }
 
                   else if(query_piece.includes('signatures') && data['number'] != 0){
@@ -844,7 +844,7 @@ angular.module('chemsign').controller('queryCtrl',
   };
         });
 
-        
+
 
 
 angular.module('chemsign').controller('searchCtrl',
@@ -900,14 +900,14 @@ angular.module('chemsign').controller('searchCtrl',
             $scope.pfrom=$scope.pfrom+25
           }
           else if(type == 'studies'){
-            $scope.sfrom=$scope.sfrom+25       
+            $scope.sfrom=$scope.sfrom+25
           }
           else{
-            $scope.sgfrom=$scope.sgfrom+25   
+            $scope.sgfrom=$scope.sgfrom+25
           }
           console.log('(sgfrom : ');
           console.log($scope.sgfrom);
-        
+
             Search.search_index({"query":query, 'search':'true','pfrom':$scope.pfrom, 'sfrom':$scope.sfrom, 'sgfrom':$scope.sgfrom}).$promise.then(function(data){
               $scope.projects = [];
               $scope.studies = [];
@@ -951,11 +951,11 @@ angular.module('chemsign').controller('searchCtrl',
                 $scope.signatures_number="No Result";
               }
                       // console.log("here");
-                      // $timeout(function(){ 
-                      //  $location.path('/database'); 
+                      // $timeout(function(){
+                      //  $location.path('/database');
                       //  },0);
             });
-             
+
           };
 
           $scope.back = function(type){
@@ -963,14 +963,14 @@ angular.module('chemsign').controller('searchCtrl',
               $scope.pfrom=$scope.pfrom-25
             }
             else if(type == 'studies'){
-              $scope.sfrom=$scope.sfrom-25       
+              $scope.sfrom=$scope.sfrom-25
             }
             else{
-              $scope.sgfrom=$scope.sgfrom-25   
+              $scope.sgfrom=$scope.sgfrom-25
             }
             console.log('(sgfrom : ');
             console.log($scope.sgfrom);
-          
+
               Search.search_index({"query":query, 'search':'true','pfrom':$scope.pfrom, 'sfrom':$scope.sfrom, 'sgfrom':$scope.sgfrom}).$promise.then(function(data){
                 $scope.projects = [];
                 $scope.studies = [];
@@ -979,7 +979,7 @@ angular.module('chemsign').controller('searchCtrl',
                 $scope.signatures_number=  data['number_signature'];
                 $scope.projects_number = data['number_project'];
                 $scope.studies_number = data['number_study'];
-                
+
                 if (data['projects'] != null){
                   $scope.search_projects = data['projects'].hits.hits;
                   for(var i =0;i<$scope.search_projects.length;i++){
@@ -1011,11 +1011,11 @@ angular.module('chemsign').controller('searchCtrl',
                   $scope.signatures_number="No Result";
                 }
                         // console.log("here");
-                        // $timeout(function(){ 
-                        //  $location.path('/database'); 
+                        // $timeout(function(){
+                        //  $location.path('/database');
                         //  },0);
               });
-             
+
           };
 
 
@@ -1320,7 +1320,7 @@ angular.module('chemsign').controller('jobresultsCtrl',
                 });
 
           }
-          
+
         });
         }
       });
@@ -1357,7 +1357,7 @@ angular.module('chemsign').controller('jobresultsCtrl',
                         console.log('elementClick in callback', select.data.label);
                         Dataset.getcluster({'cluster':select.data.label,'method':$scope.job.method}).$promise.then(function(info){
                             ngDialog.open({ template: 'clusterInfo', scope: $scope, className: 'ngdialog-theme-default',data: info})
-                        });                             
+                        });
                     });
                 },
                 yAxis: {
@@ -1369,8 +1369,8 @@ angular.module('chemsign').controller('jobresultsCtrl',
             }
         };
 
-      
-     
+
+
 
 });
 
@@ -1487,7 +1487,7 @@ angular.module('chemsign').controller('jobsCtrl',
         $scope.show_info = function(job){
           ngDialog.open({ template: 'lofInfo', scope: $scope, className: 'ngdialog-theme-default',data: job});
         }
-        
+
 
 
 
@@ -1574,7 +1574,7 @@ angular.module('chemsign').controller('loginCtrl',
             $scope.msg = data.msg;
         });
       }
-      
+
       $scope.login = function() {
 
           User.login({},{'user_name': $scope.user_name, 'user_password': $scope.user_password}).$promise.then(function(data){
@@ -1655,7 +1655,7 @@ angular.module('chemsign').controller('signinCtrl',
               });
           }
       }
-        
+
 
 });
 
@@ -1698,8 +1698,8 @@ angular.module('chemsign').controller('userInfoCtrl',
             $scope.user = data;
             console.log($scope.user);
         });
-        
-        
+
+
 
         $scope.update = function() {
             if($scope.user != null) {
@@ -1740,7 +1740,7 @@ angular.module('chemsign').controller('userprojectCtrl',
         });
       $scope.auth_user = Auth.getUser();
 
-      
+
 
       $scope.test = "";
 
@@ -1889,12 +1889,12 @@ angular.module('chemsign').controller('compareCtrl',
           }
         }
 
-        
+
 
         $scope.selection = [];
         $scope.posistion = 0
         $scope.list = [{'list':1,'val':" "},{'list':2,'val':" "},{'list':3,'val':" "},{'list':4,'val':" "},{'list':5,'val':" "},{'list':6,'val':" "}]
-        
+
         $scope.toggleSelection2 = function toggleSelection2(names,genes,id) {
           Dataset.convert({'genes':genes,'id':id,'way':'None'}).$promise.then(function(data){
             $scope.convertedList = data.converted_list;
@@ -1915,7 +1915,7 @@ angular.module('chemsign').controller('compareCtrl',
                     document.getElementById('area'+$scope.list[z].list).value = "";
                     break
                   }
-                } 
+                }
               }
 
               // is newly selected
@@ -1928,7 +1928,7 @@ angular.module('chemsign').controller('compareCtrl',
                     document.getElementById('area'+$scope.list[z].list).value = $scope.convertedList.join('\n');
                     break
                   }
-                } 
+                }
               }
           });
         }
@@ -1960,7 +1960,7 @@ angular.module('chemsign').controller('createCtrl',
           className: 'ngdialog-theme-default'
         });
       };
-     
+
 
       //INSERT FUNCTION UPLOAD EXCEL FILE
       //use user id to upload en read excel file
@@ -1992,13 +1992,13 @@ angular.module('chemsign').controller('createCtrl',
                 if (data.status == '1'){
                   alert(data.msg);
                 }
-                
-                
+
+
             }).error(function (data, status, headers, config) {
                 ////console.log('error status: ' + status);
             })
             console.log(resultInfo);
-            
+
       };
 
       //INSERT PREVALIDATION FILE VISUALISATION
@@ -2055,7 +2055,7 @@ angular.module('chemsign').controller('userCtrl',
         // console.log(data['query']);
         SearchHits.setHits(data);
         // //$rootScope.search_result = data;
-        $location.path('/search');
+        $windows.location.path('/search');
       });
     }
 
@@ -2121,7 +2121,7 @@ angular.module('chemsign').controller('browseCtrl',
       $scope.assay={}
 
       var container = document.getElementById('mynetwork');
-      
+
 
 
       var params = $location.search();
@@ -2143,7 +2143,7 @@ angular.module('chemsign').controller('browseCtrl',
 
         Dataset.get({'filter':params['dataset'],'from':'None','to':'None','collection':$scope.collection,'field':'id'}).$promise.then(function(data){
           $scope.data = data.request;
-          
+
           if($scope.data.status != 'public' && ($scope.user == undefined || $scope.user.id != $scope.data.owner )){
             console.log($scope.data.status);
             console.log($scope.data.owner);
@@ -2156,7 +2156,7 @@ angular.module('chemsign').controller('browseCtrl',
           Dataset.get({'filter':$scope.data.owner,'from':'None','to':'None','collection':'users','field':'id'}).$promise.then(function(result){
               $scope.owner = result.request;
           });
-         
+
           if($scope.collection == 'studies'){
             document.getElementById('mynetwork').style.display = "none";
             console.log($scope.data);
@@ -2165,7 +2165,7 @@ angular.module('chemsign').controller('browseCtrl',
             Dataset.get({'filter':$scope.data.projects,'from':'None','to':'None','collection':'projects','field':'id'}).$promise.then(function(result){
               $scope.info_project = result.request.title;
             });
-            
+
 
             $scope.data.assays = $scope.data.assays.split(',');
             $scope.data.signatures = $scope.data.signatures.split(',');
@@ -2204,7 +2204,7 @@ angular.module('chemsign').controller('browseCtrl',
             if($scope.data.critical != undefined){
               $scope.data.critical = $scope.data.critical.split(',');
             }
-            
+
             $scope.data.factors = $scope.data.factors.split(',');
             for(var i=0;i < $scope.data.factors.length; i++){
               console.log($scope.data.factors[i]);
@@ -2222,7 +2222,7 @@ angular.module('chemsign').controller('browseCtrl',
             Dataset.get({'filter':$scope.data.projects,'from':'None','to':'None','collection':'projects','field':'id'}).$promise.then(function(result){
               $scope.info_project = result.request.title;
             });
-            
+
             Dataset.get({'filter':$scope.data.studies,'from':'None','to':'None','collection':'studies','field':'id'}).$promise.then(function(result){
               $scope.info_study = result.request.title;
             });
@@ -2339,12 +2339,12 @@ angular.module('chemsign').controller('browseCtrl',
                 nodes: nodes,
                 edges: edges
             };
-            
+
             network = new vis.Network(container, datanet, options);
-            
+
 
             // initialize your network!
-            
+
             network.on( 'click', function(properties) {
                 var ids = properties.nodes;
                 var clickedNodes = nodes.get(ids);
@@ -2390,9 +2390,9 @@ angular.module('chemsign').controller('browseCtrl',
                 selectedID = selectedID+','+id;
                 $scope.user.selectedID = selectedID;
               }
-      
+
             }
-            
+
             $scope.user.$save({'uid': $scope.user.id}).then(function(data){
                     $scope.user = data;
                     console.log(data);
@@ -2405,7 +2405,7 @@ angular.module('chemsign').controller('browseCtrl',
             else{
                 var cookie_selectID = [];
             }
-            
+
             var index = cookie_selectID.indexOf(id);
             if (index == -1){
                 cookie_selectID.push(id);
@@ -2433,7 +2433,7 @@ angular.module('chemsign').controller('browseCtrl',
                 console.log('error status: ' + status);
                 alert(data.msg)
             })
-            
+
       };
 
       $scope.signature_upload = function(excel_file,pid) {
@@ -2471,7 +2471,7 @@ angular.module('chemsign').controller('browseCtrl',
                 ////console.log('error status: ' + status);
             })
             console.log(resultInfo);
-            
+
       };
       $scope.upExcel = function (obj,pid){
         console.log(obj);
@@ -2511,7 +2511,7 @@ angular.module('chemsign').controller('browseCtrl',
         }
       }
 
-      
+
 
       $scope.can_edit = function() {
           if ($scope.user === null){
@@ -2667,7 +2667,7 @@ angular.module('chemsign').controller('databaseCtrl',
 
       $scope.open_info = function(id){
         ngDialog.open({ template: id, className: 'ngdialog-theme-default'});
-      }    
+      }
 
 });
 
