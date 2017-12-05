@@ -1,0 +1,80 @@
+
+<h2>ChemPSy - Prediction tool (under construction)</h2>
+
+<div class="well">
+    <p>The prediction tools are based on the ChemSPY project developed within the IRSET institut.
+    <br /><br />
+    The aim of ChemPSy (Chemical Prioritization System) is to provide an innovative tool based on several bioinformatics and biostatistics methodologies to analyze and integrate massive toxicogenomics datasets. Specific objectives include: (1) classification of chemicals based on transcriptional signatures, i.e. the set of genes whose expression is known to be positively or negatively altered after an exposure to these compounds; (2) the association of classes with human pathologies or deleterious phenotypes, i.e. classes containing toxicants with well-known effects; (3) the prediction of novel reprotoxicants and/or endocrine disruptors based on transcriptional signature similarities with known chemicals affecting testis development and function.</p>
+</div>
+<div class="row">
+	<div class="col-md-4">
+		<div class="panel panel-info">
+			<div class="panel-heading">
+            	<a data-toggle="collapse" data-parent="#accordion" href="#Parameters" target="_self" class="collapsed" style="text-decoration: none; color:black;">Parameters<span class="pull-right">More</span></a>
+        	</div>
+			<div id="Parameters" class="panel-collapse collapse in">
+				<div class="panel-body" id="paneltable">
+					<div class="row">
+		        		<div class="col-md-6">
+		        			<label>Select clusters</label>
+		        			<select  ng-model="signature_selected" class="form-control" id="convert_way">
+			  					<option value="" disabled selected>Please select</option>
+			  					<option value="/clusters/ChemPSy/CorrDTC/">104 clusters - 3022 conditions - Dynamic Tree Cut - Correlation</option>
+			  				</select>
+		        		</div>
+		        		<div class="col-md-6">
+		        			<label>Select prediction method</label>
+		        			<select  ng-model="signature_selected" class="form-control" id="convert_way">
+			  					<option value="" disabled selected>Please select</option>
+			  					<option value="medoid">Use medoid</option>
+			  					<option value="centroid">Use centroid</option>
+			  					<option value="closest">Use closest condition</option>
+			  				</select>
+		        		</div>
+		            </div>
+		        </div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-8">
+		<div class="panel panel-info">
+			<div class="panel-heading">
+            	<a data-toggle="collapse" data-parent="#accordion" href="#Parameters" target="_self" class="collapsed" style="text-decoration: none; color:black;">Signature<span class="pull-right">More</span></a>
+        	</div>
+			<div id="Parameters" class="panel-collapse collapse in">
+				<div class="panel-body" id="paneltable">
+					<div class="row">
+		        		<div class="col-md-3">
+		        			<label>Select signature or paste your signature</label>
+		        			<select  ng-model="signature_selected" class="form-control" id="convert_way">
+			  					<option value="" disabled selected>Please select</option>
+			  					<option ng-repeat="sign in signatures" value="{{sign}}">{{sign.id}} - {{sign.title}}</option>
+			  				</select>
+		        		</div>
+		        		<div class="col-md-8">
+		        			<div class="row">
+		        				<div class="col-md-4">
+		        					<label for="comment">Up regulated genes:</label>
+		  							<textarea class="form-control" rows="5" id="upgenes"></textarea>
+		        				</div>
+		        				<div class="col-md-4">
+		        					<label for="comment">Down regulated genes:</label>
+		  							<textarea class="form-control" rows="5" id="downgenes"></textarea>
+		        					
+		        				</div>
+		        				<div class="col-md-4">
+		        					<label for="comment">Interrogated genes:</label>
+		  							<textarea class="form-control" rows="5" id="interrogated"></textarea>
+		        				</div>
+		        			</div>
+		        		</div>
+		        	</div>
+	        	</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<button class="btn btn-primary " ng-click="" style="margin-bottom:20px;margin-top:10px;">Predict</button>
+            	
