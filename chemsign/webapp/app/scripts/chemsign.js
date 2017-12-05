@@ -2046,8 +2046,8 @@ angular.module('chemsign').controller('userCtrl',
 
 
     $scope.onSearch = function() {
-      // var pfrom =0;
-      // var sfrom = 0;
+      var params = $location.search();
+      console.log(params);
       // var sgfrom=0;
       Search.search_index({'query': $scope.search_sig,'search':'true', 'pfrom' : 0 , 'sfrom' : 0, 'sgfrom':0 }).$promise.then(function(data){
         // console.log($scope.search_sig);
