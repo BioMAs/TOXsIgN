@@ -1839,6 +1839,8 @@ angular.module('chemsign').controller('compareCtrl',
         $scope.list = [{'list':1,'val':" "},{'list':2,'val':" "},{'list':3,'val':" "},{'list':4,'val':" "},{'list':5,'val':" "},{'list':6,'val':" "}]
 
         $scope.emptyValues = function(){
+          $scope.list = [{'list':1,'val':" "},{'list':2,'val':" "},{'list':3,'val':" "},{'list':4,'val':" "},{'list':5,'val':" "},{'list':6,'val':" "}]
+          $scope.selection = [];
           var elm = document.getElementById('checkbox-sign-down');
           if (elm.checked == true) {
             elm.click();
@@ -1849,8 +1851,7 @@ angular.module('chemsign').controller('compareCtrl',
           }
           var z = 7;
           for(var i=0;i<z;i++){
-            $scope.list[i].val = " ";
-            document.getElementById('name'+$scope.list[i].list).value = "List"+$scope.list[z].list;
+            document.getElementById('name'+$scope.list[i].list).value = "";
             document.getElementById('area'+$scope.list[i].list).value = "";
           }
 
