@@ -1839,8 +1839,14 @@ angular.module('chemsign').controller('compareCtrl',
         $scope.list = [{'list':1,'val':" "},{'list':2,'val':" "},{'list':3,'val':" "},{'list':4,'val':" "},{'list':5,'val':" "},{'list':6,'val':" "}]
 
         $scope.emptyValues = function(){
-          document.getElementById("checkbox-sign-down").checked = false;
-          document.getElementById("checkbox-sign-up").checked = false;
+          var elm = document.getElementById('checkbox-sign-down');
+          if (checked != elm.checked) {
+            elm.click();
+          }
+          var elm = document.getElementById('checkbox-sign-up');
+          if (checked != elm.checked) {
+            elm.click();
+          }
           var z = 7;
           for(var i=0;i<z;i++){
             document.getElementById('name'+$scope.list[i].list).value = "";
