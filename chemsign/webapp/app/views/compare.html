@@ -141,7 +141,7 @@
 	<b><i>Output data</i></b>: Venn diagram downloadable as png, csv or save in your workspace.
 </div>
 
-<h3>Selected species IDs to display</h3>
+<h3>Selected species Entrez gene IDs to display</h3>
 <select ng-model="convert_species" class="form-control" ng-change="emptyValues()">
 	<option value="" disabled selected>Please select</option>
 	<option value="9606">Human (Homo sapiens)</option>
@@ -167,7 +167,7 @@
 	</label>
 
 
-
+<div ng-if="convert_species != NULL">
 <div class="row-fluid ">
 	<div class="span12 content-box-large">
 		<div class="row-fluid">
@@ -340,6 +340,7 @@
 			</div>
 		</div>
 	</div>
+</div>
 </div>
 <script>
  	!function ($) {
