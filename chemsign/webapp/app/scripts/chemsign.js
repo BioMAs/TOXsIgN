@@ -1840,7 +1840,13 @@ angular.module('chemsign').controller('compareCtrl',
 
         $scope.emptyValues = function(){
           $scope.list = [{'list':1,'val':" "},{'list':2,'val':" "},{'list':3,'val':" "},{'list':4,'val':" "},{'list':5,'val':" "},{'list':6,'val':" "}]
-          document.getElementById("checkbox-sign").checked = false;
+          $('#' + 'check' + ' :checkbox:enabled').prop('checked', false);
+          var z = 7;
+          for(var i=0;i<z;i++){
+            document.getElementById('name'+$scope.list[i].list).value = "";
+            document.getElementById('area'+$scope.list[i].list).value = "";
+          }
+
         };
 
         $scope.open_info = function(id){
