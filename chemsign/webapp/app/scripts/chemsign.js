@@ -1868,10 +1868,7 @@ angular.module('chemsign').controller('compareCtrl',
         }
 
 
-        $scope.emptyValues = function(){
-          $scope.list = [{'list':1,'val':" "},{'list':2,'val':" "},{'list':3,'val':" "},{'list':4,'val':" "},{'list':5,'val':" "},{'list':6,'val':" "}]
-          document.getElementById("checkbox-sign").checked = false;
-        }
+
 
         $scope.deleted = function(signature_id){
           if($scope.user == undefined || $scope.user == null){
@@ -1899,6 +1896,11 @@ angular.module('chemsign').controller('compareCtrl',
         $scope.selection = [];
         $scope.posistion = 0
         $scope.list = [{'list':1,'val':" "},{'list':2,'val':" "},{'list':3,'val':" "},{'list':4,'val':" "},{'list':5,'val':" "},{'list':6,'val':" "}]
+
+        $scope.emptyValues = function(){
+          $scope.list = [{'list':1,'val':" "},{'list':2,'val':" "},{'list':3,'val':" "},{'list':4,'val':" "},{'list':5,'val':" "},{'list':6,'val':" "}]
+          document.getElementById("checkbox-sign").checked = false;
+        };
 
         $scope.toggleSelection2 = function toggleSelection2(names,genes,id,convert_species,species) {
           Dataset.convert({'genes':genes,'id':id,'way':'None','sign_species':species,'convert_species':convert_species}).$promise.then(function(data){

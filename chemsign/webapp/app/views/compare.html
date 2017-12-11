@@ -156,6 +156,7 @@
 	<option value="7955">Zebrafish (Danio rerio)</option>
 </select>
 
+test : {{convert_species}}
 <div ng-if="convert_species != ''">
 <h3>Selected signatures</h3>
 <label ng-repeat="sign in signatures" ng-if="sign.genes_down != undefined && sign.genes_down.length > 0 ">
