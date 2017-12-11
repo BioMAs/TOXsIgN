@@ -156,16 +156,16 @@
 	<option value="7955">Zebrafish (Danio rerio)</option>
 </select>
 
-<div ng-if="convert_species != NULL">
+
 <h3>Selected signatures</h3>
-<div id="check">
+
 	<label ng-repeat="sign in signatures" ng-if="sign.genes_down != undefined && sign.genes_down.length > 0 ">
 	    <input id="checkbox-sign-down" type="checkbox" name="listobj[]" value="{{sign.id}}" ng-checked="listobj.indexOf(sign.id+'-down') > -1" ng-click="toggleSelection2('down',sign.genes_down,sign.id,convert_species,sign.organism)"> {{sign.id}} - Down genes - {{sign.title}}    <a href="" ng-click="deleted(sign.id)"><i class="fa fa-trash" aria-hidden="true"></i></a>
 	</label>
 	<label ng-repeat="sign in signatures" ng-if="sign.genes_up != undefined && sign.genes_up.length > 0 ">
 	    <input id="checkbox-sign-up" type="checkbox" name="listobj[]" value="{{sign.id}}" ng-checked="listobj.indexOf(sign.id+'-up') > -1" ng-click="toggleSelection2('up',sign.genes_up,sign.id,convert_species,sign.organism)"> {{sign.id}} - Up genes - {{sign.title}}    <a href="" ng-click="deleted(sign.id)"><i class="fa fa-trash" aria-hidden="true"></i></a>
 	</label>
-</div>
+
 
 
 <div class="row-fluid ">
@@ -341,7 +341,6 @@
 		</div>
 	</div>
 </div>
-<div>
 <script>
  	!function ($) {
  		$(function(){
