@@ -142,7 +142,7 @@
 </div>
 
 <h3>Selected species IDs to display</h3>
-<select ng-model="convert_species" class="form-control" onchange="emptyValues()">
+<select ng-model="convert_species" class="form-control" ng-change="emptyValues()">
 	<option value="" disabled selected>Please select</option>
 	<option value="9606">Human (Homo sapiens)</option>
 	<option value="9598">Chimpanzee (Pan troglodytes)</option>
@@ -157,7 +157,7 @@
 </select>
 
 test : {{convert_species}}
-<div ng-if="convert_species == NULL">
+<div ng-if="convert_species != NULL">
 <h3>Selected signatures</h3>
 <label ng-repeat="sign in signatures" ng-if="sign.genes_down != undefined && sign.genes_down.length > 0 ">
     <input id="checkbox-sign" type="checkbox" name="listobj[]" value="{{sign.id}}" ng-checked="listobj.indexOf(sign.id+'-down') > -1" ng-click="toggleSelection2('down',sign.genes_down,sign.id,convert_species,sign.organism)"> {{sign.id}} - Down genes - {{sign.title}}    <a href="" ng-click="deleted(sign.id)"><i class="fa fa-trash" aria-hidden="true"></i></a>
