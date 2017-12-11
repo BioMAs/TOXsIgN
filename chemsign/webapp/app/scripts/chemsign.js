@@ -1842,7 +1842,7 @@ angular.module('chemsign').controller('compareCtrl',
           $scope.list = [{'list':1,'val':" "},{'list':2,'val':" "},{'list':3,'val':" "},{'list':4,'val':" "},{'list':5,'val':" "},{'list':6,'val':" "}]
           $scope.selection = [];
           var selval = document.getElementById("selectorspe");
-          var selectedSpe = selval.options[selval.selectedIndex];
+          var selectedSpe = selval[selval.selectedIndex].value;
           if(selectedSpe != ""){
             document.getElementById('grosvenn').style.display = "block"
           }
