@@ -503,7 +503,7 @@ def convert(request):
             for dataset in dataset_in_db:
                 if 'NA' not in dataset["HID"]:
                     lresult.append(str(dataset["HID"])+" ("+str(dataset["Gene_Symbol"])+")")
-            return lresult
+            return {'converted_list':lresult}
 
     if form['way'] == 'None' or form['way'] == 'EntrezToHomo' :
         if 'species' in form :
