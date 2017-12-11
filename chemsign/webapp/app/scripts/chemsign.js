@@ -1849,7 +1849,8 @@ angular.module('chemsign').controller('compareCtrl',
           }
           var z = 7;
           for(var i=0;i<z;i++){
-            document.getElementById('name'+$scope.list[i].list).value = "";
+            $scope.list[i].val = " ";
+            document.getElementById('name'+$scope.list[i].list).value = "List"+$scope.list[z].list;
             document.getElementById('area'+$scope.list[i].list).value = "";
           }
 
