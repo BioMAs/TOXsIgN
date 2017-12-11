@@ -477,6 +477,33 @@ def convert(request):
     genes_list = form['genes'].split(',')
     #print genes_list
     dataset_in_db = ""
+    dico_organism = {"Homo sapiens":"9606","Pan troglodytes":"9598","Macaca mulatta":"9544","Canis lupus familiaris":"9615","Bos taurus":"9913","Mus musculus":"10090","Rattus norvegicus":"10116","Gallus gallus":"9031","Xenopus tropicalis":"8364","Danio rerio":"7955"}
+    selected_orga = ""
+    if form["sign_species"] not in dico_organism :
+        selected_orga = "9606"
+    else :
+        selected_orga = dico_organism[form["sign_species"]]
+
+    if "sign_species" in form:
+        #Convert EGesp1 -> HGesp1
+        dataset_in_db = list(request.registry.db_mongo['homoloGene'].find( {"Gene_ID": {'$in': genes_list},'Taxonomy_ID':selected_orga},{ "HID": 1, "Gene_Symbol":1,"_id": 0 } ))
+        result = []
+        for dataset in dataset_in_db:
+            if 'NA' not in dataset["HID"]:
+                if form["convert_species"] == form["sign_species"]:
+                    result.append(str(dataset["HID"])+" ("+str(dataset["Gene_Symbol"])+")")
+                else :
+                    result.append(dataset["HID"])
+        if form["convert_species"] == form["sign_species"]:
+            return {'converted_list':result}
+        else :
+            #Convert HGesp1 -> HGesp2
+            dataset_in_db = list(request.registry.db_mongo['homoloGene'].find( {"HID": {'$in': result},'Taxonomy_ID':form["convert_species"]},{ "HID": 1, "Gene_Symbol":1,"_id": 0 } ))
+            lresult = []
+            for dataset in dataset_in_db:
+                if 'NA' not in dataset["HID"]:
+                    lresult.append(str(dataset["HID"])+" ("+str(dataset["Gene_Symbol"])+")")
+            return lresult
 
     if form['way'] == 'None' or form['way'] == 'EntrezToHomo' :
         if 'species' in form :

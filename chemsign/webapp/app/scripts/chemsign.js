@@ -1895,8 +1895,8 @@ angular.module('chemsign').controller('compareCtrl',
         $scope.posistion = 0
         $scope.list = [{'list':1,'val':" "},{'list':2,'val':" "},{'list':3,'val':" "},{'list':4,'val':" "},{'list':5,'val':" "},{'list':6,'val':" "}]
 
-        $scope.toggleSelection2 = function toggleSelection2(names,genes,id) {
-          Dataset.convert({'genes':genes,'id':id,'way':'None'}).$promise.then(function(data){
+        $scope.toggleSelection2 = function toggleSelection2(names,genes,id,convert_species,species) {
+          Dataset.convert({'genes':genes,'id':id,'way':'None','sign_species':species,'convert_species':convert_species}).$promise.then(function(data){
             $scope.convertedList = data.converted_list;
             var name = "";
               name = id+'-'+names;
