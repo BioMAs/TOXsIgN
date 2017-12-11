@@ -1841,8 +1841,9 @@ angular.module('chemsign').controller('compareCtrl',
         $scope.emptyValues = function(){
           $scope.list = [{'list':1,'val':" "},{'list':2,'val':" "},{'list':3,'val':" "},{'list':4,'val':" "},{'list':5,'val':" "},{'list':6,'val':" "}]
           $scope.selection = [];
-          var selval =  document.getElementById('selectorspe').value
-          if(selval != ""){
+          var selval = document.getElementById("selectorspe");
+          var selectedSpe = selval.options[selval.selectedIndex];
+          if(selectedSpe != ""){
             document.getElementById('grosvenn').style.display = "block"
           }
           var elm = document.getElementById('checkbox-sign-down');
