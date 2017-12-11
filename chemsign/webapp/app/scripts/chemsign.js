@@ -1840,11 +1840,11 @@ angular.module('chemsign').controller('compareCtrl',
 
         $scope.emptyValues = function(){
           var elm = document.getElementById('checkbox-sign-down');
-          if (checked != elm.checked) {
+          if (elm.checked == TRUE) {
             elm.click();
           }
           var elm = document.getElementById('checkbox-sign-up');
-          if (checked != elm.checked) {
+          if (elm.checked == TRUE) {
             elm.click();
           }
           var z = 7;
