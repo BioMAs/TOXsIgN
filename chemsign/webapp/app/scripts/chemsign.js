@@ -1875,15 +1875,10 @@ angular.module('chemsign').controller('compareCtrl',
         }
         else{
           $scope.selected = $scope.user.selectedID.split(',');
-          console.log($scope.selected);
         }
-        console.log($scope.selected);
         for(var i=0;i<$scope.selected.length;i++){
-          console.log($scope.selected[i]);
-          console.log(i);
           Dataset.get({'filter':$scope.selected[i],'from':'None','to': 'None','collection':'signatures','field':'id'}).$promise.then(function(data){
             $scope.signatures.push(data.request);
-            console.log($scope.signatures);
           });
         }
 
