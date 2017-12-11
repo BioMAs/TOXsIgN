@@ -1839,7 +1839,6 @@ angular.module('chemsign').controller('compareCtrl',
         $scope.list = [{'list':1,'val':" "},{'list':2,'val':" "},{'list':3,'val':" "},{'list':4,'val':" "},{'list':5,'val':" "},{'list':6,'val':" "}]
 
         $scope.emptyValues = function(){
-          $scope.list = [{'list':1,'val':" "},{'list':2,'val':" "},{'list':3,'val':" "},{'list':4,'val':" "},{'list':5,'val':" "},{'list':6,'val':" "}]
           document.getElementById("checkbox-sign-down").checked = false;
           document.getElementById("checkbox-sign-up").checked = false;
           var z = 7;
