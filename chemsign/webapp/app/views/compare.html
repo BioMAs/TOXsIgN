@@ -140,8 +140,9 @@
 	<b><i>Parameters</i></b>: Defined which parameter to be used to display the result.<br>
 	<b><i>Output data</i></b>: Venn diagram downloadable as png, csv or save in your workspace.
 </div>
+
 <h3>Selected species IDs to display</h3>
-<select ng-model="convert_species" class="form-control">
+<select ng-model="convert_species" class="form-control" onchange="emptyValues()">
 	<option value="" disabled selected>Please select</option>
 	<option value="9606">Human (Homo sapiens)</option>
 	<option value="9598">Chimpanzee (Pan troglodytes)</option>
@@ -155,13 +156,13 @@
 	<option value="7955">Zebrafish (Danio rerio)</option>
 </select>
 
-
+<div ng-if="convert_species != ''">
 <h3>Selected signatures</h3>
 <label ng-repeat="sign in signatures" ng-if="sign.genes_down != undefined && sign.genes_down.length > 0 ">
-    <input type="checkbox" name="listobj[]" value="{{sign.id}}" ng-checked="listobj.indexOf(sign.id+'-down') > -1" ng-click="toggleSelection2('down',sign.genes_down,sign.id,convert_species,sign.organism)"> {{sign.id}} - Down genes - {{sign.title}}    <a href="" ng-click="deleted(sign.id)"><i class="fa fa-trash" aria-hidden="true"></i></a>
+    <input id="checkbox-sign" type="checkbox" name="listobj[]" value="{{sign.id}}" ng-checked="listobj.indexOf(sign.id+'-down') > -1" ng-click="toggleSelection2('down',sign.genes_down,sign.id,convert_species,sign.organism)"> {{sign.id}} - Down genes - {{sign.title}}    <a href="" ng-click="deleted(sign.id)"><i class="fa fa-trash" aria-hidden="true"></i></a>
 </label>
 <label ng-repeat="sign in signatures" ng-if="sign.genes_up != undefined && sign.genes_up.length > 0 ">
-    <input type="checkbox" name="listobj[]" value="{{sign.id}}" ng-checked="listobj.indexOf(sign.id+'-up') > -1" ng-click="toggleSelection2('up',sign.genes_up,sign.id,convert_species,sign.organism)"> {{sign.id}} - Up genes - {{sign.title}}    <a href="" ng-click="deleted(sign.id)"><i class="fa fa-trash" aria-hidden="true"></i></a>
+    <input id="checkbox-sign" type="checkbox" name="listobj[]" value="{{sign.id}}" ng-checked="listobj.indexOf(sign.id+'-up') > -1" ng-click="toggleSelection2('up',sign.genes_up,sign.id,convert_species,sign.organism)"> {{sign.id}} - Up genes - {{sign.title}}    <a href="" ng-click="deleted(sign.id)"><i class="fa fa-trash" aria-hidden="true"></i></a>
 </label>
 
 
@@ -338,6 +339,7 @@
 		</div>
 	</div>
 </div>
+<div>
 <script>
  	!function ($) {
  		$(function(){
