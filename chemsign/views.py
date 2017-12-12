@@ -397,17 +397,19 @@ def stat(request):
     all_assay = request.registry.db_mongo['assays'].find({'status' :'public'})
     for dataset in all_assay :
         if dataset['organism'] not in species_list :
-            species_list.append(dataset['organism'])
+            if dataset['organism'] != "" :
+                species_list.append(dataset['organism'])
         if dataset['tissue'] not in tissue_list :
             tissue_list.append(dataset['tissue'])
 
-    # Nb chenmical/species
-    chemical_spe = {}
+    # Nb signatures/species
+    sign_spe = {}
     for spe in species_list :
+        logger.warning(spe)
         spe_assay = request.registry.db_mongo['sigantures'].find( {"organism": spe,'status':'public'}).count()
-        chemical_spe[spe] = spe_assay
+        sign_spe[spe] = spe_assay
 
-    return {'projects':projects,'studies':studies,'assays':assays,'signatures':signatures,'chemical':str(len(chemical_list)),'species':str(len(species_list)),'tissue':str(len(tissue_list)),'chemical_spe':chemical_spe}
+    return {'projects':projects,'studies':studies,'assays':assays,'signatures':signatures,'chemical':str(len(chemical_list)),'species':str(len(species_list)),'tissue':str(len(tissue_list)),'sign_spe':sign_spe}
 
 
 @view_config(route_name='pending', renderer='json', request_method='POST')
