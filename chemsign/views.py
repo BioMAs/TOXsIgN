@@ -379,7 +379,7 @@ def stat(request):
 
     # Get project, study, assay and signature number
 
-    project = request.registry.db_mongo['projects'].find({'status' :'public'}).count()
+    projects = request.registry.db_mongo['projects'].find({'status' :'public'}).count()
     studies = request.registry.db_mongo['studies'].find({'status' :'public'}).count()
     assays = request.registry.db_mongo['assays'].find({'status' :'public'}).count()
     signatures = request.registry.db_mongo['signatures'].find({'status' :'public'}).count()
