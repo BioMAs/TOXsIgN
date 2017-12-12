@@ -388,7 +388,7 @@ def stat(request):
     chemical_list = []
     all_factors = request.registry.db_mongo['factors'].find({'status' :'public'})
     for dataset in all_factors :
-        if dataset['chemical'] not in species_list :
+        if dataset['chemical'] not in chemical_list :
             chemical_list.append(dataset['chemical'])
 
     # Species & tissue information
