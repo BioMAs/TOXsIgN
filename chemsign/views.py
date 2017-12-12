@@ -404,7 +404,7 @@ def stat(request):
     # Nb chenmical/species
     chemical_spe = {}
     for spe in species_list :
-        spe_assay = request.registry.db_mongo['assays'].find( {"organism": spe,'status':'public'},{ "factors": 1,"_id": 0 } ))
+        spe_assay = request.registry.db_mongo['assays'].find( {"organism": spe,'status':'public'},{ "factors": 1,"_id": 0 } )
         lfactor = []
         for data in spe_assay :
             lfactor.extend(data['factors'])
