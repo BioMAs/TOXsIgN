@@ -400,7 +400,7 @@ def stat(request):
             tissue_list.append(dataset['tissue'])
 
     all_spe = request.registry.db_mongo['signatures'].find({'status' :'public'})
-    for dataset in all_assay :
+    for dataset in all_spe :
         if dataset['organism'] not in species_list :
             species_list.append(dataset['organism'])
 
