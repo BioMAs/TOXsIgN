@@ -28,10 +28,10 @@
 <h3>Signatures information</h3>
 <table class="table table-bordered table-hover table-striped">
     <tr>
-      <th ng-repeat="key,value in chemical_spe">{{key}}</th>
+      <th ng-repeat="(key,value)  in chemical_spe">{{key}}</th>
     </tr>
     <tr>
-        <th ng-repeat="key,value in chemical_spe">{{v}}</th>
+        <th ng-repeat="(key,value) in chemical_spe">{{value}}</th>
     </tr>
 </table>
 
