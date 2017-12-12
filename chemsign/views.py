@@ -404,16 +404,8 @@ def stat(request):
     # Nb chenmical/species
     chemical_spe = {}
     for spe in species_list :
-        spe_assay = request.registry.db_mongo['assays'].find( {"organism": spe,'status':'public'},{ "factors": 1,"_id": 0 } )
-        lfactor = []
-        for data in spe_assay :
-            lfactor.extend(data['factors'])
-        spe_factor = request.registry.db_mongo['factors'].find( {"id": {'$in':lfactor},'status':'public'},{ "chemical": 1,"_id": 0 })
-        facL = []
-        for fac in spe_factor :
-            if fac['chemical'] not in facL :
-                facL.append(fac['chemical'])
-        chemical_spe[spe] = len(facL)
+        spe_assay = request.registry.db_mongo['sigantures'].find( {"organism": spe,'status':'public'}).count()
+        chemical_spe[spe] = spe_assay
 
     return {'projects':projects,'studies':studies,'assays':assays,'signatures':signatures,'chemical':str(len(chemical_list)),'species':str(len(species_list)),'tissue':str(len(tissue_list)),'chemical_spe':chemical_spe}
 
