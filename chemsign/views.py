@@ -374,6 +374,35 @@ def unvalidate(request):
     request.registry.db_mongo['signatures'].update({'id':{ '$all': stid } },{'$set':{'status':'private'}})
     return {'msg':'Project status changed : Pending --> private'}
 
+@view_config(route_name='stat', renderer='json', request_method='GET')
+def stat(request):
+
+    # Get project, study, assay and signature number
+
+    project = request.registry.db_mongo['projects'].find({'status' :'public'}).count()
+    studies = request.registry.db_mongo['studies'].find({'status' :'public'}).count()
+    assays = request.registry.db_mongo['assays'].find({'status' :'public'}).count()
+    signatures = request.registry.db_mongo['signatures'].find({'status' :'public'}).count()
+
+    #Chemical information
+    chemical_list = []
+    all_factors = request.registry.db_mongo['factors'].find({'status' :'public'})
+    for dataset in all_factors :
+        if dataset['chemical'] not in species_list :
+            chemical_list.append(dataset['chemical'])
+
+    # Species & tissue information
+    species_list = []
+    tissue_list = []
+    all_assay = request.registry.db_mongo['assays'].find({'status' :'public'})
+    for dataset in all_assay :
+        if dataset['species'] not in species_list :
+            species_list.append(dataset['species'])
+        if dataset['tissue'] not in tissue_list :
+            tissue_list.append(dataset['tissue'])
+
+    return {'projects':projects,'studies':studies,'assays':assays,'signatures':signatures,'chemical':str(len(chemical_list)),'species':str(len(species_list)),'tissue':str(len(tissue_list))}
+
 
 @view_config(route_name='pending', renderer='json', request_method='POST')
 def pending(request):

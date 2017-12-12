@@ -75,6 +75,7 @@ def main(global_config, **settings):
     config.add_route('search', '/search')
     config.add_route('convert', '/convert')
     config.add_route('run', '/run')
+    config.add_route('stat', '/stat')
     config.add_route('1', '/1')
     config.add_route('infodatabase','/infodatabase')
     config.add_route('validate','/validate')

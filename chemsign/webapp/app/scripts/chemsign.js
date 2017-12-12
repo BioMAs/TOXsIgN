@@ -17,6 +17,11 @@ config(['$routeProvider','$logProvider',
             controller: 'noCtrl'
         });
 
+        $routeProvider.when('/statistics', {
+            templateUrl: 'views/statistics.html',
+            controller: 'statisticsCtrl'
+        });
+
          $routeProvider.when('/jobresults', {
             templateUrl: 'views/jobresults.html',
             controller: 'jobresultsCtrl'
@@ -209,6 +214,14 @@ config(['$httpProvider', function ($httpProvider){
 angular.module('chemsign').controller('noCtrl',
     function ($scope,$rootScope, $log, Auth, User,$location) {
 
+});
+
+
+angular.module('chemsign').controller('statisticsCtrl',
+    function ($scope,$rootScope, $log, Auth, User,$location, Dataset) {
+        Dataset.info({},{}).$promise.then(function(data){
+          console.log(data);
+        });
 });
 
 

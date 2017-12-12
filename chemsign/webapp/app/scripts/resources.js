@@ -62,6 +62,12 @@
                 isArray: false,
                 cache: false
             },
+            info: {
+                url: '/stat',
+                method: 'GET',
+                isArray: false,
+                cache: false
+            },
             getcluster: {
                 url: '/cluster',
                 method: 'POST',
@@ -121,7 +127,7 @@
                 isArray: true,
                 cache: false
             },
-            
+
             register: {
                 url: '/user/register',
                 method: 'POST',
