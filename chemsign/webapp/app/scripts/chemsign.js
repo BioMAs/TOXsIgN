@@ -221,6 +221,14 @@ angular.module('chemsign').controller('statisticsCtrl',
     function ($scope,$rootScope, $log, Auth, User,$location, Dataset) {
         Dataset.info({},{}).$promise.then(function(data){
           console.log(data);
+          $scope.project_nb = data.projects;
+          $scope.study_nb = data.studies;
+          $scope.expcond_nb = data.assays ;
+          $scope.signature_nb = data.signatures;
+          $scope.species_nb = data.species;
+          $scope.tissue_nb = data.tissue;
+          $scope.chemical_nb = data.chemical;
+          $scope.chemical_spe = data.sign_spe;
         });
 });
 

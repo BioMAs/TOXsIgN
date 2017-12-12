@@ -12,6 +12,7 @@
       <th>Signatures</th>
       <th>Species</th>
       <th>Tissue</th>
+      <th>Chemical</th>
     </tr>
     <tr>
         <td>{{project_nb}}</td>
@@ -20,18 +21,17 @@
         <td>{{signature_nb}}</td>
         <td>{{species_nb}}</td>
         <td>{{tissue_nb}}</td>
+        <td>{{chemical_nb}}</td>
     </tr>
 </table>
 
-<h3>Chemicals information</h3>
+<h3>Signatures information</h3>
 <table class="table table-bordered table-hover table-striped">
     <tr>
-      <th>Chemical</th>
-      <th>Chemical/species</th>
+      <th ng-repeat="k,v in chemical_spe">{{k}}</th>
     </tr>
     <tr>
-        <td>{{chemical_nb}}</td>
-        <td>{{chemical/spe_nb}}</td>
+        <th ng-repeat="k,v in chemical_spe">{{v}}</th>
     </tr>
 </table>
 
