@@ -910,7 +910,7 @@ def file_dataset(request):
     downfile = request.matchdict['file']
     logger.warning(downfile)
     url_file = os.path.join(request.registry.dataset_path,directory,downfile)
-    if directory == "/":
+    if directory == "@":
         logger.warning("JOBS")
         directory = downfile.split('/')[5]
         downfile = downfile.split('/')[6]
