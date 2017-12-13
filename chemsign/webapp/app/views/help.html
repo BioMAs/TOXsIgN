@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
 <div class="container">
-  <h1>Help, tutorials and FAQ - under construction</h1>
+  <h1>Help, tutorials and FAQ</h1>
   <h2>Let's start with some definitions</h2>
   <p>TOXsIgN is a new multi-species public repository for toxicological signatures... but wait a second, what is a "toxicological signature"?
   A toxicological signature is defined as the description of physiological, cellular, molecular or (transcript-/epigen-)omic effects on individuals or their descendants, after exposure to single or combined environmental factors, including chemical (e.g. pesticides, plasticizers, drugs, endocrine disruptors), physical (e.g. radiations, temperature) or biological (e.g. pathogens, parasites) factors.</p>
@@ -20,9 +20,7 @@
 
 
 <h2>How is data organized in the TOXsIgN repository?</h2>
-<p>Within the TOXsIgN repository, information is organized  in a four-layer architecture (project>study>treatment>signature): a project is subdivided into studies which address specific questions and describe treatments or experimental conditions, the latter being associated with toxicological signatures.</p>
-
-<p>It is worth mentioning that TOXsIgN uses eleven distinct controlled vocabularies (ontologies) allowing investigators to standardize data description and thus improve database queries.</p>
+<p>TOXsIgN information is organized in a four-layer architecture (Project > Study > Assay > Signature). Each layer is associated with a unique trackable identifier that can be reported in submitted manuscripts, like the raw data identifiers from GEO or ArrayExpress (Barrett et al., 2013; Kolesnikov et al., 2015). Scientists should thus submit projects (each of which receives an identifier with the “TSP” prefix), which are subsequently subdivided into studies (or subprojects, “TSE” prefix) addressing specific questions, and describing experimental assays (“TST” prefix) from which specific outcomes are extracted in the form of toxicogenomic signatures (“TSS” prefix), i.e., the set of over- and underexpressed genes in the corresponding assays.</p>
 
 
 <h2>As far as molecular and "omics" signatures are concerned, what types of database entries are suitable?</h2>
@@ -36,15 +34,20 @@
 
 
 <h2>How to submit toxicological signatures in TOXsIgN?</h2>
-<h3>Using TOXsIgN form</h3>
-<p>View how to submit toxicological signatures using TOXsIgN form <a href="#/tutorials">here</a></p>
+<p>In this quick and easy submission procedure, investigators will record all required information in a dedicated Excel template that embeds one tab for each layer (Project, Study, Assay, and Signature). This docu-ment integrates a dozen landmark controlled vocabularies allowing scientists, using ontologies as recommended (Hardy et al., 2012; Smith et al., 2007), to describe their toxicogenomic studies and their outcomes with precision. Once uploaded, the TOXsIgN webserver performs an initial evaluation of the Excel template to identify: i) “critical errors” about essential information that may not have been properly completed (such as the project title) and could therefore prevent the project upload; ii) “warnings” for important but not essential missing information (such as a PubMed identifier); and, iii) “information” for any other data not appropriately completed (such as additional information). If the system detects no “critical error”, it next invites the user to upload the associated toxicogenomic signatures. Each signature comprises three one-column text files specifying: i) all inter-rogated genes; ii) significantly overexpressed genes; and iii) underex-pressed genes. Because reliable and consistent identifier conversion is a complex problem, toxicogenomic signatures should be converted to Entrez Gene IDs from up-to-date resources (Huang et al., 2008; Mudunuri et al., 2009)</p>
+
+<h2>How to submit Affymetrix GeneChip signatures in TOXsIgN?</h2>
+<p>For experiments with Affymetrix GeneChip technologies, it is highly recommended that users normalize their raw data (CEL files) with the Brainarray custom Chip Description Files (CDF) so that intensity values are not summarized for each probe set but directly for each Entrez gene ID (Dai et al., 2005) (see Supplementary Information).</p>
+
+<h2>How to switch from private to public? </h2>
+<p>By default, each submitted project and its related signatures are tagged with a “private” status meaning that only authorized users (the owner but also coauthors) can access the uploaded data. At this stage, infor-mation can still be modified simply by uploading an updated version of the Excel template. A button is available on the web interface for each project to request the TOXsIgN administrators to switch it from private to public status. If “warnings” are still detected, this demand is rejected. The administrators will then help the investigators make the necessary modifications to activate the public status. Full instructions and exam-ples of the submission procedure are provided in the website’s tutorial section.</p>
 
 
-<h3>Using TOXsIgN excel template</h3>
-This template allows users to upload large datasets in TOXsIgN from one file. There no need to fill signature and dataset one by one.
-The excel integration works but still under improvement, so you may encounter some issues. In this case please contact administrator.<br>
-<a href="files/template_TOXsIgN.xlsx">Download template</a>
+<h2>How to download the Excel template</h2>
+<p>The latest release of the Excel template document for uploading signa-tures in the repository and all ontologies (OBO files) used in TOXsIgN are (and will continue to be) available in a dedicated web page acces-sible through the <a href="#/downloads">Download</a> tab on the main interface.</p>
 
+<h2>How to retrieve information with the TOXsIgN search engine?</h2>
+<p>A powerful search engine is implemented to access all public information within TOXsIgN. Users can thus interrogate the database ac-cording to many distinct fields, such as environmental factors, organ-isms, tissues, and technologies. They can also easily make more ad-vanced queries by using ontologies to describe toxicogenomic signatures.</p>
 
 
 </div>
