@@ -1484,7 +1484,7 @@ angular.module('chemsign').controller('jobsCtrl',
         $scope.user = Auth.getUser();
 
         $scope.mySplit = function(string, nb) {
-            var array = string.split(',');
+            var array = string.split('/');
             return array[nb];
         }
 
