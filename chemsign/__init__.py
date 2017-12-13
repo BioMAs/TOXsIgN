@@ -48,6 +48,7 @@ def main(global_config, **settings):
     config.registry.public_path = settings['public_path']
     config.registry.dataset_path = settings['dataset_path']
     config.registry.script_path = settings['script_path']
+    config.registry.job_path = settings['job_path']
 
     # by default we don't sniff, ever
     config.registry.es = Elasticsearch( [settings['elastic_host']])
