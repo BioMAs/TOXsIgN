@@ -912,27 +912,24 @@ def file_dataset(request):
     logger.warning(downfile)
     logger.warning(directory)
 
-    try :
-        if ".sign." in downfile :
-            logger.warning("JOBS")
-            directory = downfile.split('/')[5]
-            downfile = downfile.split('/')[6]
-            logger.warning(downfile)
-            logger.warning(directory)
-            url_file = os.path.join(request.registry.job_path,directory,downfile)
-        else :
-            url_file = os.path.join(request.registry.dataset_path,directory,downfile)
 
-        (handle, tmp_file) = tempfile.mkstemp('.zip')
-        logger.warning(tmp_file)
-        z = zipfile.ZipFile(tmp_file, "w")
-        z.write(url_file,os.path.basename(url_file))
-        z.close()
-        return FileResponse(tmp_file,
-                            request=request,
-                            content_type='application/zip')
-    except :
-        logger.warning("Download ERROR")
+    if ".sign." in downfile :
+        logger.warning("JOBS")
+        logger.warning(downfile)
+        logger.warning(directory)
+        url_file = os.path.join(request.registry.job_path,directory,downfile)
+    else :
+        url_file = os.path.join(request.registry.dataset_path,directory,downfile)
+
+    (handle, tmp_file) = tempfile.mkstemp('.zip')
+    logger.warning(tmp_file)
+    z = zipfile.ZipFile(tmp_file, "w")
+    z.write(url_file,os.path.basename(url_file))
+    z.close()
+    return FileResponse(tmp_file,
+                        request=request,
+                        content_type='application/zip')
+
 
 
 
