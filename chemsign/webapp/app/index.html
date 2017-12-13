@@ -56,8 +56,29 @@
             <ul class="nav navbar-nav">
               <li><a href="#/"><i class="glyphicon glyphicon-home"></i> Home</a></li>
               <li><a href="#/database?to=0-25"><i class="glyphicon glyphicon-th-list"></i> Browse</a></li>
-              <li><a href="#/downloads"><i class="glyphicon glyphicon-download-alt"></i> Download</a></li>
-              <li><a href="#/tools"><i class="glyphicon glyphicon-wrench"></i> Tools</a></li>
+              <li class="btn-group" dropdown is-open="status.isopen">
+                  <a type="button" dropdown-toggle ng-disabled="disabled">
+                    About<span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#/about">About us</a></li>
+                    <li><a href="#/help">Help</a></li>
+                    <li><a href="#/tutorial">Tutorials</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#/statistics">Statistics</a></li>
+                    <li><a href="#/downloads">Downloads</a></li>
+                  </ul>
+              </li>
+              <li class="btn-group" dropdown is-open="status.isopen">
+                  <a type="button" dropdown-toggle ng-disabled="disabled">
+                    Tools<span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#/tools"><i class="glyphicon glyphicon-wrench"></i> Tools</a></li>
+                    <li><a href="#/jobs">Running jobs</a></li>
+                  </ul>
+              </li>
+
               <!--<li ng-if="is_logged" ><a href="#/workspace"><i class="glyphicon glyphicon-wrench"></i> Tools</a></li>-->
               <li ng-if="is_logged" class="btn-group" dropdown is-open="status.isopen">
                   <a type="button" dropdown-toggle ng-disabled="disabled">
