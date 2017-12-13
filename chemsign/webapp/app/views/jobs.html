@@ -38,7 +38,6 @@
         <td>{{convert_timestamp_to_date(job.id)}}</td>
         <td>{{job.tool}}</td>
         <td>{{job.arguments}}</td>
-        <td>{{mySplit(job.result,1)}}</td>
 
 </td>
         <td>
@@ -73,6 +72,6 @@
 			  </div>
 			</div>
         </td>
-        <td><a href="" ng-click="show_result(job)"><i class="fa fa-eye" aria-hidden="true"></i></a> <a ng-href="/dataset_download/database/{{job.result}}"><i class="fa fa-file-o" aria-hidden="true"></i></a> <a href="" ng-click="show_info(job)"><i class="fa fa-info-circle" aria-hidden="true"></i></a>   <a href="" ng-click="del_job(job)"><i class="fa fa-times" aria-hidden="true"></i></a></td>
+        <td><a href="" ng-click="show_result(job)"><i class="fa fa-eye" aria-hidden="true"></i></a> <a ng-href="/dataset_download/{{mySplit(job.result,5)}}/{{mySplit(job.result,6)}}"><i class="fa fa-file-o" aria-hidden="true"></i></a> <a href="" ng-click="show_info(job)"><i class="fa fa-info-circle" aria-hidden="true"></i></a>   <a href="" ng-click="del_job(job)"><i class="fa fa-times" aria-hidden="true"></i></a></td>
     </tr>
 </table>

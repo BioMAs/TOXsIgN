@@ -913,7 +913,7 @@ def file_dataset(request):
     logger.warning(directory)
 
     try :
-        if "opt" in downfile :
+        if ".sign." in downfile :
             logger.warning("JOBS")
             directory = downfile.split('/')[5]
             downfile = downfile.split('/')[6]
