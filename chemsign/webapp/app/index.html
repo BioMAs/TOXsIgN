@@ -54,11 +54,10 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li><a href="#/"><i class="glyphicon glyphicon-home"></i> Home</a></li>
               <li><a href="#/database?to=0-25"><i class="glyphicon glyphicon-th-list"></i> Browse</a></li>
               <li ng-if="1" class="btn-group" dropdown is-open="status.isopen">
                   <a type="button" dropdown-toggle ng-disabled="disabled">
-                    About<span class="caret"></span>
+                    <i class="fa fa-share" aria-hidden="true"></i> About<span class="caret"></span>
                   </a>
                   <ul class="dropdown-menu" role="menu">
                     <li><a href="#/about">About us</a></li>
@@ -66,16 +65,16 @@
                     <li><a href="#/tutorial">Tutorials</a></li>
                     <li class="divider"></li>
                     <li><a href="#/statistics">Statistics</a></li>
-                    <li><a href="#/downloads">Downloads</a></li>
+                    <li><a href="#/downloads"><i class="fa fa-download" aria-hidden="true"></i> Downloads</a></li>
                   </ul>
               </li>
               <li  ng-if="1" class="btn-group" dropdown is-open="status.isopen">
                   <a type="button" dropdown-toggle ng-disabled="disabled">
-                    Tools<span class="caret"></span>
+                    <i class="glyphicon glyphicon-wrench"></i> Tools<span class="caret"></span>
                   </a>
                   <ul class="dropdown-menu" role="menu">
                     <li><a href="#/tools"><i class="glyphicon glyphicon-wrench"></i> Tools</a></li>
-                    <li><a href="#/jobs">Running jobs</a></li>
+                    <li><a href="#/jobs"><i class="fa fa-rocket" aria-hidden="true"></i> Running jobs</a></li>
                   </ul>
               </li>
 
@@ -97,7 +96,6 @@
               <div><a ng-href="#/query">Advanced search</a></div>
             </form>
             <ul class="nav navbar-nav navbar-right">
-              <li ng-if="! is_logged"><a href="#/jobs"><i class="fa fa-rocket" aria-hidden="true"></i> Running jobs</a></li>
               <li ng-if="! is_logged"><a href="#/login"><i class="glyphicon glyphicon-user"></i> Log in</a></li>
               <li ng-if="! is_logged"><a href="#/signin"><i class="glyphicon glyphicon-pencil"></i> Register</a></li>
               <li ng-if="is_logged" class="btn-group" dropdown is-open="status.isopen">
@@ -122,23 +120,16 @@
       <div ng-view></div>
 
     </div> <!-- /container -->
-
-
     <div class="container">
-      <section style="height:80px;"></section>
-        <div class="row" style="text-align:center;">
-
-        </div>
-
-    <footer class="footer-bs" style="background-color: grey;">
-        <div class="row">
-          <div class="col-md-3 footer-brand animated fadeInLeft">
-              <h2>TOXsIgN</h2>
-                <p>Copyright © 2015 GenOuest core facility - IRISA, All rights reserved</p>
-            </div>
-        </div>
-    </footer>
-</div>
+			<nav class="navbar navbar-inverse navbar-fixed-bottom">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="#/">TOXsIgN</a>
+					</div>
+					<p class="navbar-text">Copyright © 2017 GenOuest core facility - IRISA - IRSET, All rights reserved</p>
+				</div>
+			</nav>
+		</div>
 
 
     <!-- Bootstrap core JavaScript
