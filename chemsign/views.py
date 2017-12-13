@@ -909,14 +909,16 @@ def file_dataset(request):
     directory = request.matchdict['dir']
     downfile = request.matchdict['file']
     logger.warning(downfile)
-    url_file = os.path.join(request.registry.dataset_path,directory,downfile)
-    if directory == "@":
+    if "opt" in downfile
         logger.warning("JOBS")
         directory = downfile.split('/')[5]
         downfile = downfile.split('/')[6]
         logger.warning(downfile)
         logger.warning(directory)
         url_file = os.path.join(request.registry.job_path,directory,downfile)
+    else :
+        url_file = os.path.join(request.registry.dataset_path,directory,downfile)
+        
     (handle, tmp_file) = tempfile.mkstemp('.zip')
     logger.warning(tmp_file)
     z = zipfile.ZipFile(tmp_file, "w")
