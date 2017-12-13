@@ -909,7 +909,7 @@ def file_dataset(request):
     directory = request.matchdict['dir']
     downfile = request.matchdict['file']
     logger.warning(downfile)
-    if "opt" in downfile
+    if "opt" in downfile :
         logger.warning("JOBS")
         directory = downfile.split('/')[5]
         downfile = downfile.split('/')[6]
@@ -918,7 +918,7 @@ def file_dataset(request):
         url_file = os.path.join(request.registry.job_path,directory,downfile)
     else :
         url_file = os.path.join(request.registry.dataset_path,directory,downfile)
-        
+
     (handle, tmp_file) = tempfile.mkstemp('.zip')
     logger.warning(tmp_file)
     z = zipfile.ZipFile(tmp_file, "w")
