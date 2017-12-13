@@ -910,6 +910,8 @@ def file_dataset(request):
     downfile = request.matchdict['file']
     logger.warning(downfile)
     url_file = os.path.join(request.registry.dataset_path,directory,downfile)
+    if directory == "/":
+        url_file = downfile
     (handle, tmp_file) = tempfile.mkstemp('.zip')
     logger.warning(tmp_file)
     z = zipfile.ZipFile(tmp_file, "w")
