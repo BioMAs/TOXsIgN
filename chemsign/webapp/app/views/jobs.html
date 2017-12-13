@@ -38,6 +38,8 @@
         <td>{{convert_timestamp_to_date(job.id)}}</td>
         <td>{{job.tool}}</td>
         <td>{{job.arguments}}</td>
+        <td>{{job.result | split:'|':1}}
+</td>
         <td>
         	<div ng-if="job.status == 'running'" class="progress">
 			  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="100"
