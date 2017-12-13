@@ -1483,12 +1483,10 @@ angular.module('chemsign').controller('jobsCtrl',
         $scope.user = null
         $scope.user = Auth.getUser();
 
-        .filter('split', function() {
-        return function(input, splitChar, splitIndex) {
-            // do some bounds checking here to ensure it has that index
-            return input.split(splitChar)[splitIndex];
-            }
-        });
+        $scope.mySplit = function(string, nb) {
+            var array = string.split(',');
+            return array[nb];
+        }
 
 
         if($window.sessionStorage.token) {
