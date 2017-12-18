@@ -1,10 +1,10 @@
 <h2>Convert identifiers</h2>
 
 <div class="well">
-  The TOXsIgN conversion tool convert a list of EntrezGene Ids or HomoloGene Ids to HomoloGene Ids or EntrezGene Ids.
+  The conversion tool allows users to convert a list of EntrezGene Ids or HomoloGene Ids to HomoloGene Ids or EntrezGene Ids..
   <br /><br />
-  <b>How to perform enrichment</b><br><br>
-  <b><i>Input data</i></b>: Select the signature or the file (on your workspace or upload it)<br>
+<br>
+  <b><i>Input data</i></b>: Select the signature (on your workspace or upload it)<br>
   <b><i>Parameters</i></b>: Select the species (21 species available)<br>
   <b><i>Output data</i></b>: Table with EntrezGene Id, HomoloGene Id, gene name, taxonomy Id.<br>
   <b><i>Save data</i></b>: Use the "Save HomoleGene" button to save the HomoloGene list or use the "Save EntrezGene" button to save the EntrezGene list.
@@ -65,7 +65,7 @@
     <input type="checkbox" name="listobj[]" value="{{sign.id}}" ng-checked="listobj.indexOf(sign.id+'-up') > -1" ng-click="toggleSelection2(sign.genes_up)"> {{sign.id}} - Up genes - {{sign.title}}    <a href="" ng-click="deleted(sign.id)"><i class="fa fa-trash" aria-hidden="true"></i></a>
 </label>
 
-             
+
 <div id="List" class="panel-collapse collapse in">
     <div class="panel-body" id="paneltable">
         <textarea ng-model="listID" class="form-control" id="ec"/>

@@ -1,17 +1,14 @@
 <h2>Functional enrichment analysis tool </h2>
 <div class="well">
-	This module gives the possibility to perform enrichment in biological processes, molecular functions, cellular components and phenotypes for a selected signature. The tool returns all over/under represented terms associated to the selected signature. To be able to compare these results across species, each EntrezGene Id (which composed the signature) has been converted to HomoloGene Id (deprecated EntrezGene Id(s) are not used).
+	TThe functional enrichment analysis allows users to identify biological processes, molecular functions, cellular components and phenotypes significantly associated to a selected signature.
 <br>
-	As many existing procedures, the TOXsIgN enrichment tool is based on the hypergeometric test.<br><br> 
-
-	Finally, for practical reasons, every week each signature’s enrichment is pre-calculated to avoid the overload of the IRSET datacenter. It's possible that your signature enrichment was not pre-calculated yet.<br><br> 
 
 	<b>How to perform enrichment</b><br><br>
 	<b><i>Input data</i></b>: Select the signature using the "Select signature" selector<br>
 	<b><i>Parameters</i></b>: Defined which parameter to use as threshold and the threshold value<br>
 	<b><i>Output data</i></b>: : 4 tables that respectively correspond to the biological process, cellular component, molecular function and phenotypes enrichment, where N is the total number of HomoleGene Ids measured, R is the total number of HomoleGene Ids meeting the criterion, n is the total number of HomoleGene Ids in this specific signature, r is the number of HomoleGene Ids meeting the criterion in this specific signature and ratio corresponding to r/union(n,R).<br>
-</div>         
-	                        	
+</div>
+
 		  	<div class="row">
 		  		<div class="col-md-8">
 		  			<div class="panel panel-info">

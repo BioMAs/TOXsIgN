@@ -10,7 +10,8 @@
       </h4>
     </div>
     <div id="searchengine" class="panel-collapse collapse in">
-      <div class="panel-body">The search engine supports complex fielded queries to retrieve relevant data and associated signatures according to various experimental parameters, observed toxicological effects and/or up/down-regulated gene lists. This module is especially relevant for identifying comparable experiments (i.e. performed on similar models and/or with close environmental factors) or experiments with similar outcomes (i.e. that resulted in similar physiological, molecular and/or omics effects).</div>
+      <div class="panel-body">The search engine supports complex fielded queries to retrieve signatures and associated data based on various information such as experimental parameters, observed toxicological effects and/or up/down-regulated gene lists.
+        This module is especially powerfull for identifying comparable experiments (i.e. performed on similar models and/or with close environmental factors) and/or similar outcomes (i.e. close physiological, molecular and/or omics effects).</div>
     </div>
   </div>
   <div class="panel panel-default">
@@ -21,9 +22,8 @@
       </h4>
     </div>
     <div id="ontologies" class="panel-collapse collapse">
-      <div class="panel-body">The TOXsIgN ontologies tool allows users to browse the ontologies used to describe data in TOXsIgN. This feature is especially relevant for filling the excel template used to insert data in TOXsIgN.
-      This tool use NCBI OntologyTree widget from BioPortal. This widget is an embeddable Flex application that allows a user to interact with a tree browser for ontologies. The widget is configured to display a list of all the ontologies in TOXsIgN, allowing the user to select which one to display, or can be setup to view a particular ontology.</div>
-    </div>
+      <div class="panel-body">TOXsIgN also includes a tool to browse the ontologies used in the resource to describe data.
+        This feature is especially relevant for filling the excel template required when submitting a novel signature. This tool use the NCBI OntologyTree widget from BioPortal. It is configured to display all the ontologies used in TOXsIgN.</div>
   </div>
 </div>
 
@@ -40,7 +40,7 @@
       </h4>
     </div>
     <div id="convert" class="panel-collapse collapse">
-      <div class="panel-body">The TOXsIgN conversion tool convert a list of EntrezGene Ids or HomoloGene Ids to HomoloGene Ids or EntrezGene Ids.</div>
+      <div class="panel-body">The conversion tool allows users to convert a list of EntrezGene Ids or HomoloGene Ids to HomoloGene Ids or EntrezGene Ids.</div>
     </div>
   </div>
 </div>
@@ -60,7 +60,7 @@
       </h4>
     </div>
     <div id="signature" class="panel-collapse collapse">
-      <div class="panel-body">The TOXsIgN compare module, is a feature allowing users to compare toxicogenomic signatures between them or in several custom lists. This module is adapted from P. Bardou et al. It works and displays intersection between up to 6 signatures in a Venn diagram.</div>
+      <div class="panel-body">The comparison module allows users to compare several toxicogenomic signatures It is based on the tool developed by P. Bardou et al that can display intersection between up to 6 signatures in a Venn diagram.</div>
     </div>
   </div>
   <div class="panel panel-default">
@@ -71,7 +71,7 @@
       </h4>
     </div>
     <div id="dist" class="panel-collapse collapse">
-      <div class="panel-body">This module gives the possibility to perform a distance analysis between one selected toxicogenomic signatures and all other TOXsIgN toxicogenomic signatures. As many existing procedures, the TOXsIgN distance analysis tool is based on the euclidean and correlation distance.</div>
+      <div class="panel-body">The signature enrichment analysis module allows users to compare a selected toxicogenomic signatures to the overall set of signatures deposited by the community using a distance analysis approach (based on the Euclidean distance and the correlation coefficient).</div>
     </div>
   </div>
 </div>
@@ -89,7 +89,7 @@
       </h4>
     </div>
     <div id="function" class="panel-collapse collapse">
-      <div class="panel-body">This module gives the possibility to perform enrichment in biological processes, molecular functions, cellular components and phenotypes for a selected signature. The tool returns all over/under represented terms associated to the selected signature. To be able to compare these results across species, each EntrezGene Id (which composed the signature) has been converted to HomoloGene Id (deprecated EntrezGene Id(s) are not used).</div>
+      <div class="panel-body">The functional enrichment analysis allows users to identify biological processes, molecular functions, cellular components and phenotypes significantly associated to a selected signature.</div>
     </div>
   </div>
   <div class="panel panel-default">
@@ -100,7 +100,7 @@
       </h4>
     </div>
     <div id="dist2" class="panel-collapse collapse">
-      <div class="panel-body">This module gives the possibility to perform a distance analysis between one selected toxicogenomic signature and all other TOXsIgN toxicogenomic signatures. As many existing procedures, the TOXsIgN distance analysis tool is based on the Euclidean and correlation distance.</div>
+      <div class="panel-body">The signature enrichment analysis module allows users to compare a selected toxicogenomic signatures to the overall set of signatures deposited by the community using a distance analysis approach (based on the Euclidean distance and the correlation coefficient).</div>
     </div>
   </div>
 </div>
@@ -118,7 +118,7 @@
       </h4>
     </div>
     <div id="extract" class="panel-collapse collapse">
-      <div class="panel-body">This module allow users to extrat the toxicogenomic signature from microarray analysis data. Its returns a list of up-regulated genes, down regulated genes and all interogated genes. <br><b>This tool is under construction and will be available soon.</b></div>
+      <div class="panel-body">This module allows users to automatically extract the toxicogenomic signature from a transcriptomic dataset (Affymetrix GeneChip). This tool is under construction and will be available soon.</div>
     </div>
   </div>
 </div>
@@ -137,8 +137,9 @@
       </h4>
     </div>
     <div id="predict" class="panel-collapse collapse">
-      <div class="panel-body">The prediction tools are based on the ChemSPY project developed within the IRSET institut.
-      The aim of ChemPSy (Chemical Prioritization System) is to provide an innovative tool based on several bioinformatics and biostatistics methodologies to analyze and integrate massive toxicogenomics datasets. Specific objectives include: (1) classification of chemicals based on transcriptional signatures, i.e. the set of genes whose expression is known to be positively or negatively altered after an exposure to these compounds; (2) the association of classes with human pathologies or deleterious phenotypes, i.e. classes containing toxicants with well-known effects; (3) the prediction of novel reprotoxicants and/or endocrine disruptors based on transcriptional signature similarities with known chemicals affecting testis development and function. </div>
+      <div class="panel-body">This module will allow users to predict the adverse effects of a given chemical compound based on the approaches developed in the ChemPSy project.
+The aim of ChemPSy (Chemical Prioritization System) is to provide an innovative tool based on several bioinformatics and biostatistics methodologies to analyze and integrate massive toxicogenomic datasets. Specific objectives include: (1) classification of chemicals based on transcriptional signatures, i.e. the set of genes whose expression is known to be positively or negatively altered after an exposure to these compounds; (2) the association of classes with human pathologies or deleterious phenotypes, i.e. classes containing toxicants with well-known effects; (3) the prediction of novel reprotoxicants and/or endocrine disruptors based on transcriptional signature similarities with known chemicals affecting testis development and function. This tool is under construction and will be available soon.
+</div>
     </div>
   </div>
   <div class="panel panel-danger">
@@ -149,14 +150,14 @@
       </h4>
     </div>
     <div id="prio" class="panel-collapse collapse">
-      <div class="panel-body">The prediction tools are based on the ChemSPY project developed within the IRSET institut.
-      The aim of ChemPSy (Chemical Prioritization System) is to provide an innovative tool based on several bioinformatics and biostatistics methodologies to analyze and integrate massive toxicogenomics datasets. Specific objectives include: (1) classification of chemicals based on transcriptional signatures, i.e. the set of genes whose expression is known to be positively or negatively altered after an exposure to these compounds; (2) the association of classes with human pathologies or deleterious phenotypes, i.e. classes containing toxicants with well-known effects; (3) the prediction of novel reprotoxicants and/or endocrine disruptors based on transcriptional signature similarities with known chemicals affecting testis development and function. </div>
+      <div class="panel-body">This module will allow users to prioritize several selected chemical compounds based on the approaches developed in the ChemPSy project.
+The aim of ChemPSy (Chemical Prioritization System) is to provide an innovative tool based on several bioinformatics and biostatistics methodologies to analyze and integrate massive toxicogenomic datasets. Specific objectives include: (1) classification of chemicals based on transcriptional signatures, i.e. the set of genes whose expression is known to be positively or negatively altered after an exposure to these compounds; (2) the association of classes with human pathologies or deleterious phenotypes, i.e. classes containing toxicants with well-known effects; (3) the prediction of novel reprotoxicants and/or endocrine disruptors based on transcriptional signature similarities with known chemicals affecting testis development and function. This tool is under construction and will be available soon. </div>
     </div>
   </div>
 </div>
 
 
-<li ng-if="is_logged" class="btn-group" dropdown is-open="status.isopen">
+<!--<li ng-if="is_logged" class="btn-group" dropdown is-open="status.isopen">
                 <a type="button" dropdown-toggle ng-disabled="disabled">
                   Tools<span class="caret"></span>
                 </a>
@@ -166,4 +167,4 @@
                   <li><a href="#/predict"> ChemPSy - Prediction tool</a></li>
                   <li><a href="#/prio"> ChemPSy - Prioritization tool</a></li>
                 </ul>
-              </li>
+              </li>-->
