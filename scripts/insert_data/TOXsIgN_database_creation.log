@@ -1,0 +1,10 @@
+2018-01-23 09:46:21,967 :: DEBUG :: CreateCollection - insert ontologies
+2018-01-23 09:46:21,967 :: DEBUG :: CreateCollection - insert ontologies
+2018-01-23 09:57:12,689 :: DEBUG :: CreateCollection - create geneInfo collection
+2018-01-23 09:57:12,689 :: DEBUG :: CreateCollection - create geneInfo collection
+2018-01-23 10:00:28,969 :: DEBUG :: CreateCollection - create homoloGene collection
+2018-01-23 10:00:28,969 :: DEBUG :: CreateCollection - create homoloGene collection
+2018-01-23 10:02:06,869 :: DEBUG :: CreateCollection - create TOXsIgN_geneDB collection
+2018-01-23 10:02:06,869 :: DEBUG :: CreateCollection - create TOXsIgN_geneDB collection
+2018-01-23 10:05:17,757 :: DEBUG :: CreateCollection - Create projects counters
+2018-01-23 10:05:17,757 :: DEBUG :: CreateCollection - Create projects counters

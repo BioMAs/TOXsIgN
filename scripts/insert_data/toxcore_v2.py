@@ -65,7 +65,7 @@ logger.addHandler(steam_handler)
 #To modifie information please set value in thise file
 #DO NOT MODIFIE the tox_install.ini file location 
 config = ConfigParser.ConfigParser()
-config.readfp(open('../tox_install.ini'))
+config.readfp(open('tox_install.ini'))
 
 mongo = MongoClient(config.get('app:main','db_uri'))
 db = mongo[config.get('app:main','db_name')]
