@@ -335,29 +335,34 @@ def create_RData():
 
 	print "Create Signatures file for None user"
 	all_signature = list(db['signatures'].find( { '$and': [ { 'status': 'public' }, { 'type': 'Genomic' }] } ))
-	tmp_dir = os.path.join(os.getcwd(),'var/upload/admin/scripts/publicFiles')
+	tmp_dir = os.path.join(os.getcwd(),'var/upload/admin/publicFiles/')
 	if not os.path.exists(tmp_dir):
 		os.makedirs(tmp_dir)
 	print "Create all sign files"
 	for signature in all_signature :
+		dSign={}
 		check_files = open(tmp_dir+'/'+signature['id']+'.sign','a')
 		if os.path.isfile(os.getcwd()+'/var/Data/Public/'+signature['projects']+'/'+signature['id']+'/'+signature['file_up']):
 			fileAdmin = open(os.getcwd()+'/var/Data/Public/'+signature['projects']+'/'+signature['id']+'/'+signature['file_up'],'r')
 			for linesFile in fileAdmin.readlines():
+				dSign[linesFile.split('\t')[0]] =""
 				check_files.write(linesFile.replace('\n','')+'\t'+str(1)+'\n')
+			fileAdmin.close()
+		if os.path.isfile(os.getcwd()+'/var/Data/Public/'+signature['projects']+'/'+signature['id']+'/'+signature['file_down']):
+			fileAdmin = open(os.getcwd()+'/var/Data/Public/'+signature['projects']+'/'+signature['id']+'/'+signature['file_down'],'r')
+			for linesFile in fileAdmin.readlines():
+				dSign[linesFile.split('\t')[0]] =""
+				check_files.write(linesFile.replace('\n','')+'\t'+'-1'+'\n')
 			fileAdmin.close()
 
 		if os.path.isfile(os.getcwd()+'/var/Data/Public/'+signature['projects']+'/'+signature['id']+'/'+signature['file_interrogated']):
 			fileAdmin = open(os.getcwd()+'/var/Data/Public/'+signature['projects']+'/'+signature['id']+'/'+signature['file_interrogated'],'r')
 			for linesFile in fileAdmin.readlines():
-				check_files.write(linesFile.replace('\n','')+'\t'+str(0)+'\n')
+				if linesFile.split('\t')[0] not in dSign:
+					check_files.write(linesFile.replace('\n','')+'\t'+str(0)+'\n')
 			fileAdmin.close()
 
-		if os.path.isfile(os.getcwd()+'/var/Data/Public/'+signature['projects']+'/'+signature['id']+'/'+signature['file_down']):
-			fileAdmin = open(os.getcwd()+'/var/Data/Public/'+signature['projects']+'/'+signature['id']+'/'+signature['file_down'],'r')
-			for linesFile in fileAdmin.readlines():
-				check_files.write(linesFile.replace('\n','')+'\t'+'-1'+'\n')
-			fileAdmin.close()
+		
 				
 		check_files.close()
 	print "Create all sign files - DONE"

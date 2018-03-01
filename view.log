@@ -1,0 +1,16 @@
+2018-02-26 16:25:06,939 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/newsfeed
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343237323434373532/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 173, in handle_request
+    raise HTTPNotFound(msg)
+HTTPNotFound: /newsfeed
+2018-02-26 16:25:06,980 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/newsfeed
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343238323130383936/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 173, in handle_request
+    raise HTTPNotFound(msg)
+HTTPNotFound: /newsfeed

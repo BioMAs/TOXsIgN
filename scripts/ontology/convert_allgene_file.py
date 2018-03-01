@@ -61,7 +61,7 @@ for ids in lId :
     if ids in lresult :
         check_files.write(ids+'\t'+lresult[ids][0]+'\t'+lresult[ids][1].replace('\n','')+'\t1\n')
     else :
-        check_files.write(ids+'\t'+'NA\tNA'+'\t'+'\t0\n')                
+        check_files.write(ids+'\t'+'NA\tNA'+'\t0\n')                
 check_files.close()
 
 

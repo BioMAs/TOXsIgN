@@ -1252,12 +1252,22 @@ angular.module('chemsign').controller('jobresultsCtrl',
       Dataset.getjob({'job_list':"",'jid':params['job']}).$promise.then(function(data){
         $scope.job = data.jobs;
         console.log($scope.job);
+        $scope.job.tool = 'prediction';
+
+        ////////////// Prédiction part ////////////////////////////////
         if ($scope.job.tool == 'prediction'){
             Dataset.readpredict({'job':$scope.job.id}).$promise.then(function(datap){
                 console.log(datap.result)
                 $scope.data = datap.result;
+
+
+                
             });
           }
+
+
+
+
         else {
         Dataset.readresult({'job':$scope.job.id}).$promise.then(function(datas){
           $scope.resultcc = datas.results;

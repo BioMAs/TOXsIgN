@@ -1,74 +1,36 @@
-<script type="text/ng-template" id="clusterInfo">
-	<div class="container" style="width: auto;">
-		<div class="row">
-	    	<h2>Cluster {{ngDialogData.cluster}}</h2>
-	    	<h4>Method: {{ngDialogData.method}}</h4>
-	  	</div>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="scripts/plotly-latest.min.js"></script>
 
-	  	<ul class="nav nav-tabs">
-		  <li class="active"><a data-toggle="tab" href="#conditions" target="_self">Cluster conditions</a></li>
-		  <li><a data-toggle="tab" href="#enrichment" target="_self" ng-click="showStudies()">Cluster enrichment</a></li>
-		</ul>
 
-		<div class="row">
-			<div class="tab-content">
-			  <div id="conditions" class="tab-pane fade in active">
-			  	<table  class="table table-bordered table-hover table-striped">
-					<tr>
-			            <th>Chemical</th>
-			            <th>Dose</th>
-			            <th>Exposure time</th>
-			            <th>Tissue</th>
-			            <th>Generation</th>
-			            <th>TOXsIgN ID</th>
-			        </tr>
-			        <tr ng-repeat="fact in ngDialogData.result.conditions">
-			            <td>{{fact.chemical}}</td>
-			            <td>{{fact.dose}}</td>
-			            <td>{{fact.time}}</td>
-			            <td>{{fact.tissue}}</td>
-			            <td>{{fact.generation}}</td>
-			            <td><a href="#/browse?dataset={{fact.id.signatures}}">{{fact.id.signatures}}</a></td>
-			        </tr>
-				</table>
-
-			  </div>
-			  <div id="enrichment" class="tab-pane fade">
-			      <table  class="table table-bordered table-hover table-striped">
-					<tr>
-			            <th>Mesh Term</th>
-			            <th>r</th>
-			            <th>R</th>
-			            <th>n</th>
-			            <th>N</th>
-			            <th>r/R</th>
-			            <th>pvalue</th>
-			            <th>pBH</th>
-			        </tr>
-			        <tr ng-repeat="enr in ngDialogData.result.enrichment">
-			            <td>{{enr.mesh}}</td>
-			            <td>{{enr.r}}</td>
-			            <td>{{enr.R}}</td>
-			            <td>{{enr.n}}</td>
-			            <td>{{enr.N}}</td>
-			            <td>{{enr.rR}}</td>
-			            <td>{{enr.p}}</td>
-			            <td>{{enr.pBH}}</td>
-			        </tr>
-				</table>
-			  </div>
-			</div>
-		</div>
-	</div>
-
-</script>
 
 <h2>Results job : TSJ{{job.id}}</h2>
 
 
 
 <div ng-if="job.tool == 'prediction'" id="results">
-	<nvd3 options="options" data="data"></nvd3>
+	<ul class="nav nav-tabs">
+		<li class="active"><a data-toggle="tab" href="#bp" target="_self">Biological process</a></li>
+		<li><a data-toggle="tab" href="#cc" target="_self" ng-click="showStudies()">Cellular Component</a></li>
+		<li><a data-toggle="tab" href="#mf" target="_self" ng-click="showAssays()">Molecular Function</a></li>
+		<li><a data-toggle="tab" href="#pato" target="_self" ng-click="showSignatures()">Phenotype</a></li>
+	</ul>
+	<div class="tab-content">
+		<div id="bp" class="tab-pane fade in active">
+			 
+		</div>
+	<div class="raw">
+		<div class="col-md-6">
+
+		</div>
+
+		<div class="col-md-6">
+
+		</div>
+
+	</div>
+
+
 </div>
 
 <div ng-if="job.tool == 'distance analysis'" id="results">
