@@ -139,7 +139,7 @@ def user_info_update(request):
             token = form['token']
             del form['token']
         request.registry.db_mongo['users'].update({'id': request.matchdict['id']}, form)
-        form['_id'] = tid;
+        form['_id'] = tid
         if token != "" :
             form['token'] = token
         return form
@@ -696,31 +696,76 @@ def run(request):
 def predict(request):
     form = json.loads(request.body, encoding=request.charset)
     jid = form['job']
-    job_info = request.registry.db_mongo['Jobs'].find_one({'id':jid})
-    result_file = job_info['result']
-    dResults = []
-    dVal = {'up' : {'key':'','color':'','values':[]},'middle' : {'key':'','color':'','values':[]},'down' : {'key':'','color':'','values':[]}}
-    fResults = open(result_file,'r')
-    for lignes in fResults.readlines() :
-        cluster = lignes.split('\t')[0]
-        value = lignes.split('\t')[1].replace('\n','')
-        if float(value) >= 0.9 :
-            dVal['up']['key'] = "R > 0.9"
-            dVal['up']['color'] = "#0080FF"
-            dVal['up']['values'].append({"label":cluster,"value":value})
-        if float(value) < 0.9 and float(value) >= 0.5 :
-            dVal['middle']['key'] = "0.5 < R < 0.9"
-            dVal['middle']['color'] = "#FFBF00"
-            dVal['middle']['values'].append({"label":cluster,"value":value})
-        if float(value) < 0.5 :
-            dVal['down']['key'] = "R < 0.5"
-            dVal['down']['color'] = "#FF0000"
-            dVal['down']['values'].append({"label":cluster,"value":value})
 
-    dResults.append(dVal['up'])
-    dResults.append(dVal['middle'])
-    dResults.append(dVal['down'])
-    return {'msg':'Prediction Done','result':dResults,'status':"0"}
+    # FOR TEST uncomment for prod !!!!
+    #job_info = request.registry.db_mongo['Jobs'].find_one({'id':jid})
+    #result_file = job_info['result']
+    #fResults = open(result_file,'r')
+
+    # Test
+    fResults = open('/Users/tdarde/Desktop/TOXsIgN_oredict_test/output.txt','r')
+    conditions = ['Overview']
+    description = ""
+    with open('/Users/tdarde/Desktop/TOXsIgN_oredict_test/description.txt', 'r') as myfile:
+        description=myfile.read().replace('\n', '')
+    dInfo = {}
+    notCondList = ["Class","Sample",'X','Y']
+    result = {'charts':[],'warning':[],'time':'','methods':['Overview'],'best':{},'description':description}  
+    for lignes in fResults.readlines() :
+        splitLigne = lignes.split('\t')
+        if splitLigne[0] not in notCondList :
+            conditions.append(splitLigne[0])
+            result['methods'].append(splitLigne[0])
+        dInfo[splitLigne[0]] = splitLigne[1:]
+    result['groups'] = dInfo["Class"]
+    for cond in conditions[1:] :
+        chart = {}
+        chart['config']={'displaylogo':False,'modeBarButtonsToRemove':['zoom2d','sendDataToCloud','pan2d','lasso2d','resetScale2d']}
+        chart['data']=[]
+        chart['description'] = ""
+        chart['name'] = cond
+        chart['title'] = ""
+        chart['layout'] = {'height':700,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed'}}
+        chart['msg'] = []
+        data_chart = {}
+        data_chart['type'] = 'bar'
+        data_chart['orientation'] = "h"
+        data_chart['x'] = dInfo[cond]
+        data_chart['y'] = dInfo["Class"]
+        if "Euclidean" in cond :
+            data_chart['transforms'] = [{'type': 'sort','target': 'x','order': 'descending'}]
+            best_index = dInfo[cond].index(min(dInfo[cond]))
+            result['Best'][cond] = dInfo["Class"][best_index]
+        if "Correlation" in cond :
+            best_index = dInfo[cond].index(max(dInfo[cond]))
+            result['Best'][cond] = dInfo["Class"][best_index]
+            data_chart['transforms'] = [{'type': 'sort','target': 'x','order': 'ascending'}]
+        chart['data'].append(data_chart)
+        result['charts'].append(chart)
+
+    #Scatter plot overview
+    chart = {}
+    chart['config']={'displaylogo':False,'modeBarButtonsToRemove':['zoom2d','sendDataToCloud','pan2d','lasso2d','resetScale2d']}
+    chart['data']=[]
+    chart['description'] = ""
+    chart['name'] = 'Overview'
+    chart['title'] = ""
+    chart['layout'] = {'height':700,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed'}}
+    chart['msg'] = []
+    for cond in conditions[1:] :
+        data_chart = {}
+        data_chart['mode']= 'markers'
+        data_chart['type'] = 'scatter'
+        data_chart['text'] =  dInfo["Class"]
+        data_chart['orientation'] = "h"
+        data_chart['x'] = dInfo['X']
+        data_chart['y'] = dInfo['Y']
+        chart['data'].append(data_chart)
+    result['charts'].append(chart)
+
+    
+
+    return result
 
 @view_config(route_name='cluster', renderer='json', request_method='POST')
 def cluster(request):

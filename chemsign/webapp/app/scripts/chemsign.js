@@ -1245,23 +1245,60 @@ angular.module('chemsign').controller('enrichCtrl',
 
 });
 
+angular.module('chemsign').directive("chartDiv", function() {
+  return {
+      scope: {
+          chart: "="
+      },
+      link: function(scope, element, attrs) {
+          scope.$watch(attrs.chartDiv, function(value) {
+              Plotly.newPlot(attrs.id, scope.chart.data, scope.chart.layout, scope.chart.config || {});
+          });
+      }
+  };
+});
+
 angular.module('chemsign').controller('jobresultsCtrl',
     function ($scope,$rootScope, $log, Auth, User, Dataset, $location, ngTableParams, ngDialog, $filter) {
 
       var params = $location.search();
+      console.log(params);
+      $scope.selected_best = undefined;
+      $scope.groupInfo = undefined;
+
+      $scope.update_group = function(group){
+        Dataset.getCluster({'group': $scope.selected_best}).$promise.then(function(response){
+          $scope.groupInfo = response.data;
+        })
+      }
+
+      $scope.update_best = function(Groups){
+        $scope.selected_best = Groups[display];
+        Dataset.getCluster({'group': $scope.selected_best}).$promise.then(function(response){
+          $scope.groupInfo = response.data;
+        })
+      }
+
+
       Dataset.getjob({'job_list':"",'jid':params['job']}).$promise.then(function(data){
         $scope.job = data.jobs;
-        console.log($scope.job);
+        $scope.job = {};
+        $scope.display = "Overview";
         $scope.job.tool = 'prediction';
-
+        $scope.job.id = "Prediction TEST"
+        $scope.job.methods = "PCA_bin_DynamicCutTree_correlation"
         ////////////// Prédiction part ////////////////////////////////
         if ($scope.job.tool == 'prediction'){
-            Dataset.readpredict({'job':$scope.job.id}).$promise.then(function(datap){
-                console.log(datap.result)
-                $scope.data = datap.result;
+            Dataset.readpredict({'job':$scope.job.id}).$promise.then(function(response){
+                console.log(response)
+                $scope.charts = response.charts;
+                $scope.methods = response.methods;
+                $scope.best = response.best;
+                $scope.description = response.description;
+                $scope.group = response.groups;
 
 
-                
+
             });
           }
 

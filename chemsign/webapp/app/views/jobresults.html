@@ -9,28 +9,48 @@
 
 
 <div ng-if="job.tool == 'prediction'" id="results">
-	<ul class="nav nav-tabs">
-		<li class="active"><a data-toggle="tab" href="#bp" target="_self">Biological process</a></li>
-		<li><a data-toggle="tab" href="#cc" target="_self" ng-click="showStudies()">Cellular Component</a></li>
-		<li><a data-toggle="tab" href="#mf" target="_self" ng-click="showAssays()">Molecular Function</a></li>
-		<li><a data-toggle="tab" href="#pato" target="_self" ng-click="showSignatures()">Phenotype</a></li>
-	</ul>
-	<div class="tab-content">
-		<div id="bp" class="tab-pane fade in active">
-			 
+	<div class="row">
+		<div class="col-md-4">
+			<select ng-model="display" ng-change="update_best(best)">
+				<option value=" {{ method }} " ng-repeat="method in methods">{{ method }}</option>
+			</select>
 		</div>
-	<div class="raw">
-		<div class="col-md-6">
-
+		<div class="col-md-8" ng-repeat="chart in charts" ng-if="chart.name == display">
+			<h4>{{ display }}</h4>
+			<div chart-div chart="chart" id="chart-div-{{ $index }}"></div>
 		</div>
-
-		<div class="col-md-6">
-
-		</div>
-
 	</div>
-
-
+	<hr>
+	<div class="raw">
+		<div class="panel-group" id="accordion">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+				<h4 class="panel-title">
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapse1" target="_self">
+					Information</a>
+				</h4>
+				</div>
+				<div id="collapse1" class="panel-collapse collapse in">
+					<div class="panel-body">
+						<ul>
+							<li><b>Selected signature:</b> {{ selected_sign }}</li>
+							<li><b>Selected clustering method:</b> {{ job.methods }}</li>
+							<li><b>Clustering method description:</b> {{ description }}</li>
+							<li><b>Selected prediction methods:</b> {{ display }}</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>				  
+	</div>
+	<div class="raw" ng-if='display != "Overview"'>
+		<select ng-model = "selected_best" ng-change="update_group(selected_best)">
+			<option ng-repeat="group in groups">{{ group }}</option>
+		</select>
+	</div>
+	<div class="raw" ng-if='groupInfo != undefined'>
+		{{ groupInfo }}
+	</div>
 </div>
 
 <div ng-if="job.tool == 'distance analysis'" id="results">
@@ -47,7 +67,7 @@
 		        <td data-title="'N'" sortable="'N'">{{val.N}}</td>
 		        <td data-title="'Ratio'" sortable="'rR'">{{Math.round(val.rR *100)}} %</td>
 		        <td data-title="'Pvalue'" sortable="'pvalue'">{{val.pvalue}}</td>
-						<td data-title="'Adjusted Pvalue (Benjamini-Hochberg)'" sortable="'pvalue'">{{val.pBH}}</td>
+				<td data-title="'Adjusted Pvalue (Benjamini-Hochberg)'" sortable="'pvalue'">{{val.pBH}}</td>
 		        <td data-title="'Zscore'" sortable="'zscore'">{{val.zscore}}</td>
 		        <td data-title="'Euclidean distance'" sortable="'euclid'">{{val.euclid}}</td>
 		        <td data-title="'Correlation distance'" sortable="'cor'">{{val.cor}}</td>
