@@ -7,12 +7,11 @@
 <h2>Results job : TSJ{{job.id}}</h2>
 
 
-
 <div ng-if="job.tool == 'prediction'" id="results">
 	<div class="row">
 		<div class="col-md-4">
-			<select ng-model="display" ng-change="update_best(best)">
-				<option value=" {{ method }} " ng-repeat="method in methods">{{ method }}</option>
+			<select ng-model="display" ng-change="update_best(best,job.methods,display,data)">
+				<option value="{{ method }}" ng-repeat="method in methods">{{ method }}</option>
 			</select>
 		</div>
 		<div class="col-md-8" ng-repeat="chart in charts" ng-if="chart.name == display">
@@ -44,8 +43,8 @@
 		</div>				  
 	</div>
 	<div class="raw" ng-if='display != "Overview"'>
-		<select ng-model = "selected_best" ng-change="update_group(selected_best)">
-			<option ng-repeat="group in groups">{{ group }}</option>
+		<select ng-model = "selected_best" ng-change="update_group(selected_best,job.methods)">
+			<option ng-repeat="group in sortedGroup">{{ group }}</option>
 		</select>
 	</div>
 	<div class="raw" ng-if='groupInfo != undefined'>

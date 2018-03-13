@@ -22,6 +22,7 @@ import zipfile
 import tempfile
 import copy
 import re
+import math
 import xlrd
 from collections import OrderedDict
 import simplejson as json
@@ -696,7 +697,7 @@ def run(request):
 def predict(request):
     form = json.loads(request.body, encoding=request.charset)
     jid = form['job']
-
+    selectedmethod = form['method']
     # FOR TEST uncomment for prod !!!!
     #job_info = request.registry.db_mongo['Jobs'].find_one({'id':jid})
     #result_file = job_info['result']
@@ -704,42 +705,98 @@ def predict(request):
 
     # Test
     fResults = open('/Users/tdarde/Desktop/TOXsIgN_oredict_test/output.txt','r')
-    conditions = ['Overview']
-    description = ""
-    with open('/Users/tdarde/Desktop/TOXsIgN_oredict_test/description.txt', 'r') as myfile:
-        description=myfile.read().replace('\n', '')
     dInfo = {}
-    notCondList = ["Class","Sample",'X','Y']
-    result = {'charts':[],'warning':[],'time':'','methods':['Overview'],'best':{},'description':description}  
-    for lignes in fResults.readlines() :
-        splitLigne = lignes.split('\t')
-        if splitLigne[0] not in notCondList :
-            conditions.append(splitLigne[0])
-            result['methods'].append(splitLigne[0])
-        dInfo[splitLigne[0]] = splitLigne[1:]
-    result['groups'] = dInfo["Class"]
-    for cond in conditions[1:] :
+    groupList = []
+    best = {}
+    methodList = []
+    notCondList = ["Sample",'X','Y']
+
+    #Create dicoTable dico[group][method] = value
+    #Create dico Best 
+    for lignes in fResults :
+        lLingne = lignes.split('\t')
+
+        if lLingne[0] == "Class" :
+            for i in lLingne[1:]:
+                groupList.append(i)
+        
+
+        if lLingne[0] != "Class" and lLingne[0] != "Sample" :
+            method = lLingne[0]
+            dInfo[method] = {}
+
+            if lLingne[0] not in notCondList:
+                methodList.append(method)
+
+            values = lLingne[1:]
+
+            if method == 'X' or method == 'Y' :
+                dInfo[method]['groups'] = groupList
+                dInfo[method]['values'] = lLingne[1:]
+
+            else :
+            
+                for item in values :
+                    if item == 'NA' :
+                        loc = values.index(item)
+                        values[loc] = 'nan'
+                
+                sorted_groups = []
+                sorted_value = ""
+                if "Correlation" in method :
+                    sorted_value = sorted(values,key=lambda x: float('-inf')  if math.isnan(float(x)) else float(x))
+                if "Euclidean" in method :
+                    sorted_value = sorted(values,key=lambda x: float('inf')  if math.isnan(float(x)) else float(x),reverse=True)
+                dInfo[method]['values'] = []
+
+                for val in sorted_value :
+                    if val != 'nan':
+                        index_val = values.index(val)
+                        dInfo[method]['values'].append(val)
+                        if groupList[index_val] not in sorted_groups :
+                            sorted_groups.append(groupList[index_val])
+                dInfo[method]['groups'] = sorted_groups
+                
+                max, min = float("-Inf"),float("Inf")
+                maxGroup = minGroup = ""
+                for z in range(0,len(values)):
+                    group = groupList[z]
+                    if values[z] != 'nan' and float(values[z]) > max and group != 'Sign' :
+                        max = float(values[z])
+                        maxGroup = group
+                    if values[z] != 'nan' and float(values[z]) < min and group != 'Sign' :
+                        min = float(values[z])
+                        minGroup = group
+                if "Euclidean" in method :
+                    best[method] = minGroup
+                if "Correlation" in method :
+                    best[method] = maxGroup
+
+
+    #Set method description
+    description = ""
+    with open('/Users/tdarde/Desktop/TOXsIgN_oredict_test/'+selectedmethod+'/description.txt', 'r') as myfile:
+        description=myfile.read().replace('\n', '')
+
+    #Init result dico
+    result = {'charts':[],'warning':[],'groups':groupList,'time':'','methods':methodList,'best':best,'description':description,'data':dInfo}  
+
+    for method in methodList :
+        #Insert here sorting dictionnary function
+
         chart = {}
         chart['config']={'displaylogo':False,'modeBarButtonsToRemove':['zoom2d','sendDataToCloud','pan2d','lasso2d','resetScale2d']}
         chart['data']=[]
         chart['description'] = ""
-        chart['name'] = cond
+        chart['name'] = method
         chart['title'] = ""
-        chart['layout'] = {'height':700,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed'}}
+        chart['layout'] = {'height':400,'showlegend': False, 'legend': {'traceorder':'reversed'}}
         chart['msg'] = []
         data_chart = {}
         data_chart['type'] = 'bar'
         data_chart['orientation'] = "h"
-        data_chart['x'] = dInfo[cond]
-        data_chart['y'] = dInfo["Class"]
-        if "Euclidean" in cond :
-            data_chart['transforms'] = [{'type': 'sort','target': 'x','order': 'descending'}]
-            best_index = dInfo[cond].index(min(dInfo[cond]))
-            result['Best'][cond] = dInfo["Class"][best_index]
-        if "Correlation" in cond :
-            best_index = dInfo[cond].index(max(dInfo[cond]))
-            result['Best'][cond] = dInfo["Class"][best_index]
-            data_chart['transforms'] = [{'type': 'sort','target': 'x','order': 'ascending'}]
+        data_chart['x'] = dInfo[method]['values']
+        data_chart['y'] = dInfo[method]['groups']
         chart['data'].append(data_chart)
         result['charts'].append(chart)
 
@@ -750,21 +807,39 @@ def predict(request):
     chart['description'] = ""
     chart['name'] = 'Overview'
     chart['title'] = ""
-    chart['layout'] = {'height':700,'showlegend': True, 'legend': {"orientation": "h", 'traceorder':'reversed'}}
+    chart['layout'] = {'height':400,'showlegend': False, 'legend': {'traceorder':'reversed'}}
     chart['msg'] = []
-    for cond in conditions[1:] :
-        data_chart = {}
-        data_chart['mode']= 'markers'
-        data_chart['type'] = 'scatter'
-        data_chart['text'] =  dInfo["Class"]
-        data_chart['orientation'] = "h"
-        data_chart['x'] = dInfo['X']
-        data_chart['y'] = dInfo['Y']
-        chart['data'].append(data_chart)
+    data_chart = {}
+    data_chart['x'] = []
+    data_chart['y'] = []
+    data_chart['mode']= 'markers'
+    data_chart['type'] = 'scatter'
+    data_chart['text'] =  groupList
+    data_chart['marker'] ={'size':[],'color':[],'opacity':[]}
+    for group in groupList :
+        if group in dInfo['X']['groups']:
+            if group == "Sign":
+                data_chart['marker']['size'].append(20) 
+                data_chart['marker']['color'].append(50)
+                data_chart['marker']['opacity'].append(1)  
+            else :
+                data_chart['marker']['size'].append(15) 
+                data_chart['marker']['color'].append(10)
+                data_chart['marker']['opacity'].append(0.5)
+
+            group_index_x = dInfo['X']['groups'].index(group)
+            X_val = dInfo['X']['values'][group_index_x] 
+            group_index_y = dInfo['Y']['groups'].index(group)
+            Y_val = dInfo['Y']['values'][group_index_y]  
+            data_chart['x'].append(X_val)
+            data_chart['y'].append(Y_val)
+
+    chart['data'].append(data_chart)
     result['charts'].append(chart)
 
-    
-
+    #Need to be add at the end
+    result['methods'].insert(0,'Overview')
+    result['groups'].remove('Sign')
     return result
 
 @view_config(route_name='cluster', renderer='json', request_method='POST')
@@ -813,19 +888,18 @@ def cluster(request):
         if timetoconvert == "NA":
             return "Not available"
 
-    def infoMethod(method):
-        if method == "PCA_bin_reduced_reccutreeDynamic_correlation_hybrid_deepSplit1_C104" :
-            return 'ChemPSy - Dynamic Tree Cut - Correlation - 104 clusters'
 
     form = json.loads(request.body, encoding=request.charset)
-    clusterName = form['cluster'].split(' ')[1]
+    print form
+    clusterName = form['group']
+    print clusterName
     method = form['method']
     print "readCluster"
 
 
     clusterPath = request.registry.cluster_path
-    enrichPath = request.registry.cluster_path+"/"+method+"/Enr/"
-    fCondition = open(clusterPath+method+"/Clusters/"+method+'.'+clusterName+'.txt','r')
+    enrichPath = request.registry.cluster_path+"/"+method+"/Enrichissement/"
+    fCondition = open(clusterPath+'/'+method+"/Groups/"+method+'.'+clusterName+'.txt','r')
     dResults = {'conditions':{},'enrichment':{}}
     lChemicals = []
     for lignes in fCondition.readlines() :
@@ -870,8 +944,8 @@ def cluster(request):
             tssID = ''
         if lignes.replace('\n','') not in dResults['conditions'] :
             dResults['conditions'][lignes.replace('\n','')] = {'tissue':tissue,'chemical':chemical,'generation':generation,'dose':dose,'time':timeC,'id':tssID}
-    if os.path.isfile(enrichPath+method+'.'+clusterName+'.chem2enr.txt'):
-        fEnr = open(enrichPath+method+'.'+clusterName+'.chem2enr.txt','r')
+    if os.path.isfile(enrichPath+'/'+method+'.'+clusterName+'.chem2enr.txt'):
+        fEnr = open(enrichPath+'/'+method+'.'+clusterName+'.chem2enr.txt','r')
         for lignes in fEnr.readlines():
             if lignes.split('\t')[0] != 'MESH' :
                 mesh = lignes.split('\t')[0]

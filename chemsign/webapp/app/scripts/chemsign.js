@@ -3,7 +3,7 @@
 'use strict';
 
 // Declare app level module which depends on filters, and services
-var app = angular.module('chemsign', ['chemsign.resources','angular-carousel', 'ngDialog','nvd3','ngTableToCsv', 'ngFileUpload', 'ngSanitize', 'ngCookies', 'angular-js-xlsx', 'ngRoute','angular-venn', 'ui.bootstrap', 'datatables', 'ui.tree', 'uuid', 'ngTable','angucomplete-alt']).
+var app = angular.module('chemsign', ['chemsign.resources','angular-carousel','ui.bootstrap.accordion', 'ngDialog','nvd3','ngTableToCsv', 'ngFileUpload', 'ngSanitize', 'ngCookies', 'angular-js-xlsx', 'ngRoute','angular-venn', 'ui.bootstrap', 'datatables', 'ui.tree', 'uuid', 'ngTable','angucomplete-alt']).
 
 config(['$routeProvider','$logProvider',
     function ($routeProvider) {
@@ -1265,16 +1265,21 @@ angular.module('chemsign').controller('jobresultsCtrl',
       console.log(params);
       $scope.selected_best = undefined;
       $scope.groupInfo = undefined;
+      $scope.sortedGroup = undefined;
+      $scope.display = "Overview";
 
-      $scope.update_group = function(group){
-        Dataset.getCluster({'group': $scope.selected_best}).$promise.then(function(response){
+      $scope.update_group = function(group,method){
+        Dataset.getcluster({'group': group,'method':method}).$promise.then(function(response){
           $scope.groupInfo = response.data;
         })
       }
 
-      $scope.update_best = function(Groups){
+      $scope.update_best = function(Groups,method,display,data){
+        $scope.sortedGroup = data[display].groups.reverse();
+        $scope.display = display;
         $scope.selected_best = Groups[display];
-        Dataset.getCluster({'group': $scope.selected_best}).$promise.then(function(response){
+        console.log($scope.selected_best);
+        Dataset.getcluster({'group': $scope.selected_best,'method':method}).$promise.then(function(response){
           $scope.groupInfo = response.data;
         })
       }
@@ -1283,19 +1288,20 @@ angular.module('chemsign').controller('jobresultsCtrl',
       Dataset.getjob({'job_list':"",'jid':params['job']}).$promise.then(function(data){
         $scope.job = data.jobs;
         $scope.job = {};
-        $scope.display = "Overview";
+        
         $scope.job.tool = 'prediction';
         $scope.job.id = "Prediction TEST"
         $scope.job.methods = "PCA_bin_DynamicCutTree_correlation"
         ////////////// Prédiction part ////////////////////////////////
         if ($scope.job.tool == 'prediction'){
-            Dataset.readpredict({'job':$scope.job.id}).$promise.then(function(response){
+            Dataset.readpredict({'job':$scope.job.id,'method':$scope.job.methods}).$promise.then(function(response){
                 console.log(response)
                 $scope.charts = response.charts;
                 $scope.methods = response.methods;
                 $scope.best = response.best;
                 $scope.description = response.description;
-                $scope.group = response.groups;
+                $scope.groups = response.groups;
+                $scope.data = response.data;
 
 
 
