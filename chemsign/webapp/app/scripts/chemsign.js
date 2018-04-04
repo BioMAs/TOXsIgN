@@ -3,7 +3,7 @@
 'use strict';
 
 // Declare app level module which depends on filters, and services
-var app = angular.module('chemsign', ['chemsign.resources','angular-carousel','ui.bootstrap.accordion', 'ngDialog','nvd3','ngTableToCsv', 'ngFileUpload', 'ngSanitize', 'ngCookies', 'angular-js-xlsx', 'ngRoute','angular-venn', 'ui.bootstrap', 'datatables', 'ui.tree', 'uuid', 'ngTable','angucomplete-alt']).
+var app = angular.module('chemsign', ['chemsign.resources','angular.filter','angular-carousel','ui.bootstrap.accordion', 'ngDialog','nvd3','ngTableToCsv', 'ngFileUpload', 'ngSanitize', 'ngCookies', 'angular-js-xlsx', 'ngRoute','angular-venn', 'ui.bootstrap', 'datatables', 'ui.tree', 'uuid', 'ngTable','angucomplete-alt']).
 
 config(['$routeProvider','$logProvider',
     function ($routeProvider) {
@@ -104,7 +104,7 @@ config(['$routeProvider','$logProvider',
 
         $routeProvider.when('/predict', {
             templateUrl: 'views/prediction.html',
-            controller: 'noCtrl'
+            controller: 'predCtrl'
         });
 
          $routeProvider.when('/enrich', {
@@ -1148,6 +1148,81 @@ angular.module('chemsign').controller('distCtrl',
 
 });
 
+angular.module('chemsign').controller('predCtrl',
+    function ($scope,$rootScope, $log, Auth, User, Dataset, $window,$cookieStore, $location) {
+        $scope.msg = "Dashboard Tools";
+
+        $scope.user = null;
+        $scope.user = Auth.getUser();
+
+        if($window.sessionStorage.token) {
+            $scope.token = $window.sessionStorage.token;
+        }
+
+        $scope.signatures = [];
+        $scope.selected = ""
+        $scope.msg = "Dashboard Tools";
+        $scope.model ="";
+        $scope.job_name = "";
+        $scope.resultGo="";
+        console.log($scope.user);
+
+
+      if($scope.user == undefined || $scope.user == null){
+        $scope.selected = $cookieStore.get('selectedID').split(',');
+      }
+      else{
+        $scope.selected = $scope.user.selectedID.split(',');
+        console.log($scope.selected);
+      }
+      for(var i=0;i<$scope.selected.length;i++){
+          console.log($scope.selected[i]);
+          console.log(i);
+          Dataset.get({'filter':$scope.selected[i],'from':'None','to': 'None','collection':'signatures','field':'id'}).$promise.then(function(data){
+            if(data.request != undefined){
+              $scope.signatures.push(data.request);
+            }
+            console.log($scope.signatures);
+          });
+        }
+
+      $scope.run = function(signature){
+        var user_id = "";
+        if ($scope.user != null){
+          user_id = $scope.user.id;
+        }
+        else {
+          user_id = "None"
+        }
+        var args =  $scope.model
+        Dataset.run({'uid':user_id, 'signature':signature, 'tool':'prediction', 'arguments':args,'name':$scope.job_name}).$promise.then(function(data){
+          console.log(data);
+          if ($scope.user != null){
+            if ($scope.user.jobID == undefined){
+              $scope.user.jobID = "";
+            }
+            var list_jobID = $scope.user.jobID.split(',');
+            list_jobID.push(data.id);
+            $scope.user.jobID = list_jobID.join(',');
+            $scope.user.$save({'uid': $scope.user.id}).then(function(data){
+              $scope.user = data;
+            });
+          }
+          else {
+            if ($cookieStore.get('jobID') != undefined){
+              var list_jobID = $cookieStore.get('jobID').split(',');
+            } else{
+              var list_jobID = [];
+            }
+            list_jobID.push(data.id);
+            $cookieStore.put('jobID',list_jobID.join(','));
+          }
+          $location.path('/jobs');;
+        });
+      }
+
+});
+
 
 angular.module('chemsign').controller('enrichCtrl',
     function ($scope,$rootScope, $log, Auth, User, Dataset, $location,$window,$cookieStore, ngTableParams, $filter) {
@@ -1259,18 +1334,56 @@ angular.module('chemsign').directive("chartDiv", function() {
 });
 
 angular.module('chemsign').controller('jobresultsCtrl',
-    function ($scope,$rootScope, $log, Auth, User, Dataset, $location, ngTableParams, ngDialog, $filter) {
+    function ($scope,$rootScope, $log, Auth,$sce, User, Dataset, $location, ngTableParams, ngDialog, $filter) {
 
       var params = $location.search();
       console.log(params);
+      $scope.Math = window.Math;
       $scope.selected_best = undefined;
-      $scope.groupInfo = undefined;
       $scope.sortedGroup = undefined;
       $scope.display = "Overview";
 
+      $scope.displayChemInfo = function(chemical){
+        $scope.URL = "https://comptox.epa.gov/dashboard/dsstoxdb/results?utf8=✓&search="+chemical;
+        $scope.currentProjectUrl = $sce.trustAsResourceUrl($scope.URL)
+      }
+
       $scope.update_group = function(group,method){
         Dataset.getcluster({'group': group,'method':method}).$promise.then(function(response){
-          $scope.groupInfo = response.data;
+          console.log(response);  
+          $scope.groupInfo = response; 
+          $scope.groupchem = response.chemicalList;
+          $scope.signature = response.result["signature"];       
+          $scope.experimental = response.result["conditions"];
+          $scope.ExperimentalTable = new ngTableParams({
+              page: 1,
+              count: 50,
+          },
+            {
+              total: $scope.experimental.length,
+              getData: function ($defer, params) {
+                  $scope.dataExp = params.sorting() ? $filter('orderBy')($scope.experimental, params.orderBy()) : $scope.groupInfo;
+                  $scope.dataExp = params.filter() ? $filter('filter')($scope.dataExp, params.filter()) : $scope.dataExp;
+                  $scope.dataExp = $scope.dataExp.slice((params.page() - 1) * params.count(), params.page() * params.count());
+                  $defer.resolve($scope.dataExp);
+              }
+          });
+          $scope.ExperimentalTable.reload();
+          $scope.pato = response.result["enrichment"];
+          $scope.dsTable = new ngTableParams({
+              page: 1,
+              count: 50,
+          },
+            {
+              total: $scope.pato.length,
+              getData: function ($defer, params) {
+                  $scope.datads = params.sorting() ? $filter('orderBy')($scope.pato, params.orderBy()) : $scope.pato;
+                  $scope.datads = params.filter() ? $filter('filter')($scope.datads, params.filter()) : $scope.datads;
+                  $scope.datads = $scope.datads.slice((params.page() - 1) * params.count(), params.page() * params.count());
+                  $defer.resolve($scope.datads);
+              }
+          });
+          $scope.dsTable.reload();
         })
       }
 
@@ -1278,9 +1391,38 @@ angular.module('chemsign').controller('jobresultsCtrl',
         $scope.sortedGroup = data[display].groups.reverse();
         $scope.display = display;
         $scope.selected_best = Groups[display];
-        console.log($scope.selected_best);
         Dataset.getcluster({'group': $scope.selected_best,'method':method}).$promise.then(function(response){
-          $scope.groupInfo = response.data;
+          $scope.groupInfo = response; 
+          $scope.groupchem = response.chemicalList;
+          $scope.signature = response.result["signature"]; 
+          $scope.experimental = response.result["conditions"];
+          $scope.ExperimentalTable = new ngTableParams({
+              page: 1,
+              count: 50,
+          },
+            {
+              total: $scope.experimental.length,
+              getData: function ($defer, params) {
+                  $scope.dataExp = params.sorting() ? $filter('orderBy')($scope.experimental, params.orderBy()) : $scope.groupInfo;
+                  $scope.dataExp = params.filter() ? $filter('filter')($scope.dataExp, params.filter()) : $scope.dataExp;
+                  $scope.dataExp = $scope.dataExp.slice((params.page() - 1) * params.count(), params.page() * params.count());
+                  $defer.resolve($scope.dataExp);
+              }
+          });
+          $scope.pato = response.result["enrichment"];
+          $scope.dsTable = new ngTableParams({
+              page: 1,
+              count: 50,
+          },
+            {
+              total: $scope.pato.length,
+              getData: function ($defer, params) {
+                  $scope.datads = params.sorting() ? $filter('orderBy')($scope.pato, params.orderBy()) : $scope.pato;
+                  $scope.datads = params.filter() ? $filter('filter')($scope.datads, params.filter()) : $scope.datads;
+                  $scope.datads = $scope.datads.slice((params.page() - 1) * params.count(), params.page() * params.count());
+                  $defer.resolve($scope.datads);
+              }
+          });
         })
       }
 
@@ -1289,9 +1431,10 @@ angular.module('chemsign').controller('jobresultsCtrl',
         $scope.job = data.jobs;
         $scope.job = {};
         
-        $scope.job.tool = 'prediction';
-        $scope.job.id = "Prediction TEST"
-        $scope.job.methods = "PCA_bin_DynamicCutTree_correlation"
+        $scope.job.tool = 'prediction'; //test
+        $scope.job.id = "Prediction TEST" //test
+        $scope.job.methods = "PCA_bin_DynamicCutTree_correlation" //test
+
         ////////////// Prédiction part ////////////////////////////////
         if ($scope.job.tool == 'prediction'){
             Dataset.readpredict({'job':$scope.job.id,'method':$scope.job.methods}).$promise.then(function(response){

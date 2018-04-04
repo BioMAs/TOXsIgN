@@ -695,6 +695,11 @@ def run(request):
 
 @view_config(route_name='predict', renderer='json', request_method='POST')
 def predict(request):
+    def findindex(item2find,listOrString):
+        "Search indexes of an item (arg.1) contained in a list or a string (arg.2)"
+        return [n for n,item in enumerate(listOrString) if item==item2find]
+
+
     form = json.loads(request.body, encoding=request.charset)
     jid = form['job']
     selectedmethod = form['method']
@@ -750,11 +755,13 @@ def predict(request):
                 dInfo[method]['values'] = []
 
                 for val in sorted_value :
-                    if val != 'nan':
-                        index_val = values.index(val)
-                        dInfo[method]['values'].append(val)
-                        if groupList[index_val] not in sorted_groups :
-                            sorted_groups.append(groupList[index_val])
+                    index_val = findindex(val,values)
+
+                    for indexvalue in index_val :
+                        if val != 'nan':
+                            dInfo[method]['values'].append(val)
+                        if groupList[indexvalue] not in sorted_groups :
+                            sorted_groups.append(groupList[indexvalue])
                 dInfo[method]['groups'] = sorted_groups
                 
                 max, min = float("-Inf"),float("Inf")
@@ -790,7 +797,7 @@ def predict(request):
         chart['description'] = ""
         chart['name'] = method
         chart['title'] = ""
-        chart['layout'] = {'height':400,'showlegend': False, 'legend': {'traceorder':'reversed'}}
+        chart['layout'] = {'height':700,'showlegend': False, 'legend': {'traceorder':'reversed'},'margin':{'l':600}}
         chart['msg'] = []
         data_chart = {}
         data_chart['type'] = 'bar'
@@ -807,7 +814,7 @@ def predict(request):
     chart['description'] = ""
     chart['name'] = 'Overview'
     chart['title'] = ""
-    chart['layout'] = {'height':400,'showlegend': False, 'legend': {'traceorder':'reversed'}}
+    chart['layout'] = {'height':700,'showlegend': False, 'legend': {'traceorder':'reversed'}}
     chart['msg'] = []
     data_chart = {}
     data_chart['x'] = []
@@ -897,10 +904,11 @@ def cluster(request):
     print "readCluster"
 
 
-    clusterPath = request.registry.cluster_path
-    enrichPath = request.registry.cluster_path+"/"+method+"/Enrichissement/"
-    fCondition = open(clusterPath+'/'+method+"/Groups/"+method+'.'+clusterName+'.txt','r')
-    dResults = {'conditions':{},'enrichment':{}}
+    clusterPath = '/Users/tdarde/Desktop/TOXsIgN_oredict_test'
+    enrichPath = '/Users/tdarde/Desktop/TOXsIgN_oredict_test'+"/"+method+"/Enrichissement/"
+    signaturePath = '/Users/tdarde/Desktop/TOXsIgN_oredict_test'+"/"+method+"/Signatures/"
+    fCondition = open(clusterPath+'/'+method+"/Groups/"+clusterName+'.txt','r')
+    dResults = {'conditions':[],'enrichment':{}}
     lChemicals = []
     for lignes in fCondition.readlines() :
         lignef = lignes.replace('\n','')
@@ -916,8 +924,8 @@ def cluster(request):
             tissue = 'Skeletal muscle tissue'
 
         chemical = condition_information[2]
-        if chemical not in lChemicals :
-            lChemicals.append(chemical)
+        if chemical.replace('_',' ') not in lChemicals :
+            lChemicals.append(chemical.replace('_',' '))
         generation = condition_information[3]
         if '_' in condition_information[4] :
             dose_nb = condition_information[4].split('_')[0]
@@ -943,9 +951,10 @@ def cluster(request):
         else :
             tssID = ''
         if lignes.replace('\n','') not in dResults['conditions'] :
-            dResults['conditions'][lignes.replace('\n','')] = {'tissue':tissue,'chemical':chemical,'generation':generation,'dose':dose,'time':timeC,'id':tssID}
-    if os.path.isfile(enrichPath+'/'+method+'.'+clusterName+'.chem2enr.txt'):
-        fEnr = open(enrichPath+'/'+method+'.'+clusterName+'.chem2enr.txt','r')
+            dResults['conditions'].append({'term':lignes.replace('\n',''),'tissue':tissue,'chemical':chemical.replace('_',' '),'generation':generation,'dose':dose,'time':timeC,'id':tssID})
+    dResults['enrichment'] = []
+    if os.path.isfile(enrichPath+'/'+clusterName+'.chem2enr.txt'):
+        fEnr = open(enrichPath+'/'+clusterName+'.chem2enr.txt','r')
         for lignes in fEnr.readlines():
             if lignes.split('\t')[0] != 'MESH' :
                 mesh = lignes.split('\t')[0]
@@ -956,13 +965,25 @@ def cluster(request):
                 rR = str(round(float(lignes.split('\t')[5]),6))
                 p = str(round(float(lignes.split('\t')[6]),6))
                 pBH = str(round(float(lignes.split('\t')[7]),6))
-                dResults['enrichment'][mesh] = {'mesh':mesh.replace('.',' '),'r':r,'R':R,'n':n,'N':N,'rR':rR,'p':p,'pBH':pBH}
+                dResults['enrichment'].append({'mesh':mesh.replace('.',' '),'r':r,'R':R,'n':n,'N':N,'rR':rR,'p':p,'pBH':pBH})
     else :
-        dResults['enrichment']['No enrichment available'] = {'mesh':'No enrichment available'}
+        dResults['enrichment']= []
+        dResults['enrichment'].append({'msg':'No enrichment available'})
+    
+
+    print signaturePath+clusterName+'.GeneIDs.txt'
+    if os.path.isfile(signaturePath+clusterName+'.GeneIDs.txt'):
+        fEnr = open(signaturePath+clusterName+'.GeneIDs.txt','r')
+        dResults['signature'] = []
+        for lignes in fEnr.readlines():
+            dResults['signature'].append(lignes.replace('\n',''))
+    else :
+        dResults['signature'] = []
+        dResults['signature'].append({'msg':'No signature available'})
 
 
 
-    return {'msg':'Prediction Done','result':dResults,'method':infoMethod(form['method']),'cluster':clusterName,'status':"0"}
+    return {'msg':'Prediction Done','result':dResults,'chemicalList':lChemicals,'method':form['method'],'cluster':clusterName,'status':"0"}
 
 
 

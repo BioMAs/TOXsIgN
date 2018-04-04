@@ -44,15 +44,16 @@ def CreateFileDB(fileGene,fileHomo):
     geneFileOut = open('TOXsIgN_geneDB','a')
     dGene = {}
     for geneLine in geneFile.readlines():
-        tax_id = geneLine.split('\t')[0]
-        GeneID = geneLine.split('\t')[1]
-        Symbol = geneLine.split('\t')[2] 
-        Synonyms = geneLine.split('\t')[4] 
-        description = geneLine.split('\t')[8]
-        if GeneID in dHomo :
-            geneFileOut.write(geneLine.replace('\n','')+'\t'+dHomo[GeneID]+'\n')
-        else :
-            geneFileOut.write(geneLine.replace('\n','')+'\tNA\n')
+        if geneLine[0] != '#':
+            tax_id = geneLine.split('\t')[0]
+            GeneID = geneLine.split('\t')[1]
+            Symbol = geneLine.split('\t')[2] 
+            Synonyms = geneLine.split('\t')[4] 
+            description = geneLine.split('\t')[8]
+            if GeneID in dHomo :
+                geneFileOut.write(geneLine.replace('\n','')+'\t'+dHomo[GeneID]+'\n')
+            else :
+                geneFileOut.write(geneLine.replace('\n','')+'\tNA\n')
     
     geneFileOut.close()
 CreateFileDB('../../Data/Database/gene_info_parse', '../../Data/Database/homologene.data.txt')

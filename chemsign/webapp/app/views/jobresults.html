@@ -1,57 +1,156 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
 <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 <script src="scripts/plotly-latest.min.js"></script>
+<style>
+	.panel.panel-horizontal {
+    display:table;
+    width:100%;
+}
+.panel.panel-horizontal > .panel-heading, .panel.panel-horizontal > .panel-body, .panel.panel-horizontal > .panel-footer {
+    display:table-cell;
+}
+.panel.panel-horizontal > .panel-heading, .panel.panel-horizontal > .panel-footer {
+    width: 25%;
+    border:0;
+    vertical-align: middle;
+}
+.panel.panel-horizontal > .panel-heading {
+    border-right: 1px solid #ddd;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 4px;
+}
+.panel.panel-horizontal > .panel-footer {
+    border-left: 1px solid #ddd;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 4px;
+}
 
+</style>
 
 
 <h2>Results job : TSJ{{job.id}}</h2>
 
-
+<!--Prediction analysis-->
 <div ng-if="job.tool == 'prediction'" id="results">
+	<hr>
+	<select ng-model="display" ng-change="update_best(best,job.methods,display,data)">
+		<option value="{{ method }}" ng-repeat="method in methods">{{ method }}</option>
+	</select>
 	<div class="row">
-		<div class="col-md-4">
-			<select ng-model="display" ng-change="update_best(best,job.methods,display,data)">
-				<option value="{{ method }}" ng-repeat="method in methods">{{ method }}</option>
-			</select>
-		</div>
-		<div class="col-md-8" ng-repeat="chart in charts" ng-if="chart.name == display">
+		<div class="col-md-12" ng-repeat="chart in charts" ng-if="chart.name == display">
 			<h4>{{ display }}</h4>
 			<div chart-div chart="chart" id="chart-div-{{ $index }}"></div>
 		</div>
 	</div>
 	<hr>
 	<div class="raw">
-		<div class="panel-group" id="accordion">
-			<div class="panel panel-default">
-				<div class="panel-heading">
-				<h4 class="panel-title">
-					<a data-toggle="collapse" data-parent="#accordion" href="#collapse1" target="_self">
-					Information</a>
-				</h4>
-				</div>
-				<div id="collapse1" class="panel-collapse collapse in">
-					<div class="panel-body">
-						<ul>
-							<li><b>Selected signature:</b> {{ selected_sign }}</li>
-							<li><b>Selected clustering method:</b> {{ job.methods }}</li>
-							<li><b>Clustering method description:</b> {{ description }}</li>
-							<li><b>Selected prediction methods:</b> {{ display }}</li>
-						</ul>
+		<accordion>
+			<accordion-group is-open="false">
+				<accordion-heading>
+					Information <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i>
+				</accordion-heading>
+				<p>
+					<ul>
+						<li><b>Selected signature:</b> {{ selected_sign }}</li>
+						<li><b>Selected clustering method:</b> {{ job.methods }}</li>
+						<li><b>Clustering method description:</b> {{ description }}</li>
+						<li><b>Selected prediction methods:</b> {{ display }}</li>
+					</ul>
+				</p>
+			</accordion-group>
+		</accordion>	  
+	</div>
+	<div class="raw" ng-if='display != "Overview"' style="margin-bottom:10px;">
+		<select ng-model = "selected_best" ng-change="update_group(selected_best,job.methods)">
+			<option ng-repeat="group in sortedGroup" ng-if="group != 'Sign'">{{ group }}</option>
+		</select>
+	</div>
+	<div class="raw" ng-if='groupInfo'>
+		<ul class="nav nav-tabs" style="margin-bottom:10px;">
+			<li class="active"><a data-toggle="tab" href="#ec" target="_self">Experimental conditions ({{experimental.length}})</a></li>
+			<li><a data-toggle="tab" href="#chem" target="_self">Chemicals ({{groupchem.length}})</a></li>
+			<li><a data-toggle="tab" href="#pato" target="_self">Phenotype</a></li>
+			<li><a data-toggle="tab" href="#sign" target="_self" ng-if='! signature[0]["msg"]'>Signature ({{signature.length}})</a></li>
+			<li><a data-toggle="tab" href="#sign" target="_self" ng-if='signature[0]["msg"]'>Signature (0)</a></li>
+	
+		</ul>
+	
+		<div class="tab-content">
+			<div id="ec" class="tab-pane fade in active">
+				<a class="btn" title="Export Table" ng-click="csv.generate()" ng-href="{{ csv.link() }}" download="myTable.txt">
+				<i class="glyphicon glyphicon-new-window"></i> Export
+				</a>
+				<table ng-table="ExperimentalTable"  show-filter="true" class="table table-striped" export-csv="csv" separator=";" export-csv-ignore="ignore">
+					<tr ng-repeat="val in $data">
+						<td data-title="'Experimental condition'">{{val.term}}</td>
+						<td data-title="'Chemical'" sortable="'Chemical'">{{val.chemical}}</td>
+						<td data-title="'Dose'" sortable="'Dose'">{{val.dose}}</td>
+						<td data-title="'Time'" sortable="'Time'">{{val.time}}</td>
+						<td data-title="'Tissue'" sortable="'Tissue'">{{val.tissue}}</td>
+						<td data-title="'Generation'">{{val.generation}}</td>
+						<td data-title="'Signature ID'">{{val.id['signatures']}}</td>
+					</tr>
+				</table>
+			</div>
+			<div id="chem" class="tab-pane fade">
+				<div class="row">
+					<div class="col-md-4">
+						<div class="panel panel-default panel-horizontal" ng-repeat="val in groupchem">
+							<div class="panel-heading">
+								<h3 class="panel-title"><i class="fas fa-flask"></i></h3>
+							</div>
+							<div class="panel-body">{{ val }}</div>
+							<div class="panel-footer"><a class="btn btn-default" href="https://comptox.epa.gov/dashboard/dsstoxdb/results?utf8=✓&search={{val}}" target="_blank">More</a></div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>				  
-	</div>
-	<div class="raw" ng-if='display != "Overview"'>
-		<select ng-model = "selected_best" ng-change="update_group(selected_best,job.methods)">
-			<option ng-repeat="group in sortedGroup">{{ group }}</option>
-		</select>
-	</div>
-	<div class="raw" ng-if='groupInfo != undefined'>
-		{{ groupInfo }}
+			<div id="pato" class="tab-pane fade">
+				<div class="alert alert-warning" role="alert" ng-if='pato[0]["msg"]'>
+					{{ pato[0]["msg"] }}
+				</div>
+				<a class="btn" title="Export Table" ng-if='!pato[0]["msg"]' ng-click="csv.generate()" ng-href="{{ csv.link() }}" download="myTable.txt">
+					<i class="glyphicon glyphicon-new-window"></i> Export
+				</a>
+				<table ng-table="dsTable" show-filter="true" class="table table-striped" export-csv="csv" separator=";" export-csv-ignore="ignore">
+					<tr ng-repeat="val in $data">
+						<td data-title="'Term'" filter="{mesh: 'text'}">{{val.mesh}}</td>
+						<td data-title="'r'" sortable="'r'">{{val.r}}</td>
+						<td data-title="'R'" sortable="'R'">{{val.R}}</td>
+						<td data-title="'n'" sortable="'n'">{{val.n}}</td>
+						<td data-title="'N'" sortable="'N'">{{val.N}}</td>
+						<td data-title="'Ratio'" sortable="'rR'">{{Math.round(val.rR *100)}} %</td>
+						<td data-title="'Pvalue'" sortable="'pvalue'">{{val.p}}</td>
+						<td data-title="'Adjusted Pvalue (Benjamini-Hochberg)'" sortable="'pbh'">{{val.pBH}}</td>
+					</tr>
+				</table>
+			</div>
+			<div id="sign" class="tab-pane fade">
+				<div class="alert alert-warning" role="alert" ng-if='signature[0]["msg"]'>
+					{{ signature[0]["msg"] }}
+				</div>				
+				<div class="row">
+					<div class="col-md-4">
+						<div class="panel panel-default panel-horizontal" ng-repeat="gene in signature" ng-if='! signature[0]["msg"]'>
+							<div class="panel-heading">
+								<h3 class="panel-title"><i class="fas fa-dna"></i></h3>
+							</div>
+							<div class="panel-body">{{ gene }}</div>
+							<div class="panel-footer"><a class="btn btn-default" href="https://www.ncbi.nlm.nih.gov/gene/?term={{gene}}" target="_blank">More</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 
+
+
+
+
+
+<!--Distance analysis-->
 <div ng-if="job.tool == 'distance analysis'" id="results">
     <div class="panel-body" id="paneltable">
     	<a class="btn" title="Export Table" ng-click="csv.generate()" ng-href="{{ csv.link() }}" download="myTable.txt">
@@ -75,7 +174,7 @@
     </div>
 </div>
 
-
+<!--Functional analysis-->
 <div ng-if="job.tool == 'functional analysis'" id="results">
 	<ul class="nav nav-tabs">
 	  <li class="active"><a data-toggle="tab" href="#bp" target="_self">Biological process</a></li>
