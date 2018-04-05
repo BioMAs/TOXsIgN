@@ -709,7 +709,6 @@ def predict(request):
     fResults = open(result_file,'r')
 
     # Test
-    #Results = open('/Users/tdarde/Desktop/TOXsIgN_oredict_test/output.txt','r')
     dInfo = {}
     groupList = []
     best = {}
