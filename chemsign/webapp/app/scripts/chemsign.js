@@ -1195,7 +1195,7 @@ angular.module('chemsign').controller('predCtrl',
           user_id = "None"
         }
         var args =  $scope.model
-        Dataset.run({'uid':user_id, 'signature':signature, 'tool':'prediction', 'arguments':args,'name':$scope.job_name}).$promise.then(function(data){
+        Dataset.run({'uid':user_id, 'signature':signature, 'tool':'prediction', 'arguments':$scope.model,'name':$scope.job_name}).$promise.then(function(data){
           console.log(data);
           if ($scope.user != null){
             if ($scope.user.jobID == undefined){
@@ -1425,7 +1425,6 @@ angular.module('chemsign').controller('jobresultsCtrl',
 
       Dataset.getjob({'job_list':"",'jid':params['job']}).$promise.then(function(data){
         $scope.job = data.jobs;
-        $scope.job = {};
         
         //$scope.job.tool = 'prediction'; //test
         //$scope.job.id = "Prediction TEST" //test
