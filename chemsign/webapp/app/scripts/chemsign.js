@@ -1345,7 +1345,7 @@ angular.module('chemsign').controller('jobresultsCtrl',
 
 
       $scope.update_group = function(group,method){
-        Dataset.getcluster({'group': group,'method':method}).$promise.then(function(response){
+        Dataset.getcluster({'group': group,'method':$scope.job.arguments}).$promise.then(function(response){
           console.log(response);  
           $scope.groupInfo = response; 
           $scope.groupchem = response.chemicalList;
@@ -1387,7 +1387,7 @@ angular.module('chemsign').controller('jobresultsCtrl',
         $scope.sortedGroup = data[display].groups.reverse();
         $scope.display = display;
         $scope.selected_best = Groups[display];
-        Dataset.getcluster({'group': $scope.selected_best,'method':method}).$promise.then(function(response){
+        Dataset.getcluster({'group': $scope.selected_best,'method':$scope.job.arguments}).$promise.then(function(response){
           $scope.groupInfo = response; 
           $scope.groupchem = response.chemicalList;
           $scope.signature = response.result["signature"]; 
