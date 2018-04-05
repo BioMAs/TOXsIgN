@@ -704,12 +704,12 @@ def predict(request):
     jid = form['job']
     selectedmethod = form['method']
     # FOR TEST uncomment for prod !!!!
-    #job_info = request.registry.db_mongo['Jobs'].find_one({'id':jid})
-    #result_file = job_info['result']
-    #fResults = open(result_file,'r')
+    job_info = request.registry.db_mongo['Jobs'].find_one({'id':jid})
+    result_file = job_info['result']
+    fResults = open(result_file,'r')
 
     # Test
-    fResults = open('/Users/tdarde/Desktop/TOXsIgN_oredict_test/output.txt','r')
+    #Results = open('/Users/tdarde/Desktop/TOXsIgN_oredict_test/output.txt','r')
     dInfo = {}
     groupList = []
     best = {}
@@ -782,7 +782,7 @@ def predict(request):
 
     #Set method description
     description = ""
-    with open('/Users/tdarde/Desktop/TOXsIgN_oredict_test/'+selectedmethod+'/description.txt', 'r') as myfile:
+    with open(os.path.join(request.registry.cluster_path,selectedmethod,'description.txt'), 'r') as myfile:
         description=myfile.read().replace('\n', '')
 
     #Init result dico
@@ -897,17 +897,14 @@ def cluster(request):
 
 
     form = json.loads(request.body, encoding=request.charset)
-    print form
     clusterName = form['group']
-    print clusterName
     method = form['method']
-    print "readCluster"
 
 
-    clusterPath = '/Users/tdarde/Desktop/TOXsIgN_oredict_test'
-    enrichPath = '/Users/tdarde/Desktop/TOXsIgN_oredict_test'+"/"+method+"/Enrichissement/"
-    signaturePath = '/Users/tdarde/Desktop/TOXsIgN_oredict_test'+"/"+method+"/Signatures/"
-    fCondition = open(clusterPath+'/'+method+"/Groups/"+clusterName+'.txt','r')
+    clusterPath = os.path.join(request.registry.cluster_path,method)
+    enrichPath = clusterPath+"/Enrichissement/"
+    signaturePath = clusterPath+"/Signatures/"
+    fCondition = open(clusterPath+"/Groups/"+clusterName+'.txt','r')
     dResults = {'conditions':[],'enrichment':{}}
     lChemicals = []
     for lignes in fCondition.readlines() :

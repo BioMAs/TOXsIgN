@@ -762,7 +762,7 @@ angular.module('chemsign').controller('queryCtrl',
 
 
 
-                                    if (query_piece.includes('projects') && data['number'] != 0){
+                  if (query_piece.includes('projects') && data['number'] != 0){
 
                     $scope.projects_number= ''+data['number'];
                     $scope.studies_number = 'No Result';
@@ -1343,10 +1343,6 @@ angular.module('chemsign').controller('jobresultsCtrl',
       $scope.sortedGroup = undefined;
       $scope.display = "Overview";
 
-      $scope.displayChemInfo = function(chemical){
-        $scope.URL = "https://comptox.epa.gov/dashboard/dsstoxdb/results?utf8=✓&search="+chemical;
-        $scope.currentProjectUrl = $sce.trustAsResourceUrl($scope.URL)
-      }
 
       $scope.update_group = function(group,method){
         Dataset.getcluster({'group': group,'method':method}).$promise.then(function(response){
@@ -1431,13 +1427,13 @@ angular.module('chemsign').controller('jobresultsCtrl',
         $scope.job = data.jobs;
         $scope.job = {};
         
-        $scope.job.tool = 'prediction'; //test
-        $scope.job.id = "Prediction TEST" //test
-        $scope.job.methods = "PCA_bin_DynamicCutTree_correlation" //test
+        //$scope.job.tool = 'prediction'; //test
+        //$scope.job.id = "Prediction TEST" //test
+        //$scope.job.methods = "PCA_bin_DynamicCutTree_correlation" //test
 
         ////////////// Prédiction part ////////////////////////////////
         if ($scope.job.tool == 'prediction'){
-            Dataset.readpredict({'job':$scope.job.id,'method':$scope.job.methods}).$promise.then(function(response){
+            Dataset.readpredict({'job':$scope.job.id,'method':$scope.job.arguments}).$promise.then(function(response){
                 console.log(response)
                 $scope.charts = response.charts;
                 $scope.methods = response.methods;
@@ -1555,39 +1551,6 @@ angular.module('chemsign').controller('jobresultsCtrl',
       $scope.show_dataset = function(id){
         $location.url('/browse?dataset='+id);
       };
-
-      $scope.options = {
-            chart: {
-                type: 'multiBarHorizontalChart',
-                height: 2500,
-                x: function(d){return d.label;},
-                y: function(d){return d.value;},
-                //yErr: function(d){ return [-Math.abs(d.value * Math.random() * 0.3), Math.abs(d.value * Math.random() * 0.3)] },
-                showControls: true,
-                showValues: true,
-                duration: 500,
-                xAxis: {
-                    showMaxMin: false
-                },
-                callback: function(chart) {
-                    chart.multibar.dispatch.on('elementClick', function(select){
-                        console.log('elementClick in callback', select.data.label);
-                        Dataset.getcluster({'cluster':select.data.label,'method':$scope.job.method}).$promise.then(function(info){
-                            ngDialog.open({ template: 'clusterInfo', scope: $scope, className: 'ngdialog-theme-default',data: info})
-                        });
-                    });
-                },
-                yAxis: {
-                    axisLabel: 'Values',
-                    tickFormat: function(d){
-                        return d3.format(',.2f')(d);
-                    }
-                }
-            }
-        };
-
-
-
 
 });
 
