@@ -1175,7 +1175,7 @@ def file_upload(request):
 
     signature_selected = request.registry.db_mongo['signatures'].find_one({'id' :request.POST['sid']})
     logger.warning(signature_selected) 
-    
+
     if signature_selected is None :
         return {'msg':'Something went wrong. If the problem persists, please contact administrators'}
     if signature_selected['owner'] !=  request.POST['uid'] :
@@ -1184,11 +1184,11 @@ def file_upload(request):
     if signature_selected[request.POST['type']] == "" :
         request.registry.db_mongo['signatures'].update({'id' :request.POST['sid']},{'$set':{request.POST['type']:request.POST['name']}})
     else :
-        if request.POST['name'] not in signature_selected[request.POST['type']].split(',') :
+        if request.POST['name'] not in signature_selected[request.POST['type']] :
             return {'msg':'No file corresponding to your uploaded file. Please update the file name using project updating button'}
         else :
-            print request.POST['name']
-            print signature_selected[request.POST['type']].split()
+            logger.warning( request.POST['name'])
+            logger.warning( signature_selected[request.POST['type']].split())
 
     if request.POST['type'] == 'additional_file' :
         tmp_file_name = uuid.uuid4().hex
@@ -1207,16 +1207,19 @@ def file_upload(request):
         os.rename(temp_file_path, os.path.join(upload_path, request.params['name']))
         print 'write file into : '+ upload_path
         return {'msg':'Upload complete'}
+    logger.warning("ELSE ENTER") 
     else :
+        logger.warning("ELSE ENTER") 
         if signature_selected[request.POST['type']] == "" :
             request.registry.db_mongo['signatures'].update({'id' :request.POST['sid']},{'$set':{request.POST['type']:request.POST['name']}})
         else :
-            if request.POST['name'] not in signature_selected[request.POST['type']].split(',') :
+            if request.POST['name'] not in signature_selected[request.POST['type']] :
                 return {'msg':'No file corresponding to your uploaded file. Please update the file name using project updating button'}
             else :
                 print request.POST['name']
                 print signature_selected[request.POST['type']].split()
         try :
+            logger.warning(signature_selected['genes_identifier'])
             if signature_selected['genes_identifier'] == 'Entrez genes' :
 
                 tmp_file_name = uuid.uuid4().hex
