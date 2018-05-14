@@ -1223,6 +1223,7 @@ def file_upload(request):
             logger.warning(signature_selected['genes_identifier'])
             if signature_selected['genes_identifier'] == 'Entrez genes' :
                 logger.warning("OPEN FILE")
+
                 tmp_file_name = uuid.uuid4().hex
                 #print tmp_file_name
                 file_path = os.path.join('/tmp', '%s.sig' % tmp_file_name)
@@ -1236,10 +1237,11 @@ def file_upload(request):
 
                 logger.warning("FILE write")
                 upload_path = os.path.join(request.registry.upload_path, request.params['uid'], 'tmp')
+
                 logger.warning(upload_path)
                 if not os.path.exists(upload_path):
                     os.makedirs(upload_path)
-                os.rename(temp_file_path, os.path.join(upload_path, tmp_file_name))
+                shutil.move(temp_file_path, os.path.join(upload_path, tmp_file_name))
                 check_file = open(os.path.join(upload_path, tmp_file_name),'r')
 
 
