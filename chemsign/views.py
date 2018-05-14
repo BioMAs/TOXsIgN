@@ -1174,6 +1174,8 @@ def file_upload(request):
         return HTTPForbidden('no input file')
 
     signature_selected = request.registry.db_mongo['signatures'].find_one({'id' :request.POST['sid']})
+    logger.warning(signature_selected) 
+    
     if signature_selected is None :
         return {'msg':'Something went wrong. If the problem persists, please contact administrators'}
     if signature_selected['owner'] !=  request.POST['uid'] :
