@@ -1189,7 +1189,7 @@ def file_upload(request):
         else :
             logger.warning( request.POST['name'])
             logger.warning( signature_selected[request.POST['type']].split())
-
+    logger.warning("ELSE ENTER") 
     if request.POST['type'] == 'additional_file' :
         tmp_file_name = uuid.uuid4().hex
         file_path = os.path.join('/tmp', '%s.sig' % tmp_file_name)
@@ -1207,7 +1207,7 @@ def file_upload(request):
         os.rename(temp_file_path, os.path.join(upload_path, request.params['name']))
         print 'write file into : '+ upload_path
         return {'msg':'Upload complete'}
-    logger.warning("ELSE ENTER") 
+    
     else :
         logger.warning("ELSE ENTER") 
         if signature_selected[request.POST['type']] == "" :
