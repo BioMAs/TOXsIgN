@@ -1190,6 +1190,7 @@ def file_upload(request):
             logger.warning( request.POST['name'])
             logger.warning( signature_selected[request.POST['type']].split())
     logger.warning("ELSE ENTER") 
+
     if request.POST['type'] == 'additional_file' :
         tmp_file_name = uuid.uuid4().hex
         file_path = os.path.join('/tmp', '%s.sig' % tmp_file_name)
@@ -1221,22 +1222,28 @@ def file_upload(request):
         try :
             logger.warning(signature_selected['genes_identifier'])
             if signature_selected['genes_identifier'] == 'Entrez genes' :
-
+                logger.warning("OPEN FILE")
                 tmp_file_name = uuid.uuid4().hex
                 #print tmp_file_name
                 file_path = os.path.join('/tmp', '%s.sig' % tmp_file_name)
                 temp_file_path = file_path + '~'
-
+                logger.warning(temp_file_path)
                 # Finally write the data to a temporary file
                 with open(temp_file_path, 'wb') as output_file:
                     shutil.copyfileobj(input_file, output_file)
                 # Now that we know the file has been fully saved to disk move it into place.
 
+
+                logger.warning("FILE write")
                 upload_path = os.path.join(request.registry.upload_path, request.params['uid'], 'tmp')
+                logger.warning(upload_path)
                 if not os.path.exists(upload_path):
                     os.makedirs(upload_path)
                 os.rename(temp_file_path, os.path.join(upload_path, tmp_file_name))
                 check_file = open(os.path.join(upload_path, tmp_file_name),'r')
+
+
+                logger.warning("File OUVERT")
                 lId = []
                 for lineID in check_file.readlines():
                     if lineID != '' and lineID != 'NA' and lineID != '-' and lineID != 'na' and lineID != ' ' and lineID != 'Na' :
@@ -1285,9 +1292,9 @@ def file_upload(request):
 
         except :
             print sys.exc_info()[1]
-            return {'msg':"TOXsIgN can't read your file. Please make sure you use the correct format. If this error persists, please contact the site administrator.",'status': '1' }
+            return {'msg':"ERROR 023 - TOXsIgN can't read your file. Please make sure you use the correct format. If this error persists, please contact the site administrator.",'status': '1' }
 
-        return {'msg': "TOXsIgN can't read your file. Please make sure you use the correct format. If this error persists, please contact the site administrator."}
+        return {'msg': "ERROR 022 - TOXsIgN can't read your file. Please make sure you use the correct format. If this error persists, please contact the site administrator."}
 
 
 
