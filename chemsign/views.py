@@ -1164,6 +1164,7 @@ def file_signature(request):
 @view_config(route_name='file_upload', renderer='json', request_method='POST')
 def file_upload(request):
     session_user = is_authenticated(request)
+    print request.POST
     if session_user is None:
         return 'HTTPForbidden()'
     input_file = None
