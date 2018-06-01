@@ -896,7 +896,7 @@ def cluster(request):
 
 
     form = json.loads(request.body, encoding=request.charset)
-    clusterName = form['group']
+    clusterName = form['group'].replace("\n","")
     method = form['method']
 
 

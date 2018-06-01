@@ -5937,3 +5937,1999 @@ Traceback (most recent call last):
   File "/Users/tdarde/Documents/GitHub/TOXsIgN/chemsign/views.py", line 900, in cluster
     clusterPath = request.registry.cluster_path
 AttributeError: 'Registry' object has no attribute 'cluster_path'
+2018-04-03 11:42:49,562 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/cluster
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343233393831353230/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/GitHub/TOXsIgN/chemsign/views.py", line 900, in cluster
+    clusterPath = request.registry.cluster_path
+AttributeError: 'Registry' object has no attribute 'cluster_path'
+2018-04-03 11:42:51,635 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/cluster
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343235353030353630/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/GitHub/TOXsIgN/chemsign/views.py", line 900, in cluster
+    clusterPath = request.registry.cluster_path
+AttributeError: 'Registry' object has no attribute 'cluster_path'
+2018-04-03 11:42:53,675 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/cluster
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343236363230353630/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/GitHub/TOXsIgN/chemsign/views.py", line 900, in cluster
+    clusterPath = request.registry.cluster_path
+AttributeError: 'Registry' object has no attribute 'cluster_path'
+2018-04-03 11:42:55,384 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/cluster
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343238303538383332/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/GitHub/TOXsIgN/chemsign/views.py", line 900, in cluster
+    clusterPath = request.registry.cluster_path
+AttributeError: 'Registry' object has no attribute 'cluster_path'
+2018-04-03 11:42:57,138 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/cluster
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343239333431373736/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/GitHub/TOXsIgN/chemsign/views.py", line 900, in cluster
+    clusterPath = request.registry.cluster_path
+AttributeError: 'Registry' object has no attribute 'cluster_path'
+2018-04-03 11:43:20,089 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/cluster
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343330383435393638/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/GitHub/TOXsIgN/chemsign/views.py", line 900, in cluster
+    clusterPath = request.registry.cluster_path
+AttributeError: 'Registry' object has no attribute 'cluster_path'
+2018-04-03 11:47:25,810 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/cluster
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343332313034353238/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/GitHub/TOXsIgN/chemsign/views.py", line 900, in cluster
+    clusterPath = request.registry.cluster_path
+AttributeError: 'Registry' object has no attribute 'cluster_path'
+2018-04-03 11:47:27,664 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/cluster
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343333343533323030/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/GitHub/TOXsIgN/chemsign/views.py", line 900, in cluster
+    clusterPath = request.registry.cluster_path
+AttributeError: 'Registry' object has no attribute 'cluster_path'
+2018-04-03 11:47:29,455 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/cluster
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343334373332313736/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/GitHub/TOXsIgN/chemsign/views.py", line 900, in cluster
+    clusterPath = request.registry.cluster_path
+AttributeError: 'Registry' object has no attribute 'cluster_path'
+2018-04-03 11:47:35,947 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/cluster
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343335393636383634/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/GitHub/TOXsIgN/chemsign/views.py", line 900, in cluster
+    clusterPath = request.registry.cluster_path
+AttributeError: 'Registry' object has no attribute 'cluster_path'
+2018-04-03 11:47:45,393 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/cluster
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343337323439343838/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/GitHub/TOXsIgN/chemsign/views.py", line 900, in cluster
+    clusterPath = request.registry.cluster_path
+AttributeError: 'Registry' object has no attribute 'cluster_path'
+2018-04-03 11:47:49,158 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/cluster
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343338353839393034/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/GitHub/TOXsIgN/chemsign/views.py", line 900, in cluster
+    clusterPath = request.registry.cluster_path
+AttributeError: 'Registry' object has no attribute 'cluster_path'
+2018-04-03 11:47:52,280 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/cluster
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343339383536353238/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/GitHub/TOXsIgN/chemsign/views.py", line 900, in cluster
+    clusterPath = request.registry.cluster_path
+AttributeError: 'Registry' object has no attribute 'cluster_path'
+2018-04-03 11:48:05,680 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343333323838373230/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-03 11:48:25,598 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343431333033303536/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-03 11:48:51,013 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/cluster
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343432303233303536/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/GitHub/TOXsIgN/chemsign/views.py", line 900, in cluster
+    clusterPath = request.registry.cluster_path
+AttributeError: 'Registry' object has no attribute 'cluster_path'
+2018-04-03 11:56:46,997 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/cluster
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343434373431303732/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/GitHub/TOXsIgN/chemsign/views.py", line 900, in cluster
+    clusterPath = request.registry.cluster_path
+AttributeError: 'Registry' object has no attribute 'cluster_path'
+2018-04-03 11:56:50,038 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/cluster
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343436303733353532/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/GitHub/TOXsIgN/chemsign/views.py", line 900, in cluster
+    clusterPath = request.registry.cluster_path
+AttributeError: 'Registry' object has no attribute 'cluster_path'
+2018-04-03 11:57:14,119 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343437333231383732/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-03 11:57:17,699 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/cluster
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343439323137343234/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/GitHub/TOXsIgN/chemsign/views.py", line 900, in cluster
+    clusterPath = request.registry.cluster_path
+AttributeError: 'Registry' object has no attribute 'cluster_path'
+2018-04-03 11:57:38,626 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/cluster
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343135313130333532/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/GitHub/TOXsIgN/chemsign/views.py", line 900, in cluster
+    clusterPath = request.registry.cluster_path
+AttributeError: 'Registry' object has no attribute 'cluster_path'
+2018-04-03 11:57:40,827 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343135313130363732/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-03 11:58:05,947 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/cluster
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343534313636333532/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/GitHub/TOXsIgN/chemsign/views.py", line 900, in cluster
+    clusterPath = request.registry.cluster_path
+AttributeError: 'Registry' object has no attribute 'cluster_path'
+2018-04-03 11:58:18,370 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/cluster
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343536323633393532/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/GitHub/TOXsIgN/chemsign/views.py", line 900, in cluster
+    clusterPath = request.registry.cluster_path
+AttributeError: 'Registry' object has no attribute 'cluster_path'
+2018-04-03 14:39:12,509 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353735313732313736/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-03 14:39:18,252 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/cluster
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353831363538313932/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/GitHub/TOXsIgN/chemsign/views.py", line 900, in cluster
+    clusterPath = request.registry.cluster_path
+AttributeError: 'Registry' object has no attribute 'cluster_path'
+2018-04-03 14:39:36,297 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/cluster
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353832353635373132/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/GitHub/TOXsIgN/chemsign/views.py", line 900, in cluster
+    clusterPath = request.registry.cluster_path
+AttributeError: 'Registry' object has no attribute 'cluster_path'
+2018-04-03 14:45:34,105 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/cluster
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353736333432383030/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/GitHub/TOXsIgN/chemsign/views.py", line 900, in cluster
+    clusterPath = request.registry.cluster_path
+AttributeError: 'Registry' object has no attribute 'cluster_path'
+2018-04-03 14:45:45,652 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/cluster
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353838353434343634/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/GitHub/TOXsIgN/chemsign/views.py", line 900, in cluster
+    clusterPath = request.registry.cluster_path
+AttributeError: 'Registry' object has no attribute 'cluster_path'
+2018-04-03 14:51:49,342 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/cluster
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353839373533303430/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/GitHub/TOXsIgN/chemsign/views.py", line 900, in cluster
+    clusterPath = request.registry.cluster_path
+AttributeError: 'Registry' object has no attribute 'cluster_path'
+2018-04-03 14:52:07,695 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/cluster
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353930383136393736/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/GitHub/TOXsIgN/chemsign/views.py", line 900, in cluster
+    clusterPath = request.registry.cluster_path
+AttributeError: 'Registry' object has no attribute 'cluster_path'
+2018-04-03 14:56:01,110 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353632343938353132/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-03 14:56:06,223 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/cluster
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353633353631313034/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/GitHub/TOXsIgN/chemsign/views.py", line 900, in cluster
+    clusterPath = request.registry.cluster_path
+AttributeError: 'Registry' object has no attribute 'cluster_path'
+2018-04-03 14:56:08,725 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/cluster
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353634383736313132/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/GitHub/TOXsIgN/chemsign/views.py", line 900, in cluster
+    clusterPath = request.registry.cluster_path
+AttributeError: 'Registry' object has no attribute 'cluster_path'
+2018-04-03 14:57:14,251 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353239373634353630/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-03 14:57:19,676 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/cluster
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353331333139333736/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/GitHub/TOXsIgN/chemsign/views.py", line 900, in cluster
+    clusterPath = request.registry.cluster_path
+AttributeError: 'Registry' object has no attribute 'cluster_path'
+2018-04-03 15:00:08,352 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353638303337353834/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-03 15:01:03,077 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343939323132343936/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-03 15:02:11,992 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343537363239303732/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-03 15:02:53,403 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/cluster
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343539333536383136/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/GitHub/TOXsIgN/chemsign/views.py", line 902, in cluster
+    clusterPath = request.registry.cluster_path
+AttributeError: 'Registry' object has no attribute 'cluster_path'
+2018-04-03 15:04:55,471 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353435363438393132/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-03 15:06:18,882 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353534383536373230/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-03 15:11:57,633 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333930363135343430/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-03 15:12:03,216 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/cluster
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333933333239343234/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/GitHub/TOXsIgN/chemsign/views.py", line 907, in cluster
+    clusterPath = request.registry.cluster_path
+AttributeError: 'Registry' object has no attribute 'cluster_path'
+2018-04-03 15:17:11,283 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353539353431333238/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-03 15:17:15,279 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/cluster
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353630363034313132/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/GitHub/TOXsIgN/chemsign/views.py", line 909, in cluster
+    fCondition = open(clusterPath+'/'+method+"/Groups/"+method+'.'+clusterName+'.txt','r')
+NameError: global name 'clusterPath' is not defined
+2018-04-03 15:24:01,317 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333931373534303634/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-03 15:24:06,948 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/cluster
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333934343633393532/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/GitHub/TOXsIgN/chemsign/views.py", line 909, in cluster
+    fCondition = open(clusterPath+'/'+method+"/Groups/"+method+'.'+clusterName+'.txt','r')
+IOError: [Errno 2] No such file or directory: '/Users/tdarde/Desktop/TOXsIgN_oredict_test/PCA_bin_DynamicCutTree_correlation/Groups/PCA_bin_DynamicCutTree_correlation.PCA_bin_reduced_reccutreeDynamic_correlation_hybrid_deepSplit1_C104.100.txt'
+2018-04-03 15:26:46,017 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353832393735383234/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-03 15:26:50,159 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/cluster
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353835363833333434/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/GitHub/TOXsIgN/chemsign/views.py", line 972, in cluster
+    return {'msg':'Prediction Done','result':dResults,'method':infoMethod(form['method']),'cluster':clusterName,'status':"0"}
+NameError: global name 'infoMethod' is not defined
+2018-04-03 15:30:46,217 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343832383038313434/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-03 15:33:29,080 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/getjob
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343837323130303030/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/GitHub/TOXsIgN/chemsign/views.py", line 511, in getjob
+    job = request.registry.db_mongo['Jobs'].find_one( {'_id': ObjectId(form['jid'])})
+  File "build/bdist.macosx-10.6-x86_64/egg/bson/objectid.py", line 92, in __init__
+    self.__validate(oid)
+  File "build/bdist.macosx-10.6-x86_64/egg/bson/objectid.py", line 199, in __validate
+    raise InvalidId("%s is not a valid ObjectId" % oid)
+InvalidId: 5ac34ba23d9df7000ad079c is not a valid ObjectId
+2018-04-03 15:48:25,507 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/cluster
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343036383433393834/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/GitHub/TOXsIgN/chemsign/views.py", line 980, in cluster
+    dResults['signature']['No signature available'] = {'mesh':'No signature available'}
+KeyError: 'signature'
+2018-04-03 15:49:37,769 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/cluster
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353133353336323038/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/GitHub/TOXsIgN/chemsign/views.py", line 975, in cluster
+    fEnr = open(signaturePath+'/'+method+'.'+clusterName+'.GeneIDs.txt','r')
+IOError: [Errno 2] No such file or directory: '/Users/tdarde/Desktop/TOXsIgN_oredict_test/PCA_bin_DynamicCutTree_correlation/Signatures//PCA_bin_DynamicCutTree_correlation.PCA_bin_reduced_reccutreeDynamic_correlation_hybrid_deepSplit1_C104.100.GeneIDs.txt'
+2018-04-03 16:11:44,453 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353835353533373434/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-03 16:12:12,326 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353836373638393132/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-03 16:12:22,877 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353837313234323430/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-03 16:12:40,244 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353739363939393230/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-03 16:14:11,948 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353935333031393034/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-03 16:14:33,226 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353833393132303136/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-03 17:19:22,067 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333537323034333034/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-03 17:41:19,530 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333631373837333434/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-03 17:41:59,473 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333633313435373434/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-03 17:43:15,371 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333532313836303634/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-03 17:44:03,775 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333533303531393230/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-03 17:46:44,573 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34353733343235333630/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-03 17:51:06,860 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333634383737373132/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-04 08:59:35,516 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343034363234353932/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-04 09:04:49,381 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343435313436373034/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-04 09:05:53,432 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343434313734343136/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-04 09:08:23,980 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343433363438393132/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-04 09:09:09,221 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343337303538313238/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-04 09:09:58,440 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343337383439353532/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-04 09:10:19,784 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343435373039353834/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-04 09:39:27,146 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343435333038313132/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-04 09:39:35,866 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343336323734373034/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-04 09:42:29,659 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343438383231343536/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-04 09:42:55,377 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343534383236313238/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-04 09:43:06,685 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343438333234383830/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-04 09:43:21,179 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343338303135323438/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-04 09:47:41,733 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343338323133393638/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-04 09:49:00,958 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343439393632363430/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-04 09:53:17,636 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343438353434373230/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-04 09:53:18,020 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/%7B%7BcurrentProjectUrl%7D%7D
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343537303831383732/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/%7B%7BcurrentProjectUrl%7D%7D
+2018-04-04 09:53:22,340 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/%7B%7BcurrentProjectUrl%7D%7D
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343438323137323332/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/%7B%7BcurrentProjectUrl%7D%7D
+2018-04-04 09:53:45,292 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/%7B%7BcurrentProjectUrl%7D%7D
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343630333639373434/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/%7B%7BcurrentProjectUrl%7D%7D
+2018-04-04 09:53:48,720 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/%7B%7BcurrentProjectUrl%7D%7D
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343539333935333434/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/%7B%7BcurrentProjectUrl%7D%7D
+2018-04-04 10:10:29,279 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/%7B%7BcurrentProjectUrl%7D%7D
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333530323131393230/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/%7B%7BcurrentProjectUrl%7D%7D
+2018-04-04 10:10:37,403 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/%7B%7BcurrentProjectUrl%7D%7D
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333531313639373434/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/%7B%7BcurrentProjectUrl%7D%7D
+2018-04-04 10:15:59,935 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/%7B%7BcurrentProjectUrl%7D%7D
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333531363339363936/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/%7B%7BcurrentProjectUrl%7D%7D
+2018-04-04 10:18:25,868 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/%7B%7BcurrentProjectUrl%7D%7D
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333033323831343838/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/%7B%7BcurrentProjectUrl%7D%7D
+2018-04-04 10:19:19,605 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/%7B%7BcurrentProjectUrl%7D%7D
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333534313131393532/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/%7B%7BcurrentProjectUrl%7D%7D
+2018-04-04 10:19:37,901 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/%7B%7BcurrentProjectUrl%7D%7D
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333536373430363838/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/%7B%7BcurrentProjectUrl%7D%7D
+2018-04-04 10:19:51,167 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/%7B%7BcurrentProjectUrl%7D%7D
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333533353039343536/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/%7B%7BcurrentProjectUrl%7D%7D
+2018-04-04 10:32:04,746 :: ERROR :: Uncaught Exception at http://0.0.0.0:6543/cluster
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333837333139383838/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/toolbar.py", line 247, in toolbar_tween
+    response = _handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid_debugtoolbar-4.3-py2.7.egg/pyramid_debugtoolbar/panels/performance.py", line 58, in resource_timer_handler
+    result = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 41, in excview_tween
+    response = _error_handler(request, exc)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 16, in _error_handler
+    reraise(*exc_info)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 390, in attr_view
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 368, in predicate_wrapper
+    return view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 439, in rendered_view
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 148, in _requestonly_view
+    response = view(request)
+  File "/Users/tdarde/Documents/GitHub/TOXsIgN/chemsign/views.py", line 910, in cluster
+    fCondition = open(clusterPath+'/'+method+"/Groups/"+clusterName+'.txt','r')
+IOError: [Errno 2] No such file or directory: '/Users/tdarde/Desktop/TOXsIgN_oredict_test/PCA_bin_DynamicCutTree_correlation/Groups/Sign.txt'
+2018-04-04 10:34:49,713 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333836363332393132/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-04 10:34:52,153 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333934383934383030/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-04 10:36:14,335 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333937383033343038/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-04 10:39:52,627 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333939323838363536/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-04 10:40:11,744 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343031313935323136/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-04 10:48:28,811 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34343035313936353630/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-04 11:16:15,331 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333930343932343332/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-04 11:17:12,590 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333931343332393132/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-04 11:17:16,168 :: ERROR :: Squashed Exception at http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+traceback url: http://0.0.0.0:6543/_debug_toolbar/34333431383232383634/exception
+Traceback (most recent call last):
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/tweens.py", line 39, in excview_tween
+    response = handler(request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/router.py", line 156, in handle_request
+    view_name
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/view.py", line 642, in _call_view
+    response = view_callable(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/viewderivers.py", line 410, in viewresult_to_response
+    result = view(context, request)
+  File "/Users/tdarde/anaconda2/lib/python2.7/site-packages/pyramid-1.9.1-py2.7.egg/pyramid/static.py", line 125, in __call__
+    raise HTTPNotFound(request.url)
+HTTPNotFound: http://0.0.0.0:6543/app/styles/bootstrap.min.css.map
+2018-04-04 11:18:14,329 :: WARNING :: RUNNING
+2018-04-04 11:18:14,329 :: WARNING :: SUPERTEST
+2018-04-04 11:18:14,346 :: WARNING :: --signature TSS2,--script prediction,--job 1,--user None
+2018-04-04 11:18:14,347 :: WARNING :: /Users/tdarde/Documents/GitHub/TOXsIgN/var/upload/script
