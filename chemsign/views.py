@@ -304,8 +304,8 @@ def validate(request):
         sid = project['signatures'].split(',')
         request.registry.db_mongo['projects'].update({'id' :pid},{'$set':{'status':'public'}})
         request.registry.db_mongo['studies'].update({'id':{ '$all': stid } },{'$set':{'status':'public'}})
-        request.registry.db_mongo['assays'].update({'id':{ '$all': stid } },{'$set':{'status':'public'}})
-        request.registry.db_mongo['signatures'].update({'id':{ '$all': stid } },{'$set':{'status':'public'}})
+        request.registry.db_mongo['assays'].update({'id':{ '$all': aid } },{'$set':{'status':'public'}})
+        request.registry.db_mongo['signatures'].update({'id':{ '$all': sid } },{'$set':{'status':'public'}})
         cmd = "python %s --signature a --script gopublic --job b --user none" % (os.path.join(request.registry.script_path, 'jobLauncher.py'))
         os.system(cmd)
 
