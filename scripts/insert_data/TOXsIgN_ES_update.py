@@ -71,7 +71,7 @@ def update_project_indexes(pId):
 
     del project['_id']
     bulk_insert = ''
-    bulk_insert += "{ \"index\" : { \"_index\" : \"toxsign\", \"_type\": \"projects\" , \"_id\" : \""+proj['id']+"\" } }\n"
+    bulk_insert += "{ \"index\" : { \"_index\" : \"toxsign\", \"_type\": \"projects\" , \"_id\" : \""+project['id']+"\" } }\n"
     bulk_insert += json.dumps(project)+"\n"
     if bulk_insert:
         es.bulk(body=bulk_insert)
