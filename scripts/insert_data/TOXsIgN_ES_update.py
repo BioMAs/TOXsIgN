@@ -20,6 +20,7 @@ import ConfigParser, os
 from pymongo import MongoClient
 import elasticsearch
 import copy
+import json
 import logging
 import elasticsearch
 from logging.handlers import RotatingFileHandler
