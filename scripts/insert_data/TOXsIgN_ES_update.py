@@ -14,19 +14,13 @@ Created on 13 nov. 2018
 """
 import argparse
 import sys
-import datetime
-from time import *
 from hashlib import sha1
 from random import randint
-import bcrypt
 import ConfigParser, os
-from hashlib import sha1
 from pymongo import MongoClient
 import elasticsearch
 import copy
-import json
 import logging
-import xlsxwriter
 import elasticsearch
 from logging.handlers import RotatingFileHandler
  
