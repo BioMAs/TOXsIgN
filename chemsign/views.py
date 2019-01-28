@@ -652,6 +652,15 @@ def run(request):
     tool = form['tool']
     name = form['name']
     signature = json.loads(form['signature'])
+    tool_name = ""
+
+    if tool == 'distance_analysis':
+        tool_name = "Signature enrichment analysis"
+    if tool == 'functional_analysis':
+        tool_name = "Functional enrichment analysis"
+    if tool == 'prediction':
+        tool_name = "ChemPSy prediction"
+
 
     logger.warning("RUNNING")
     logger.warning(form['name'])
@@ -678,9 +687,9 @@ def run(request):
             'name':name,
             'status' : 'creating',
             'user': user_id,
-            'tool': tool,
+            'tool': tool_name,
             'signature' :signature['id'],
-            'time':sdt,
+            'time':str(sdt),
             'stderr':'',
             'arguments':arguments
         }
