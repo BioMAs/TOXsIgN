@@ -36,7 +36,11 @@
         <td>{{job.id}}</td>
         <td>{{job.name}}</td>
         <td>{{convert_timestamp_to_date(job.id)}}</td>
-        <td>{{job.tool}}</td>
+        <td>{{job.tool}}
+					<span ng-if="job.tool == 'distance analysis'">Signature enrichment analysis</span>
+					<span ng-if="job.tool == 'functional analysis	'">Functional enrichment analysis</span>
+					<span ng-if="job.tool == 'prediction'">ChemPSy - Prediction tool</span>
+				</td>
         <td>{{job.arguments}}</td>
 
 </td>
