@@ -31,7 +31,7 @@
 <h2>Results job : TSJ{{job.id}}</h2>
 
 <!--Prediction analysis-->
-<div ng-if="job.tool == 'ChemPSy prediction'" id="results">
+<div ng-if="job.tool == 'prediction'" id="results">
 	<hr>
 	<select ng-model="display" ng-change="update_best(best,job.methods,display,data)">
 		<option value="{{ method }}" ng-repeat="method in methods">{{ method }}</option>
@@ -145,13 +145,8 @@
 	</div>
 </div>
 
-
-
-
-
-
 <!--Distance analysis-->
-<div ng-if="job.tool == 'Signature enrichment analysis'" id="results">
+<div ng-if="job.tool == 'distance_analysis'" id="results">
     <div class="panel-body" id="paneltable">
     	<a class="btn" title="Export Table" ng-click="csv.generate()" ng-href="{{ csv.link() }}" download="myTable.txt">
 	      <i class="glyphicon glyphicon-new-window"></i> Export
@@ -175,7 +170,7 @@
 </div>
 
 <!--Functional analysis-->
-<div ng-if="job.tool == 'Functional enrichment analysis'" id="results">
+<div ng-if="job.tool == 'functional analysis'" id="results">
 	<ul class="nav nav-tabs">
 	  <li class="active"><a data-toggle="tab" href="#bp" target="_self">Biological process</a></li>
 	  <li><a data-toggle="tab" href="#cc" target="_self" ng-click="showStudies()">Cellular Component</a></li>
