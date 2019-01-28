@@ -1249,12 +1249,12 @@ angular.module('chemsign').controller('enrichCtrl',
         $scope.size = 0;
         console.log($scope.user);
 
-      $scope.add = function(){
-        $scope.filter_val[$scope.filter]={'param':$scope.adjust_filter,'value':$scope.value_filter,'name':$scope.job_name};
-        $scope.filter ="pvalue";
-        $scope.adjust_filter ="lt";
-        $scope.value_filter =0.01;
-        $scope.job_name = ""
+      $scope.add = function(filter,adjust_filter,value_filter,job_name){
+        $scope.filter_val[filter]={'param':adjust_filter,'value':value_filter,'name':job_name};
+        $scope.filter =filter;
+        $scope.adjust_filter =adjust_filter;
+        $scope.value_filter =value_filter;
+        $scope.job_name = job_name;
         $scope.size = Object.keys($scope.filter_val).length;
 
       };

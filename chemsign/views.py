@@ -654,9 +654,9 @@ def run(request):
     signature = json.loads(form['signature'])
     tool_name = ""
 
-    if tool == 'distance_analysis':
+    if tool == 'distance analysis':
         tool_name = "Signature enrichment analysis"
-    if tool == 'functional_analysis':
+    if tool == 'functional analysis':
         tool_name = "Functional enrichment analysis"
     if tool == 'prediction':
         tool_name = "ChemPSy prediction"
