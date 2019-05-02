@@ -12,3 +12,5 @@ PyJWT
 bcrypt
 velruse
 elasticsearch
+simplejson
+xlrd

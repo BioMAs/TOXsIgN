@@ -22,7 +22,9 @@ requires = [
     'PyJWT',
     'bcrypt',
     'velruse',
-    'elasticsearch'
+    'elasticsearch',
+    'simplejson'
+    'xlrd'
     ]
 
 setup(name='chemsign',
