@@ -168,6 +168,8 @@ def user_register(request):
     if user_in_db is None :
         if 'address' not in form :
             form['address'] = 'No address'
+        if 'laboratory' not in form :
+            form['laboratory'] = 'No laboratory'
         secret = request.registry.settings['secret_passphrase']
         token = jwt.encode({'user': {'id': form['user_name'],
                                      'password': bcrypt.hashpw(form['user_password'].encode('utf-8'), bcrypt.gensalt()),
