@@ -183,6 +183,7 @@ def user_register(request):
                         'aud': 'urn:chemsign/api'}, secret)
         message = "You requested an account, please click the following link to validate it\n"
         message += request.host_url+'/app/index.html#/login?action=confirm_email&token='+token
+        print message
         send_mail(request, form['user_name'], '[ToxSigN] Please validate your account', message)
         return {'msg': 'You will receive a confirmation email. Please click the link to verify your account.'}
     else :
