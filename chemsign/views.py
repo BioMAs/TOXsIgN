@@ -79,7 +79,7 @@ def send_mail(request, email_to, subject, message):
     port = 25
     if request.registry.settings['mail.smtp.port']:
         port = int(request.registry.settings['mail.smtp.port'])
-    mfrom = request.registry.settings['mail.from']
+    mfrom = 'do-no-reply.toxsign@genouest.org'
     mto = email_to
     msg = MIMEText(message)
     msg['To'] = email.utils.formataddr(('Recipient', mto))
