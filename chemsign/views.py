@@ -83,7 +83,7 @@ def send_mail(request, email_to, subject, message):
     mto = email_to
     msg = MIMEText(message)
     msg['To'] = email.utils.formataddr(('Recipient', mto))
-    msg['From'] = email.utils.formataddr(('Author', mfrom))
+    msg['From'] = email.utils.formataddr(('TOXsIgN team', mfrom))
     msg['Subject'] = subject
     server = None
     try:
